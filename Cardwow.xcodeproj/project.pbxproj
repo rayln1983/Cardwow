@@ -237,6 +237,25 @@
 		24F4B70318182D0B00F0F752 /* class_shaman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6FA18182D0B00F0F752 /* class_shaman@2x.png */; };
 		24F4B70418182D0B00F0F752 /* class_warlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6FB18182D0B00F0F752 /* class_warlock@2x.png */; };
 		24F4B70518182D0B00F0F752 /* class_warrior@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6FC18182D0B00F0F752 /* class_warrior@2x.png */; };
+		24F4B70F181830BD00F0F752 /* class_druid@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B706181830BC00F0F752 /* class_druid@2x.jpg */; };
+		24F4B710181830BD00F0F752 /* class_hunter@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B707181830BC00F0F752 /* class_hunter@2x.jpg */; };
+		24F4B711181830BD00F0F752 /* class_mage@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B708181830BC00F0F752 /* class_mage@2x.jpg */; };
+		24F4B712181830BD00F0F752 /* class_paladin@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B709181830BC00F0F752 /* class_paladin@2x.jpg */; };
+		24F4B713181830BD00F0F752 /* class_priest@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B70A181830BD00F0F752 /* class_priest@2x.jpg */; };
+		24F4B714181830BD00F0F752 /* class_rogue@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B70B181830BD00F0F752 /* class_rogue@2x.jpg */; };
+		24F4B715181830BD00F0F752 /* class_shaman@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B70C181830BD00F0F752 /* class_shaman@2x.jpg */; };
+		24F4B716181830BD00F0F752 /* class_warlock@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B70D181830BD00F0F752 /* class_warlock@2x.jpg */; };
+		24F4B717181830BD00F0F752 /* class_warrior@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B70E181830BD00F0F752 /* class_warrior@2x.jpg */; };
+		24F4B71C181832CA00F0F752 /* LayoutScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B71B181832CA00F0F752 /* LayoutScene.m */; };
+		24F4B71F181832EC00F0F752 /* Warrior.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B71E181832EC00F0F752 /* Warrior.m */; };
+		24F4B7221818332E00F0F752 /* BaseSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7211818332E00F0F752 /* BaseSprite.m */; };
+		24F4B7251818336000F0F752 /* Hunter.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7241818336000F0F752 /* Hunter.m */; };
+		24F4B7281818337E00F0F752 /* Paladin.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7271818337E00F0F752 /* Paladin.m */; };
+		24F4B72B181833C900F0F752 /* Shaman.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B72A181833C900F0F752 /* Shaman.m */; };
+		24F4B72E181833E700F0F752 /* Druid.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B72D181833E700F0F752 /* Druid.m */; };
+		24F4B7311818340100F0F752 /* Mage.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7301818340100F0F752 /* Mage.m */; };
+		24F4B7341818341900F0F752 /* Priest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7331818341900F0F752 /* Priest.m */; };
+		24F4B7371818343200F0F752 /* Warlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7361818343200F0F752 /* Warlock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -661,6 +680,35 @@
 		24F4B6FA18182D0B00F0F752 /* class_shaman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_shaman@2x.png"; sourceTree = "<group>"; };
 		24F4B6FB18182D0B00F0F752 /* class_warlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_warlock@2x.png"; sourceTree = "<group>"; };
 		24F4B6FC18182D0B00F0F752 /* class_warrior@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_warrior@2x.png"; sourceTree = "<group>"; };
+		24F4B706181830BC00F0F752 /* class_druid@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_druid@2x.jpg"; sourceTree = "<group>"; };
+		24F4B707181830BC00F0F752 /* class_hunter@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_hunter@2x.jpg"; sourceTree = "<group>"; };
+		24F4B708181830BC00F0F752 /* class_mage@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_mage@2x.jpg"; sourceTree = "<group>"; };
+		24F4B709181830BC00F0F752 /* class_paladin@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_paladin@2x.jpg"; sourceTree = "<group>"; };
+		24F4B70A181830BD00F0F752 /* class_priest@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_priest@2x.jpg"; sourceTree = "<group>"; };
+		24F4B70B181830BD00F0F752 /* class_rogue@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_rogue@2x.jpg"; sourceTree = "<group>"; };
+		24F4B70C181830BD00F0F752 /* class_shaman@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_shaman@2x.jpg"; sourceTree = "<group>"; };
+		24F4B70D181830BD00F0F752 /* class_warlock@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_warlock@2x.jpg"; sourceTree = "<group>"; };
+		24F4B70E181830BD00F0F752 /* class_warrior@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_warrior@2x.jpg"; sourceTree = "<group>"; };
+		24F4B71A181832CA00F0F752 /* LayoutScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutScene.h; sourceTree = "<group>"; };
+		24F4B71B181832CA00F0F752 /* LayoutScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutScene.m; sourceTree = "<group>"; };
+		24F4B71D181832EC00F0F752 /* Warrior.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Warrior.h; sourceTree = "<group>"; };
+		24F4B71E181832EC00F0F752 /* Warrior.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Warrior.m; sourceTree = "<group>"; };
+		24F4B7201818332E00F0F752 /* BaseSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSprite.h; sourceTree = "<group>"; };
+		24F4B7211818332E00F0F752 /* BaseSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSprite.m; sourceTree = "<group>"; };
+		24F4B7231818336000F0F752 /* Hunter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hunter.h; sourceTree = "<group>"; };
+		24F4B7241818336000F0F752 /* Hunter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hunter.m; sourceTree = "<group>"; };
+		24F4B7261818337E00F0F752 /* Paladin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paladin.h; sourceTree = "<group>"; };
+		24F4B7271818337E00F0F752 /* Paladin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paladin.m; sourceTree = "<group>"; };
+		24F4B729181833C900F0F752 /* Shaman.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shaman.h; sourceTree = "<group>"; };
+		24F4B72A181833C900F0F752 /* Shaman.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shaman.m; sourceTree = "<group>"; };
+		24F4B72C181833E700F0F752 /* Druid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Druid.h; sourceTree = "<group>"; };
+		24F4B72D181833E700F0F752 /* Druid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Druid.m; sourceTree = "<group>"; };
+		24F4B72F1818340100F0F752 /* Mage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mage.h; sourceTree = "<group>"; };
+		24F4B7301818340100F0F752 /* Mage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mage.m; sourceTree = "<group>"; };
+		24F4B7321818341900F0F752 /* Priest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Priest.h; sourceTree = "<group>"; };
+		24F4B7331818341900F0F752 /* Priest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priest.m; sourceTree = "<group>"; };
+		24F4B7351818343200F0F752 /* Warlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Warlock.h; sourceTree = "<group>"; };
+		24F4B7361818343200F0F752 /* Warlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Warlock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -719,6 +767,8 @@
 		24F4B40A18181F1800F0F752 /* Cardwow */ = {
 			isa = PBXGroup;
 			children = (
+				24F4B7191818328300F0F752 /* Entity */,
+				24F4B7181818326E00F0F752 /* Scene */,
 				24F4B5E118181F1A00F0F752 /* AppDelegate.h */,
 				24F4B5E218181F1A00F0F752 /* AppDelegate.m */,
 				24F4B5E718181F1A00F0F752 /* IntroLayer.h */,
@@ -1237,6 +1287,15 @@
 		24F4B60C1818254900F0F752 /* cardwow */ = {
 			isa = PBXGroup;
 			children = (
+				24F4B706181830BC00F0F752 /* class_druid@2x.jpg */,
+				24F4B707181830BC00F0F752 /* class_hunter@2x.jpg */,
+				24F4B708181830BC00F0F752 /* class_mage@2x.jpg */,
+				24F4B709181830BC00F0F752 /* class_paladin@2x.jpg */,
+				24F4B70A181830BD00F0F752 /* class_priest@2x.jpg */,
+				24F4B70B181830BD00F0F752 /* class_rogue@2x.jpg */,
+				24F4B70C181830BD00F0F752 /* class_shaman@2x.jpg */,
+				24F4B70D181830BD00F0F752 /* class_warlock@2x.jpg */,
+				24F4B70E181830BD00F0F752 /* class_warrior@2x.jpg */,
 				24F4B6F418182D0B00F0F752 /* class_druid@2x.png */,
 				24F4B6F518182D0B00F0F752 /* class_hunter@2x.png */,
 				24F4B6F618182D0B00F0F752 /* class_mage@2x.png */,
@@ -1401,6 +1460,40 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
+		24F4B7181818326E00F0F752 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B71A181832CA00F0F752 /* LayoutScene.h */,
+				24F4B71B181832CA00F0F752 /* LayoutScene.m */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		24F4B7191818328300F0F752 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B71D181832EC00F0F752 /* Warrior.h */,
+				24F4B71E181832EC00F0F752 /* Warrior.m */,
+				24F4B7201818332E00F0F752 /* BaseSprite.h */,
+				24F4B7211818332E00F0F752 /* BaseSprite.m */,
+				24F4B7231818336000F0F752 /* Hunter.h */,
+				24F4B7241818336000F0F752 /* Hunter.m */,
+				24F4B7261818337E00F0F752 /* Paladin.h */,
+				24F4B7271818337E00F0F752 /* Paladin.m */,
+				24F4B729181833C900F0F752 /* Shaman.h */,
+				24F4B72A181833C900F0F752 /* Shaman.m */,
+				24F4B72C181833E700F0F752 /* Druid.h */,
+				24F4B72D181833E700F0F752 /* Druid.m */,
+				24F4B72F1818340100F0F752 /* Mage.h */,
+				24F4B7301818340100F0F752 /* Mage.m */,
+				24F4B7321818341900F0F752 /* Priest.h */,
+				24F4B7331818341900F0F752 /* Priest.m */,
+				24F4B7351818343200F0F752 /* Warlock.h */,
+				24F4B7361818343200F0F752 /* Warlock.m */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1459,17 +1552,21 @@
 				24F4B6291818254900F0F752 /* class_druid.jpg in Resources */,
 				24F4B5EE18181F1A00F0F752 /* grossini_dance_atlas.png in Resources */,
 				24F4B63C1818254900F0F752 /* warrior.png in Resources */,
+				24F4B717181830BD00F0F752 /* class_warrior@2x.jpg in Resources */,
 				24F4B6311818254900F0F752 /* class_warlock.jpg in Resources */,
 				24F4B63A1818254900F0F752 /* shaman.png in Resources */,
 				24F4B6321818254900F0F752 /* class_warrior.jpg in Resources */,
 				24F4B60B1818253900F0F752 /* ccbParticleStars.png in Resources */,
 				24F4B40F18181F1800F0F752 /* Default-Landscape~ipad.png in Resources */,
+				24F4B711181830BD00F0F752 /* class_mage@2x.jpg in Resources */,
 				24F4B62A1818254900F0F752 /* class_hunter.jpg in Resources */,
 				24F4B41F18181F1800F0F752 /* Icon.png in Resources */,
 				24F4B70518182D0B00F0F752 /* class_warrior@2x.png in Resources */,
+				24F4B716181830BD00F0F752 /* class_warlock@2x.jpg in Resources */,
 				24F4B6EC181825CA00F0F752 /* LICENSE in Resources */,
 				24F4B41918181F1800F0F752 /* Icon-Small-50.png in Resources */,
 				24F4B60A1818253900F0F752 /* ccbParticleSnow.png in Resources */,
+				24F4B714181830BD00F0F752 /* class_rogue@2x.jpg in Resources */,
 				24F4B70218182D0B00F0F752 /* class_rogue@2x.png in Resources */,
 				24F4B70418182D0B00F0F752 /* class_warlock@2x.png in Resources */,
 				24F4B6331818254900F0F752 /* druid.png in Resources */,
@@ -1501,12 +1598,17 @@
 				24F4B6031818253900F0F752 /* ccbDefaultImages-hd.png in Resources */,
 				24F4B6FE18182D0B00F0F752 /* class_hunter@2x.png in Resources */,
 				24F4B63D1818254900F0F752 /* 白素贞.png in Resources */,
+				24F4B712181830BD00F0F752 /* class_paladin@2x.jpg in Resources */,
 				24F4B63E1818254900F0F752 /* 白素贞@2x.png in Resources */,
 				24F4B6FD18182D0B00F0F752 /* class_druid@2x.png in Resources */,
+				24F4B715181830BD00F0F752 /* class_shaman@2x.jpg in Resources */,
 				24F4B6061818253900F0F752 /* ccbDefaultImages.plist in Resources */,
 				24F4B70318182D0B00F0F752 /* class_shaman@2x.png in Resources */,
+				24F4B713181830BD00F0F752 /* class_priest@2x.jpg in Resources */,
 				24F4B6F31818282D00F0F752 /* frame@2x.png in Resources */,
+				24F4B710181830BD00F0F752 /* class_hunter@2x.jpg in Resources */,
 				24F4B5F61818252500F0F752 /* Main.ccbi in Resources */,
+				24F4B70F181830BD00F0F752 /* class_druid@2x.jpg in Resources */,
 				24F4B70018182D0B00F0F752 /* class_paladin@2x.png in Resources */,
 				24F4B6051818253900F0F752 /* ccbDefaultImages-ipadhd.plist in Resources */,
 				24F4B41318181F1800F0F752 /* fps_images-hd.png in Resources */,
@@ -1535,6 +1637,7 @@
 				24F4B57A18181F1A00F0F752 /* vec3.c in Sources */,
 				24F4B47818181F1800F0F752 /* CCLabelBMFont.m in Sources */,
 				24F4B4FF18181F1900F0F752 /* CCGLView.m in Sources */,
+				24F4B7311818340100F0F752 /* Mage.m in Sources */,
 				24F4B46018181F1800F0F752 /* ccDeprecated.m in Sources */,
 				24F4B4A418181F1900F0F752 /* CCRenderTexture.m in Sources */,
 				24F4B54A18181F1900F0F752 /* SimpleAudioEngine.m in Sources */,
@@ -1546,6 +1649,7 @@
 				24F4B6D7181825CA00F0F752 /* CCBAnimationManager.m in Sources */,
 				24F4B44A18181F1800F0F752 /* CCActionTiledGrid.m in Sources */,
 				24F4B4AA18181F1900F0F752 /* CCScheduler.m in Sources */,
+				24F4B7341818341900F0F752 /* Priest.m in Sources */,
 				24F4B51D18181F1900F0F752 /* ccCArray.m in Sources */,
 				24F4B4E118181F1900F0F752 /* CCTMXTiledMap.m in Sources */,
 				24F4B48B18181F1800F0F752 /* CCNode+Debug.m in Sources */,
@@ -1559,13 +1663,17 @@
 				24F4B5CC18181F1A00F0F752 /* cpSpace.c in Sources */,
 				24F4B44718181F1800F0F752 /* CCActionProgressTimer.m in Sources */,
 				24F4B6E1181825CA00F0F752 /* CCControlPotentiometer.m in Sources */,
+				24F4B72B181833C900F0F752 /* Shaman.m in Sources */,
 				24F4B49718181F1800F0F752 /* CCParticleExamples.m in Sources */,
+				24F4B7371818343200F0F752 /* Warlock.m in Sources */,
 				24F4B51618181F1900F0F752 /* base64.c in Sources */,
 				24F4B6EE181825CA00F0F752 /* mztools.c in Sources */,
 				24F4B5C818181F1A00F0F752 /* cpPolyShape.c in Sources */,
 				24F4B50318181F1900F0F752 /* CCTouchDispatcher.m in Sources */,
 				24F4B6DA181825CA00F0F752 /* CCBsequence.m in Sources */,
 				24F4B42918181F1800F0F752 /* CCAction.m in Sources */,
+				24F4B71F181832EC00F0F752 /* Warrior.m in Sources */,
+				24F4B71C181832CA00F0F752 /* LayoutScene.m in Sources */,
 				24F4B43818181F1800F0F752 /* CCActionGrid3D.m in Sources */,
 				24F4B51018181F1900F0F752 /* CCGLView.m in Sources */,
 				24F4B4C618181F1900F0F752 /* CCSpriteFrame.m in Sources */,
@@ -1578,7 +1686,9 @@
 				24F4B6D9181825CA00F0F752 /* CCBReader.m in Sources */,
 				24F4B6DE181825CA00F0F752 /* CCControlButton.m in Sources */,
 				24F4B5BE18181F1A00F0F752 /* cpBB.c in Sources */,
+				24F4B72E181833E700F0F752 /* Druid.m in Sources */,
 				24F4B45D18181F1800F0F752 /* CCConfiguration.m in Sources */,
+				24F4B7221818332E00F0F752 /* BaseSprite.m in Sources */,
 				24F4B6F1181825CA00F0F752 /* SSZipArchive.m in Sources */,
 				24F4B50D18181F1900F0F752 /* CCEventDispatcher.m in Sources */,
 				24F4B48E18181F1800F0F752 /* CCNode.m in Sources */,
@@ -1651,6 +1761,7 @@
 				24F4B46F18181F1800F0F752 /* CCGrabber.m in Sources */,
 				24F4B5B018181F1A00F0F752 /* cpPivotJoint.c in Sources */,
 				24F4B5DA18181F1A00F0F752 /* cpVect.c in Sources */,
+				24F4B7281818337E00F0F752 /* Paladin.m in Sources */,
 				24F4B6E6181825CA00F0F752 /* CCControlSwitchMask.fsh in Sources */,
 				24F4B5A818181F1A00F0F752 /* cpDampedSpring.c in Sources */,
 				24F4B6E2181825CA00F0F752 /* CCControlSaturationBrightnessPicker.m in Sources */,
@@ -1672,6 +1783,7 @@
 				24F4B6E3181825CA00F0F752 /* CCControlSlider.m in Sources */,
 				24F4B4BA18181F1900F0F752 /* CCShaderCache.m in Sources */,
 				24F4B46918181F1800F0F752 /* CCGLProgram.m in Sources */,
+				24F4B7251818336000F0F752 /* Hunter.m in Sources */,
 				24F4B53318181F1900F0F752 /* TGAlib.m in Sources */,
 				24F4B4EA18181F1900F0F752 /* CCTransitionPageTurn.m in Sources */,
 				24F4B52F18181F1900F0F752 /* NSThread+performBlock.m in Sources */,
