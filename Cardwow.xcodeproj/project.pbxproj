@@ -161,10 +161,82 @@
 		24F4B5DA18181F1A00F0F752 /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B5D918181F1A00F0F752 /* cpVect.c */; };
 		24F4B5E018181F1A00F0F752 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B5DF18181F1A00F0F752 /* main.m */; };
 		24F4B5E318181F1A00F0F752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B5E218181F1A00F0F752 /* AppDelegate.m */; };
-		24F4B5E618181F1A00F0F752 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B5E518181F1A00F0F752 /* HelloWorldLayer.m */; };
 		24F4B5E918181F1A00F0F752 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B5E818181F1A00F0F752 /* IntroLayer.m */; };
 		24F4B5EC18181F1A00F0F752 /* PhysicsSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B5EB18181F1A00F0F752 /* PhysicsSprite.m */; };
 		24F4B5EE18181F1A00F0F752 /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5ED18181F1A00F0F752 /* grossini_dance_atlas.png */; };
+		24F4B5F61818252500F0F752 /* Main.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5F51818252500F0F752 /* Main.ccbi */; };
+		24F4B6021818253900F0F752 /* ccbDefaultImages-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5F81818253900F0F752 /* ccbDefaultImages-hd.plist */; };
+		24F4B6031818253900F0F752 /* ccbDefaultImages-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5F91818253900F0F752 /* ccbDefaultImages-hd.png */; };
+		24F4B6041818253900F0F752 /* ccbDefaultImages-ipad.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5FA1818253900F0F752 /* ccbDefaultImages-ipad.plist */; };
+		24F4B6051818253900F0F752 /* ccbDefaultImages-ipadhd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5FB1818253900F0F752 /* ccbDefaultImages-ipadhd.plist */; };
+		24F4B6061818253900F0F752 /* ccbDefaultImages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5FC1818253900F0F752 /* ccbDefaultImages.plist */; };
+		24F4B6071818253900F0F752 /* ccbDefaultImages.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5FD1818253900F0F752 /* ccbDefaultImages.png */; };
+		24F4B6081818253900F0F752 /* ccbParticleFire.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5FE1818253900F0F752 /* ccbParticleFire.png */; };
+		24F4B6091818253900F0F752 /* ccbParticleSmoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B5FF1818253900F0F752 /* ccbParticleSmoke.png */; };
+		24F4B60A1818253900F0F752 /* ccbParticleSnow.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6001818253900F0F752 /* ccbParticleSnow.png */; };
+		24F4B60B1818253900F0F752 /* ccbParticleStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6011818253900F0F752 /* ccbParticleStars.png */; };
+		24F4B6261818254900F0F752 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B60D1818254900F0F752 /* background.png */; };
+		24F4B6271818254900F0F752 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B60E1818254900F0F752 /* background@2x.png */; };
+		24F4B6281818254900F0F752 /* class_death-knight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B60F1818254900F0F752 /* class_death-knight.jpg */; };
+		24F4B6291818254900F0F752 /* class_druid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6101818254900F0F752 /* class_druid.jpg */; };
+		24F4B62A1818254900F0F752 /* class_hunter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6111818254900F0F752 /* class_hunter.jpg */; };
+		24F4B62B1818254900F0F752 /* class_mage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6121818254900F0F752 /* class_mage.jpg */; };
+		24F4B62C1818254900F0F752 /* class_monk.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6131818254900F0F752 /* class_monk.jpg */; };
+		24F4B62D1818254900F0F752 /* class_paladin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6141818254900F0F752 /* class_paladin.jpg */; };
+		24F4B62E1818254900F0F752 /* class_priest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6151818254900F0F752 /* class_priest.jpg */; };
+		24F4B62F1818254900F0F752 /* class_rogue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6161818254900F0F752 /* class_rogue.jpg */; };
+		24F4B6301818254900F0F752 /* class_shaman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6171818254900F0F752 /* class_shaman.jpg */; };
+		24F4B6311818254900F0F752 /* class_warlock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6181818254900F0F752 /* class_warlock.jpg */; };
+		24F4B6321818254900F0F752 /* class_warrior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6191818254900F0F752 /* class_warrior.jpg */; };
+		24F4B6331818254900F0F752 /* druid.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B61A1818254900F0F752 /* druid.png */; };
+		24F4B6341818254900F0F752 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B61B1818254900F0F752 /* frame.png */; };
+		24F4B6351818254900F0F752 /* hunter.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B61C1818254900F0F752 /* hunter.png */; };
+		24F4B6361818254900F0F752 /* mage.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B61D1818254900F0F752 /* mage.png */; };
+		24F4B6371818254900F0F752 /* paladin.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B61E1818254900F0F752 /* paladin.png */; };
+		24F4B6381818254900F0F752 /* priest.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B61F1818254900F0F752 /* priest.png */; };
+		24F4B6391818254900F0F752 /* rogue.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6201818254900F0F752 /* rogue.png */; };
+		24F4B63A1818254900F0F752 /* shaman.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6211818254900F0F752 /* shaman.png */; };
+		24F4B63B1818254900F0F752 /* warlock.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6221818254900F0F752 /* warlock.png */; };
+		24F4B63C1818254900F0F752 /* warrior.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6231818254900F0F752 /* warrior.png */; };
+		24F4B63D1818254900F0F752 /* 白素贞.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6241818254900F0F752 /* 白素贞.png */; };
+		24F4B63E1818254900F0F752 /* 白素贞@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6251818254900F0F752 /* 白素贞@2x.png */; };
+		24F4B6D7181825CA00F0F752 /* CCBAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B69C181825C900F0F752 /* CCBAnimationManager.m */; };
+		24F4B6D8181825CA00F0F752 /* CCBKeyframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B69E181825C900F0F752 /* CCBKeyframe.m */; };
+		24F4B6D9181825CA00F0F752 /* CCBReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6A0181825C900F0F752 /* CCBReader.m */; };
+		24F4B6DA181825CA00F0F752 /* CCBsequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6A2181825C900F0F752 /* CCBsequence.m */; };
+		24F4B6DB181825CA00F0F752 /* CCBSequenceProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6A4181825C900F0F752 /* CCBSequenceProperty.m */; };
+		24F4B6DC181825CA00F0F752 /* CCNode+CCBRelativePositioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6A6181825C900F0F752 /* CCNode+CCBRelativePositioning.m */; };
+		24F4B6DD181825CA00F0F752 /* CCControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6AA181825C900F0F752 /* CCControl.m */; };
+		24F4B6DE181825CA00F0F752 /* CCControlButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6AC181825C900F0F752 /* CCControlButton.m */; };
+		24F4B6DF181825CA00F0F752 /* CCControlColourPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6AE181825C900F0F752 /* CCControlColourPicker.m */; };
+		24F4B6E0181825CA00F0F752 /* CCControlHuePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6B0181825C900F0F752 /* CCControlHuePicker.m */; };
+		24F4B6E1181825CA00F0F752 /* CCControlPotentiometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6B2181825C900F0F752 /* CCControlPotentiometer.m */; };
+		24F4B6E2181825CA00F0F752 /* CCControlSaturationBrightnessPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6B4181825C900F0F752 /* CCControlSaturationBrightnessPicker.m */; };
+		24F4B6E3181825CA00F0F752 /* CCControlSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6B6181825C900F0F752 /* CCControlSlider.m */; };
+		24F4B6E4181825CA00F0F752 /* CCControlStepper.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6B8181825C900F0F752 /* CCControlStepper.m */; };
+		24F4B6E5181825CA00F0F752 /* CCControlSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6BA181825C900F0F752 /* CCControlSwitch.m */; };
+		24F4B6E6181825CA00F0F752 /* CCControlSwitchMask.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6BC181825C900F0F752 /* CCControlSwitchMask.fsh */; };
+		24F4B6E7181825CA00F0F752 /* CCColourUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6BF181825C900F0F752 /* CCColourUtils.m */; };
+		24F4B6E8181825CA00F0F752 /* CCScale9Sprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6C1181825C900F0F752 /* CCScale9Sprite.m */; };
+		24F4B6E9181825CA00F0F752 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6C3181825C900F0F752 /* Utils.m */; };
+		24F4B6EA181825CA00F0F752 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6C5181825C900F0F752 /* README.md */; };
+		24F4B6EB181825CA00F0F752 /* CCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6C8181825CA00F0F752 /* CCScrollView.m */; };
+		24F4B6EC181825CA00F0F752 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6CA181825CA00F0F752 /* LICENSE */; };
+		24F4B6ED181825CA00F0F752 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6CD181825CA00F0F752 /* ioapi.c */; };
+		24F4B6EE181825CA00F0F752 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6CF181825CA00F0F752 /* mztools.c */; };
+		24F4B6EF181825CA00F0F752 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6D1181825CA00F0F752 /* unzip.c */; };
+		24F4B6F0181825CA00F0F752 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6D3181825CA00F0F752 /* zip.c */; };
+		24F4B6F1181825CA00F0F752 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B6D6181825CA00F0F752 /* SSZipArchive.m */; };
+		24F4B6F31818282D00F0F752 /* frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F21818282D00F0F752 /* frame@2x.png */; };
+		24F4B6FD18182D0B00F0F752 /* class_druid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F418182D0B00F0F752 /* class_druid@2x.png */; };
+		24F4B6FE18182D0B00F0F752 /* class_hunter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F518182D0B00F0F752 /* class_hunter@2x.png */; };
+		24F4B6FF18182D0B00F0F752 /* class_mage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F618182D0B00F0F752 /* class_mage@2x.png */; };
+		24F4B70018182D0B00F0F752 /* class_paladin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F718182D0B00F0F752 /* class_paladin@2x.png */; };
+		24F4B70118182D0B00F0F752 /* class_priest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F818182D0B00F0F752 /* class_priest@2x.png */; };
+		24F4B70218182D0B00F0F752 /* class_rogue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6F918182D0B00F0F752 /* class_rogue@2x.png */; };
+		24F4B70318182D0B00F0F752 /* class_shaman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6FA18182D0B00F0F752 /* class_shaman@2x.png */; };
+		24F4B70418182D0B00F0F752 /* class_warlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6FB18182D0B00F0F752 /* class_warlock@2x.png */; };
+		24F4B70518182D0B00F0F752 /* class_warrior@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F4B6FC18182D0B00F0F752 /* class_warrior@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -485,13 +557,110 @@
 		24F4B5DF18181F1A00F0F752 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		24F4B5E118181F1A00F0F752 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		24F4B5E218181F1A00F0F752 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		24F4B5E418181F1A00F0F752 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		24F4B5E518181F1A00F0F752 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		24F4B5E718181F1A00F0F752 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		24F4B5E818181F1A00F0F752 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		24F4B5EA18181F1A00F0F752 /* PhysicsSprite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhysicsSprite.h; sourceTree = "<group>"; };
 		24F4B5EB18181F1A00F0F752 /* PhysicsSprite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhysicsSprite.m; sourceTree = "<group>"; };
 		24F4B5ED18181F1A00F0F752 /* grossini_dance_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_dance_atlas.png; path = Resources/grossini_dance_atlas.png; sourceTree = "<group>"; };
+		24F4B5F51818252500F0F752 /* Main.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = Main.ccbi; sourceTree = "<group>"; };
+		24F4B5F81818253900F0F752 /* ccbDefaultImages-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ccbDefaultImages-hd.plist"; sourceTree = "<group>"; };
+		24F4B5F91818253900F0F752 /* ccbDefaultImages-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ccbDefaultImages-hd.png"; sourceTree = "<group>"; };
+		24F4B5FA1818253900F0F752 /* ccbDefaultImages-ipad.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ccbDefaultImages-ipad.plist"; sourceTree = "<group>"; };
+		24F4B5FB1818253900F0F752 /* ccbDefaultImages-ipadhd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ccbDefaultImages-ipadhd.plist"; sourceTree = "<group>"; };
+		24F4B5FC1818253900F0F752 /* ccbDefaultImages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ccbDefaultImages.plist; sourceTree = "<group>"; };
+		24F4B5FD1818253900F0F752 /* ccbDefaultImages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbDefaultImages.png; sourceTree = "<group>"; };
+		24F4B5FE1818253900F0F752 /* ccbParticleFire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleFire.png; sourceTree = "<group>"; };
+		24F4B5FF1818253900F0F752 /* ccbParticleSmoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleSmoke.png; sourceTree = "<group>"; };
+		24F4B6001818253900F0F752 /* ccbParticleSnow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleSnow.png; sourceTree = "<group>"; };
+		24F4B6011818253900F0F752 /* ccbParticleStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleStars.png; sourceTree = "<group>"; };
+		24F4B60D1818254900F0F752 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		24F4B60E1818254900F0F752 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		24F4B60F1818254900F0F752 /* class_death-knight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "class_death-knight.jpg"; sourceTree = "<group>"; };
+		24F4B6101818254900F0F752 /* class_druid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_druid.jpg; sourceTree = "<group>"; };
+		24F4B6111818254900F0F752 /* class_hunter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_hunter.jpg; sourceTree = "<group>"; };
+		24F4B6121818254900F0F752 /* class_mage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_mage.jpg; sourceTree = "<group>"; };
+		24F4B6131818254900F0F752 /* class_monk.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_monk.jpg; sourceTree = "<group>"; };
+		24F4B6141818254900F0F752 /* class_paladin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_paladin.jpg; sourceTree = "<group>"; };
+		24F4B6151818254900F0F752 /* class_priest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_priest.jpg; sourceTree = "<group>"; };
+		24F4B6161818254900F0F752 /* class_rogue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_rogue.jpg; sourceTree = "<group>"; };
+		24F4B6171818254900F0F752 /* class_shaman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_shaman.jpg; sourceTree = "<group>"; };
+		24F4B6181818254900F0F752 /* class_warlock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_warlock.jpg; sourceTree = "<group>"; };
+		24F4B6191818254900F0F752 /* class_warrior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = class_warrior.jpg; sourceTree = "<group>"; };
+		24F4B61A1818254900F0F752 /* druid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = druid.png; sourceTree = "<group>"; };
+		24F4B61B1818254900F0F752 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
+		24F4B61C1818254900F0F752 /* hunter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hunter.png; sourceTree = "<group>"; };
+		24F4B61D1818254900F0F752 /* mage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mage.png; sourceTree = "<group>"; };
+		24F4B61E1818254900F0F752 /* paladin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paladin.png; sourceTree = "<group>"; };
+		24F4B61F1818254900F0F752 /* priest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = priest.png; sourceTree = "<group>"; };
+		24F4B6201818254900F0F752 /* rogue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rogue.png; sourceTree = "<group>"; };
+		24F4B6211818254900F0F752 /* shaman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shaman.png; sourceTree = "<group>"; };
+		24F4B6221818254900F0F752 /* warlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warlock.png; sourceTree = "<group>"; };
+		24F4B6231818254900F0F752 /* warrior.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warrior.png; sourceTree = "<group>"; };
+		24F4B6241818254900F0F752 /* 白素贞.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白素贞.png"; sourceTree = "<group>"; };
+		24F4B6251818254900F0F752 /* 白素贞@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白素贞@2x.png"; sourceTree = "<group>"; };
+		24F4B69B181825C900F0F752 /* CCBAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBAnimationManager.h; sourceTree = "<group>"; };
+		24F4B69C181825C900F0F752 /* CCBAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBAnimationManager.m; sourceTree = "<group>"; };
+		24F4B69D181825C900F0F752 /* CCBKeyframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBKeyframe.h; sourceTree = "<group>"; };
+		24F4B69E181825C900F0F752 /* CCBKeyframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBKeyframe.m; sourceTree = "<group>"; };
+		24F4B69F181825C900F0F752 /* CCBReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBReader.h; sourceTree = "<group>"; };
+		24F4B6A0181825C900F0F752 /* CCBReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBReader.m; sourceTree = "<group>"; };
+		24F4B6A1181825C900F0F752 /* CCBSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSequence.h; sourceTree = "<group>"; };
+		24F4B6A2181825C900F0F752 /* CCBsequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBsequence.m; sourceTree = "<group>"; };
+		24F4B6A3181825C900F0F752 /* CCBSequenceProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSequenceProperty.h; sourceTree = "<group>"; };
+		24F4B6A4181825C900F0F752 /* CCBSequenceProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBSequenceProperty.m; sourceTree = "<group>"; };
+		24F4B6A5181825C900F0F752 /* CCNode+CCBRelativePositioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CCNode+CCBRelativePositioning.h"; sourceTree = "<group>"; };
+		24F4B6A6181825C900F0F752 /* CCNode+CCBRelativePositioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCNode+CCBRelativePositioning.m"; sourceTree = "<group>"; };
+		24F4B6A9181825C900F0F752 /* CCControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControl.h; sourceTree = "<group>"; };
+		24F4B6AA181825C900F0F752 /* CCControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControl.m; sourceTree = "<group>"; };
+		24F4B6AB181825C900F0F752 /* CCControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlButton.h; sourceTree = "<group>"; };
+		24F4B6AC181825C900F0F752 /* CCControlButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlButton.m; sourceTree = "<group>"; };
+		24F4B6AD181825C900F0F752 /* CCControlColourPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlColourPicker.h; sourceTree = "<group>"; };
+		24F4B6AE181825C900F0F752 /* CCControlColourPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlColourPicker.m; sourceTree = "<group>"; };
+		24F4B6AF181825C900F0F752 /* CCControlHuePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlHuePicker.h; sourceTree = "<group>"; };
+		24F4B6B0181825C900F0F752 /* CCControlHuePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlHuePicker.m; sourceTree = "<group>"; };
+		24F4B6B1181825C900F0F752 /* CCControlPotentiometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlPotentiometer.h; sourceTree = "<group>"; };
+		24F4B6B2181825C900F0F752 /* CCControlPotentiometer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlPotentiometer.m; sourceTree = "<group>"; };
+		24F4B6B3181825C900F0F752 /* CCControlSaturationBrightnessPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSaturationBrightnessPicker.h; sourceTree = "<group>"; };
+		24F4B6B4181825C900F0F752 /* CCControlSaturationBrightnessPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlSaturationBrightnessPicker.m; sourceTree = "<group>"; };
+		24F4B6B5181825C900F0F752 /* CCControlSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSlider.h; sourceTree = "<group>"; };
+		24F4B6B6181825C900F0F752 /* CCControlSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlSlider.m; sourceTree = "<group>"; };
+		24F4B6B7181825C900F0F752 /* CCControlStepper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlStepper.h; sourceTree = "<group>"; };
+		24F4B6B8181825C900F0F752 /* CCControlStepper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlStepper.m; sourceTree = "<group>"; };
+		24F4B6B9181825C900F0F752 /* CCControlSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlSwitch.h; sourceTree = "<group>"; };
+		24F4B6BA181825C900F0F752 /* CCControlSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCControlSwitch.m; sourceTree = "<group>"; };
+		24F4B6BC181825C900F0F752 /* CCControlSwitchMask.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CCControlSwitchMask.fsh; sourceTree = "<group>"; };
+		24F4B6BE181825C900F0F752 /* CCColourUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCColourUtils.h; sourceTree = "<group>"; };
+		24F4B6BF181825C900F0F752 /* CCColourUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCColourUtils.m; sourceTree = "<group>"; };
+		24F4B6C0181825C900F0F752 /* CCScale9Sprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScale9Sprite.h; sourceTree = "<group>"; };
+		24F4B6C1181825C900F0F752 /* CCScale9Sprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9Sprite.m; sourceTree = "<group>"; };
+		24F4B6C2181825C900F0F752 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		24F4B6C3181825C900F0F752 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		24F4B6C4181825C900F0F752 /* CCControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCControlExtension.h; sourceTree = "<group>"; };
+		24F4B6C5181825C900F0F752 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		24F4B6C7181825C900F0F752 /* CCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollView.h; sourceTree = "<group>"; };
+		24F4B6C8181825CA00F0F752 /* CCScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollView.m; sourceTree = "<group>"; };
+		24F4B6CA181825CA00F0F752 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		24F4B6CC181825CA00F0F752 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		24F4B6CD181825CA00F0F752 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		24F4B6CE181825CA00F0F752 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		24F4B6CF181825CA00F0F752 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		24F4B6D0181825CA00F0F752 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		24F4B6D1181825CA00F0F752 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		24F4B6D2181825CA00F0F752 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		24F4B6D3181825CA00F0F752 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		24F4B6D4181825CA00F0F752 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		24F4B6D5181825CA00F0F752 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		24F4B6D6181825CA00F0F752 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		24F4B6F21818282D00F0F752 /* frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "frame@2x.png"; sourceTree = "<group>"; };
+		24F4B6F418182D0B00F0F752 /* class_druid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_druid@2x.png"; sourceTree = "<group>"; };
+		24F4B6F518182D0B00F0F752 /* class_hunter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_hunter@2x.png"; sourceTree = "<group>"; };
+		24F4B6F618182D0B00F0F752 /* class_mage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_mage@2x.png"; sourceTree = "<group>"; };
+		24F4B6F718182D0B00F0F752 /* class_paladin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_paladin@2x.png"; sourceTree = "<group>"; };
+		24F4B6F818182D0B00F0F752 /* class_priest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_priest@2x.png"; sourceTree = "<group>"; };
+		24F4B6F918182D0B00F0F752 /* class_rogue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_rogue@2x.png"; sourceTree = "<group>"; };
+		24F4B6FA18182D0B00F0F752 /* class_shaman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_shaman@2x.png"; sourceTree = "<group>"; };
+		24F4B6FB18182D0B00F0F752 /* class_warlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_warlock@2x.png"; sourceTree = "<group>"; };
+		24F4B6FC18182D0B00F0F752 /* class_warrior@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class_warrior@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,8 +721,6 @@
 			children = (
 				24F4B5E118181F1A00F0F752 /* AppDelegate.h */,
 				24F4B5E218181F1A00F0F752 /* AppDelegate.m */,
-				24F4B5E418181F1A00F0F752 /* HelloWorldLayer.h */,
-				24F4B5E518181F1A00F0F752 /* HelloWorldLayer.m */,
 				24F4B5E718181F1A00F0F752 /* IntroLayer.h */,
 				24F4B5E818181F1A00F0F752 /* IntroLayer.m */,
 				24F4B5EA18181F1A00F0F752 /* PhysicsSprite.h */,
@@ -568,6 +735,9 @@
 		24F4B40B18181F1800F0F752 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				24F4B60C1818254900F0F752 /* cardwow */,
+				24F4B5F71818253900F0F752 /* ccbResources */,
+				24F4B5F41818252500F0F752 /* Cardwow */,
 				24F4B40C18181F1800F0F752 /* Default.png */,
 				24F4B40E18181F1800F0F752 /* Default-Landscape~ipad.png */,
 				24F4B41018181F1800F0F752 /* fps_images.png */,
@@ -589,6 +759,7 @@
 		24F4B42518181F1800F0F752 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				24F4B699181825C900F0F752 /* cocos2d-iphone */,
 				24F4B53C18181F1900F0F752 /* LICENSE_cocos2d.txt */,
 				24F4B54B18181F1900F0F752 /* LICENSE_CocosDenshion.txt */,
 				24F4B57D18181F1A00F0F752 /* LICENSE_Kazmath.txt */,
@@ -1036,6 +1207,200 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		24F4B5F41818252500F0F752 /* Cardwow */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B5F51818252500F0F752 /* Main.ccbi */,
+			);
+			name = Cardwow;
+			path = Resources/assets/Project/Cardwow;
+			sourceTree = "<group>";
+		};
+		24F4B5F71818253900F0F752 /* ccbResources */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B5F81818253900F0F752 /* ccbDefaultImages-hd.plist */,
+				24F4B5F91818253900F0F752 /* ccbDefaultImages-hd.png */,
+				24F4B5FA1818253900F0F752 /* ccbDefaultImages-ipad.plist */,
+				24F4B5FB1818253900F0F752 /* ccbDefaultImages-ipadhd.plist */,
+				24F4B5FC1818253900F0F752 /* ccbDefaultImages.plist */,
+				24F4B5FD1818253900F0F752 /* ccbDefaultImages.png */,
+				24F4B5FE1818253900F0F752 /* ccbParticleFire.png */,
+				24F4B5FF1818253900F0F752 /* ccbParticleSmoke.png */,
+				24F4B6001818253900F0F752 /* ccbParticleSnow.png */,
+				24F4B6011818253900F0F752 /* ccbParticleStars.png */,
+			);
+			name = ccbResources;
+			path = Resources/assets/ccbResources;
+			sourceTree = "<group>";
+		};
+		24F4B60C1818254900F0F752 /* cardwow */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6F418182D0B00F0F752 /* class_druid@2x.png */,
+				24F4B6F518182D0B00F0F752 /* class_hunter@2x.png */,
+				24F4B6F618182D0B00F0F752 /* class_mage@2x.png */,
+				24F4B6F718182D0B00F0F752 /* class_paladin@2x.png */,
+				24F4B6F818182D0B00F0F752 /* class_priest@2x.png */,
+				24F4B6F918182D0B00F0F752 /* class_rogue@2x.png */,
+				24F4B6FA18182D0B00F0F752 /* class_shaman@2x.png */,
+				24F4B6FB18182D0B00F0F752 /* class_warlock@2x.png */,
+				24F4B6FC18182D0B00F0F752 /* class_warrior@2x.png */,
+				24F4B6F21818282D00F0F752 /* frame@2x.png */,
+				24F4B60D1818254900F0F752 /* background.png */,
+				24F4B60E1818254900F0F752 /* background@2x.png */,
+				24F4B60F1818254900F0F752 /* class_death-knight.jpg */,
+				24F4B6101818254900F0F752 /* class_druid.jpg */,
+				24F4B6111818254900F0F752 /* class_hunter.jpg */,
+				24F4B6121818254900F0F752 /* class_mage.jpg */,
+				24F4B6131818254900F0F752 /* class_monk.jpg */,
+				24F4B6141818254900F0F752 /* class_paladin.jpg */,
+				24F4B6151818254900F0F752 /* class_priest.jpg */,
+				24F4B6161818254900F0F752 /* class_rogue.jpg */,
+				24F4B6171818254900F0F752 /* class_shaman.jpg */,
+				24F4B6181818254900F0F752 /* class_warlock.jpg */,
+				24F4B6191818254900F0F752 /* class_warrior.jpg */,
+				24F4B61A1818254900F0F752 /* druid.png */,
+				24F4B61B1818254900F0F752 /* frame.png */,
+				24F4B61C1818254900F0F752 /* hunter.png */,
+				24F4B61D1818254900F0F752 /* mage.png */,
+				24F4B61E1818254900F0F752 /* paladin.png */,
+				24F4B61F1818254900F0F752 /* priest.png */,
+				24F4B6201818254900F0F752 /* rogue.png */,
+				24F4B6211818254900F0F752 /* shaman.png */,
+				24F4B6221818254900F0F752 /* warlock.png */,
+				24F4B6231818254900F0F752 /* warrior.png */,
+				24F4B6241818254900F0F752 /* 白素贞.png */,
+				24F4B6251818254900F0F752 /* 白素贞@2x.png */,
+			);
+			name = cardwow;
+			path = Resources/assets/Resource/cardwow;
+			sourceTree = "<group>";
+		};
+		24F4B699181825C900F0F752 /* cocos2d-iphone */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B69A181825C900F0F752 /* CCBReader */,
+				24F4B6A7181825C900F0F752 /* CCControlExtension */,
+				24F4B6C6181825C900F0F752 /* CCScrollView */,
+				24F4B6C9181825CA00F0F752 /* SSZipArchive */,
+			);
+			path = "cocos2d-iphone";
+			sourceTree = "<group>";
+		};
+		24F4B69A181825C900F0F752 /* CCBReader */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B69B181825C900F0F752 /* CCBAnimationManager.h */,
+				24F4B69C181825C900F0F752 /* CCBAnimationManager.m */,
+				24F4B69D181825C900F0F752 /* CCBKeyframe.h */,
+				24F4B69E181825C900F0F752 /* CCBKeyframe.m */,
+				24F4B69F181825C900F0F752 /* CCBReader.h */,
+				24F4B6A0181825C900F0F752 /* CCBReader.m */,
+				24F4B6A1181825C900F0F752 /* CCBSequence.h */,
+				24F4B6A2181825C900F0F752 /* CCBsequence.m */,
+				24F4B6A3181825C900F0F752 /* CCBSequenceProperty.h */,
+				24F4B6A4181825C900F0F752 /* CCBSequenceProperty.m */,
+				24F4B6A5181825C900F0F752 /* CCNode+CCBRelativePositioning.h */,
+				24F4B6A6181825C900F0F752 /* CCNode+CCBRelativePositioning.m */,
+			);
+			path = CCBReader;
+			sourceTree = "<group>";
+		};
+		24F4B6A7181825C900F0F752 /* CCControlExtension */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6A8181825C900F0F752 /* CCControl */,
+				24F4B6C4181825C900F0F752 /* CCControlExtension.h */,
+				24F4B6C5181825C900F0F752 /* README.md */,
+			);
+			path = CCControlExtension;
+			sourceTree = "<group>";
+		};
+		24F4B6A8181825C900F0F752 /* CCControl */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6A9181825C900F0F752 /* CCControl.h */,
+				24F4B6AA181825C900F0F752 /* CCControl.m */,
+				24F4B6AB181825C900F0F752 /* CCControlButton.h */,
+				24F4B6AC181825C900F0F752 /* CCControlButton.m */,
+				24F4B6AD181825C900F0F752 /* CCControlColourPicker.h */,
+				24F4B6AE181825C900F0F752 /* CCControlColourPicker.m */,
+				24F4B6AF181825C900F0F752 /* CCControlHuePicker.h */,
+				24F4B6B0181825C900F0F752 /* CCControlHuePicker.m */,
+				24F4B6B1181825C900F0F752 /* CCControlPotentiometer.h */,
+				24F4B6B2181825C900F0F752 /* CCControlPotentiometer.m */,
+				24F4B6B3181825C900F0F752 /* CCControlSaturationBrightnessPicker.h */,
+				24F4B6B4181825C900F0F752 /* CCControlSaturationBrightnessPicker.m */,
+				24F4B6B5181825C900F0F752 /* CCControlSlider.h */,
+				24F4B6B6181825C900F0F752 /* CCControlSlider.m */,
+				24F4B6B7181825C900F0F752 /* CCControlStepper.h */,
+				24F4B6B8181825C900F0F752 /* CCControlStepper.m */,
+				24F4B6B9181825C900F0F752 /* CCControlSwitch.h */,
+				24F4B6BA181825C900F0F752 /* CCControlSwitch.m */,
+				24F4B6BB181825C900F0F752 /* Shaders */,
+				24F4B6BD181825C900F0F752 /* Utils */,
+			);
+			path = CCControl;
+			sourceTree = "<group>";
+		};
+		24F4B6BB181825C900F0F752 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6BC181825C900F0F752 /* CCControlSwitchMask.fsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		24F4B6BD181825C900F0F752 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6BE181825C900F0F752 /* CCColourUtils.h */,
+				24F4B6BF181825C900F0F752 /* CCColourUtils.m */,
+				24F4B6C0181825C900F0F752 /* CCScale9Sprite.h */,
+				24F4B6C1181825C900F0F752 /* CCScale9Sprite.m */,
+				24F4B6C2181825C900F0F752 /* Utils.h */,
+				24F4B6C3181825C900F0F752 /* Utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		24F4B6C6181825C900F0F752 /* CCScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6C7181825C900F0F752 /* CCScrollView.h */,
+				24F4B6C8181825CA00F0F752 /* CCScrollView.m */,
+			);
+			path = CCScrollView;
+			sourceTree = "<group>";
+		};
+		24F4B6C9181825CA00F0F752 /* SSZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6CA181825CA00F0F752 /* LICENSE */,
+				24F4B6CB181825CA00F0F752 /* minizip */,
+				24F4B6D5181825CA00F0F752 /* SSZipArchive.h */,
+				24F4B6D6181825CA00F0F752 /* SSZipArchive.m */,
+			);
+			path = SSZipArchive;
+			sourceTree = "<group>";
+		};
+		24F4B6CB181825CA00F0F752 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				24F4B6CC181825CA00F0F752 /* crypt.h */,
+				24F4B6CD181825CA00F0F752 /* ioapi.c */,
+				24F4B6CE181825CA00F0F752 /* ioapi.h */,
+				24F4B6CF181825CA00F0F752 /* mztools.c */,
+				24F4B6D0181825CA00F0F752 /* mztools.h */,
+				24F4B6D1181825CA00F0F752 /* unzip.c */,
+				24F4B6D2181825CA00F0F752 /* unzip.h */,
+				24F4B6D3181825CA00F0F752 /* zip.c */,
+				24F4B6D4181825CA00F0F752 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1087,20 +1452,68 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F4B41B18181F1800F0F752 /* Icon-Small.png in Resources */,
+				24F4B6351818254900F0F752 /* hunter.png in Resources */,
+				24F4B6381818254900F0F752 /* priest.png in Resources */,
+				24F4B62F1818254900F0F752 /* class_rogue.jpg in Resources */,
+				24F4B6341818254900F0F752 /* frame.png in Resources */,
+				24F4B6291818254900F0F752 /* class_druid.jpg in Resources */,
 				24F4B5EE18181F1A00F0F752 /* grossini_dance_atlas.png in Resources */,
+				24F4B63C1818254900F0F752 /* warrior.png in Resources */,
+				24F4B6311818254900F0F752 /* class_warlock.jpg in Resources */,
+				24F4B63A1818254900F0F752 /* shaman.png in Resources */,
+				24F4B6321818254900F0F752 /* class_warrior.jpg in Resources */,
+				24F4B60B1818253900F0F752 /* ccbParticleStars.png in Resources */,
 				24F4B40F18181F1800F0F752 /* Default-Landscape~ipad.png in Resources */,
+				24F4B62A1818254900F0F752 /* class_hunter.jpg in Resources */,
 				24F4B41F18181F1800F0F752 /* Icon.png in Resources */,
+				24F4B70518182D0B00F0F752 /* class_warrior@2x.png in Resources */,
+				24F4B6EC181825CA00F0F752 /* LICENSE in Resources */,
 				24F4B41918181F1800F0F752 /* Icon-Small-50.png in Resources */,
+				24F4B60A1818253900F0F752 /* ccbParticleSnow.png in Resources */,
+				24F4B70218182D0B00F0F752 /* class_rogue@2x.png in Resources */,
+				24F4B70418182D0B00F0F752 /* class_warlock@2x.png in Resources */,
+				24F4B6331818254900F0F752 /* druid.png in Resources */,
 				24F4B41D18181F1800F0F752 /* Icon-Small@2x.png in Resources */,
+				24F4B62E1818254900F0F752 /* class_priest.jpg in Resources */,
 				24F4B59D18181F1A00F0F752 /* README.textile in Resources */,
 				24F4B42118181F1800F0F752 /* Icon@2x.png in Resources */,
+				24F4B62B1818254900F0F752 /* class_mage.jpg in Resources */,
+				24F4B6281818254900F0F752 /* class_death-knight.jpg in Resources */,
+				24F4B62C1818254900F0F752 /* class_monk.jpg in Resources */,
+				24F4B6271818254900F0F752 /* background@2x.png in Resources */,
 				24F4B40D18181F1800F0F752 /* Default.png in Resources */,
 				24F4B42418181F1800F0F752 /* iTunesArtwork in Resources */,
+				24F4B6091818253900F0F752 /* ccbParticleSmoke.png in Resources */,
+				24F4B6071818253900F0F752 /* ccbDefaultImages.png in Resources */,
+				24F4B6EA181825CA00F0F752 /* README.md in Resources */,
+				24F4B62D1818254900F0F752 /* class_paladin.jpg in Resources */,
+				24F4B6301818254900F0F752 /* class_shaman.jpg in Resources */,
+				24F4B6FF18182D0B00F0F752 /* class_mage@2x.png in Resources */,
+				24F4B70118182D0B00F0F752 /* class_priest@2x.png in Resources */,
+				24F4B6081818253900F0F752 /* ccbParticleFire.png in Resources */,
+				24F4B6041818253900F0F752 /* ccbDefaultImages-ipad.plist in Resources */,
+				24F4B63B1818254900F0F752 /* warlock.png in Resources */,
+				24F4B6371818254900F0F752 /* paladin.png in Resources */,
 				24F4B56218181F1A00F0F752 /* ChangeLog in Resources */,
+				24F4B6021818253900F0F752 /* ccbDefaultImages-hd.plist in Resources */,
 				24F4B41518181F1800F0F752 /* fps_images-ipadhd.png in Resources */,
 				24F4B41118181F1800F0F752 /* fps_images.png in Resources */,
+				24F4B6031818253900F0F752 /* ccbDefaultImages-hd.png in Resources */,
+				24F4B6FE18182D0B00F0F752 /* class_hunter@2x.png in Resources */,
+				24F4B63D1818254900F0F752 /* 白素贞.png in Resources */,
+				24F4B63E1818254900F0F752 /* 白素贞@2x.png in Resources */,
+				24F4B6FD18182D0B00F0F752 /* class_druid@2x.png in Resources */,
+				24F4B6061818253900F0F752 /* ccbDefaultImages.plist in Resources */,
+				24F4B70318182D0B00F0F752 /* class_shaman@2x.png in Resources */,
+				24F4B6F31818282D00F0F752 /* frame@2x.png in Resources */,
+				24F4B5F61818252500F0F752 /* Main.ccbi in Resources */,
+				24F4B70018182D0B00F0F752 /* class_paladin@2x.png in Resources */,
+				24F4B6051818253900F0F752 /* ccbDefaultImages-ipadhd.plist in Resources */,
 				24F4B41318181F1800F0F752 /* fps_images-hd.png in Resources */,
+				24F4B6261818254900F0F752 /* background.png in Resources */,
 				24F4B41718181F1800F0F752 /* Icon-72.png in Resources */,
+				24F4B6391818254900F0F752 /* rogue.png in Resources */,
+				24F4B6361818254900F0F752 /* mage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1116,7 +1529,6 @@
 				24F4B5BA18181F1A00F0F752 /* cpArbiter.c in Sources */,
 				24F4B46318181F1800F0F752 /* CCDirector.m in Sources */,
 				24F4B44118181F1800F0F752 /* CCActionManager.m in Sources */,
-				24F4B5E618181F1A00F0F752 /* HelloWorldLayer.m in Sources */,
 				24F4B51A18181F1900F0F752 /* CCArray.m in Sources */,
 				24F4B52C18181F1900F0F752 /* CGPointExtension.m in Sources */,
 				24F4B42F18181F1800F0F752 /* CCActionCatmullRom.m in Sources */,
@@ -1127,9 +1539,11 @@
 				24F4B4A418181F1900F0F752 /* CCRenderTexture.m in Sources */,
 				24F4B54A18181F1900F0F752 /* SimpleAudioEngine.m in Sources */,
 				24F4B49D18181F1900F0F752 /* CCParticleSystemQuad.m in Sources */,
+				24F4B6E5181825CA00F0F752 /* CCControlSwitch.m in Sources */,
 				24F4B4CF18181F1900F0F752 /* CCTextureAtlas.m in Sources */,
 				24F4B4F818181F1900F0F752 /* CCDirectorIOS.m in Sources */,
 				24F4B4F118181F1900F0F752 /* cocos2d.m in Sources */,
+				24F4B6D7181825CA00F0F752 /* CCBAnimationManager.m in Sources */,
 				24F4B44A18181F1800F0F752 /* CCActionTiledGrid.m in Sources */,
 				24F4B4AA18181F1900F0F752 /* CCScheduler.m in Sources */,
 				24F4B51D18181F1900F0F752 /* ccCArray.m in Sources */,
@@ -1137,16 +1551,20 @@
 				24F4B48B18181F1800F0F752 /* CCNode+Debug.m in Sources */,
 				24F4B5C618181F1A00F0F752 /* cpHashSet.c in Sources */,
 				24F4B47218181F1800F0F752 /* CCGrid.m in Sources */,
+				24F4B6E4181825CA00F0F752 /* CCControlStepper.m in Sources */,
 				24F4B42C18181F1800F0F752 /* CCActionCamera.m in Sources */,
 				24F4B5D218181F1A00F0F752 /* cpSpaceQuery.c in Sources */,
 				24F4B43518181F1800F0F752 /* CCActionGrid.m in Sources */,
 				24F4B4E418181F1900F0F752 /* CCTMXXMLParser.m in Sources */,
 				24F4B5CC18181F1A00F0F752 /* cpSpace.c in Sources */,
 				24F4B44718181F1800F0F752 /* CCActionProgressTimer.m in Sources */,
+				24F4B6E1181825CA00F0F752 /* CCControlPotentiometer.m in Sources */,
 				24F4B49718181F1800F0F752 /* CCParticleExamples.m in Sources */,
 				24F4B51618181F1900F0F752 /* base64.c in Sources */,
+				24F4B6EE181825CA00F0F752 /* mztools.c in Sources */,
 				24F4B5C818181F1A00F0F752 /* cpPolyShape.c in Sources */,
 				24F4B50318181F1900F0F752 /* CCTouchDispatcher.m in Sources */,
+				24F4B6DA181825CA00F0F752 /* CCBsequence.m in Sources */,
 				24F4B42918181F1800F0F752 /* CCAction.m in Sources */,
 				24F4B43818181F1800F0F752 /* CCActionGrid3D.m in Sources */,
 				24F4B51018181F1900F0F752 /* CCGLView.m in Sources */,
@@ -1157,8 +1575,11 @@
 				24F4B4C918181F1900F0F752 /* CCSpriteFrameCache.m in Sources */,
 				24F4B54718181F1900F0F752 /* CocosDenshion.m in Sources */,
 				24F4B54018181F1900F0F752 /* CDAudioManager.m in Sources */,
+				24F4B6D9181825CA00F0F752 /* CCBReader.m in Sources */,
+				24F4B6DE181825CA00F0F752 /* CCControlButton.m in Sources */,
 				24F4B5BE18181F1A00F0F752 /* cpBB.c in Sources */,
 				24F4B45D18181F1800F0F752 /* CCConfiguration.m in Sources */,
+				24F4B6F1181825CA00F0F752 /* SSZipArchive.m in Sources */,
 				24F4B50D18181F1900F0F752 /* CCEventDispatcher.m in Sources */,
 				24F4B48E18181F1800F0F752 /* CCNode.m in Sources */,
 				24F4B49418181F1800F0F752 /* CCParticleBatchNode.m in Sources */,
@@ -1169,6 +1590,7 @@
 				24F4B51318181F1900F0F752 /* CCWindow.m in Sources */,
 				24F4B5CA18181F1A00F0F752 /* cpShape.c in Sources */,
 				24F4B57C18181F1A00F0F752 /* vec4.c in Sources */,
+				24F4B6DD181825CA00F0F752 /* CCControl.m in Sources */,
 				24F4B5D618181F1A00F0F752 /* cpSpatialIndex.c in Sources */,
 				24F4B5BC18181F1A00F0F752 /* cpArray.c in Sources */,
 				24F4B49A18181F1900F0F752 /* CCParticleSystem.m in Sources */,
@@ -1178,23 +1600,29 @@
 				24F4B52918181F1900F0F752 /* CCVertex.m in Sources */,
 				24F4B50618181F1900F0F752 /* CCTouchHandler.m in Sources */,
 				24F4B56C18181F1A00F0F752 /* mat4.c in Sources */,
+				24F4B6D8181825CA00F0F752 /* CCBKeyframe.m in Sources */,
 				24F4B57018181F1A00F0F752 /* plane.c in Sources */,
 				24F4B44418181F1800F0F752 /* CCActionPageTurn3D.m in Sources */,
 				24F4B56818181F1A00F0F752 /* matrix.c in Sources */,
+				24F4B6ED181825CA00F0F752 /* ioapi.c in Sources */,
 				24F4B57418181F1A00F0F752 /* ray2.c in Sources */,
 				24F4B5CE18181F1A00F0F752 /* cpSpaceComponent.c in Sources */,
 				24F4B49118181F1800F0F752 /* CCParallaxNode.m in Sources */,
 				24F4B4D818181F1900F0F752 /* CCTileMapAtlas.m in Sources */,
 				24F4B4A018181F1900F0F752 /* CCProgressTimer.m in Sources */,
 				24F4B52018181F1900F0F752 /* CCFileUtils.m in Sources */,
+				24F4B6DB181825CA00F0F752 /* CCBSequenceProperty.m in Sources */,
 				24F4B56618181F1A00F0F752 /* mat4stack.c in Sources */,
 				24F4B5C418181F1A00F0F752 /* cpCollision.c in Sources */,
 				24F4B5C218181F1A00F0F752 /* cpBody.c in Sources */,
+				24F4B6E8181825CA00F0F752 /* CCScale9Sprite.m in Sources */,
+				24F4B6E0181825CA00F0F752 /* CCControlHuePicker.m in Sources */,
 				24F4B48818181F1800F0F752 /* CCMotionStreak.m in Sources */,
 				24F4B45018181F1800F0F752 /* CCAnimation.m in Sources */,
 				24F4B43B18181F1800F0F752 /* CCActionInstant.m in Sources */,
 				24F4B43E18181F1800F0F752 /* CCActionInterval.m in Sources */,
 				24F4B57818181F1A00F0F752 /* vec2.c in Sources */,
+				24F4B6E7181825CA00F0F752 /* CCColourUtils.m in Sources */,
 				24F4B5AE18181F1A00F0F752 /* cpPinJoint.c in Sources */,
 				24F4B53B18181F1900F0F752 /* ZipUtils.m in Sources */,
 				24F4B4A718181F1900F0F752 /* CCScene.m in Sources */,
@@ -1206,6 +1634,8 @@
 				24F4B52318181F1900F0F752 /* CCProfiling.m in Sources */,
 				24F4B5D018181F1A00F0F752 /* cpSpaceHash.c in Sources */,
 				24F4B56A18181F1A00F0F752 /* mat3.c in Sources */,
+				24F4B6DF181825CA00F0F752 /* CCControlColourPicker.m in Sources */,
+				24F4B6F0181825CA00F0F752 /* zip.c in Sources */,
 				24F4B54418181F1900F0F752 /* CDOpenALSupport.m in Sources */,
 				24F4B4BD18181F1900F0F752 /* ccShaders.m in Sources */,
 				24F4B48518181F1800F0F752 /* CCMenuItem.m in Sources */,
@@ -1214,12 +1644,16 @@
 				24F4B57618181F1A00F0F752 /* utility.c in Sources */,
 				24F4B4E718181F1900F0F752 /* CCTransition.m in Sources */,
 				24F4B4FB18181F1900F0F752 /* CCES2Renderer.m in Sources */,
+				24F4B6DC181825CA00F0F752 /* CCNode+CCBRelativePositioning.m in Sources */,
 				24F4B47B18181F1800F0F752 /* CCLabelTTF.m in Sources */,
 				24F4B5A018181F1A00F0F752 /* chipmunk.c in Sources */,
+				24F4B6EF181825CA00F0F752 /* unzip.c in Sources */,
 				24F4B46F18181F1800F0F752 /* CCGrabber.m in Sources */,
 				24F4B5B018181F1A00F0F752 /* cpPivotJoint.c in Sources */,
 				24F4B5DA18181F1A00F0F752 /* cpVect.c in Sources */,
+				24F4B6E6181825CA00F0F752 /* CCControlSwitchMask.fsh in Sources */,
 				24F4B5A818181F1A00F0F752 /* cpDampedSpring.c in Sources */,
+				24F4B6E2181825CA00F0F752 /* CCControlSaturationBrightnessPicker.m in Sources */,
 				24F4B4D218181F1900F0F752 /* CCTextureCache.m in Sources */,
 				24F4B5D818181F1A00F0F752 /* cpSweep1D.c in Sources */,
 				24F4B48218181F1800F0F752 /* CCMenu.m in Sources */,
@@ -1229,11 +1663,13 @@
 				24F4B5AA18181F1A00F0F752 /* cpGearJoint.c in Sources */,
 				24F4B46C18181F1800F0F752 /* ccGLStateCache.m in Sources */,
 				24F4B43218181F1800F0F752 /* CCActionEase.m in Sources */,
+				24F4B6E9181825CA00F0F752 /* Utils.m in Sources */,
 				24F4B5A418181F1A00F0F752 /* cpConstraint.c in Sources */,
 				24F4B56018181F1900F0F752 /* aabb.c in Sources */,
 				24F4B5A618181F1A00F0F752 /* cpDampedRotarySpring.c in Sources */,
 				24F4B57218181F1A00F0F752 /* quaternion.c in Sources */,
 				24F4B45918181F1800F0F752 /* CCCamera.m in Sources */,
+				24F4B6E3181825CA00F0F752 /* CCControlSlider.m in Sources */,
 				24F4B4BA18181F1900F0F752 /* CCShaderCache.m in Sources */,
 				24F4B46918181F1800F0F752 /* CCGLProgram.m in Sources */,
 				24F4B53318181F1900F0F752 /* TGAlib.m in Sources */,
@@ -1241,6 +1677,7 @@
 				24F4B52F18181F1900F0F752 /* NSThread+performBlock.m in Sources */,
 				24F4B53618181F1900F0F752 /* TransformUtils.m in Sources */,
 				24F4B5B418181F1A00F0F752 /* cpRotaryLimitJoint.c in Sources */,
+				24F4B6EB181825CA00F0F752 /* CCScrollView.m in Sources */,
 				24F4B45318181F1800F0F752 /* CCAnimationCache.m in Sources */,
 				24F4B5B618181F1A00F0F752 /* cpSimpleMotor.c in Sources */,
 				24F4B47518181F1800F0F752 /* CCLabelAtlas.m in Sources */,
