@@ -28,4 +28,7 @@
 @property (nonatomic, strong) Mage *mage;
 @property (nonatomic, strong) Priest *priest;
 @property (nonatomic, strong) Warlock *warlock;
+
+@property (nonatomic, strong) NSArray *occupation;
+@property (nonatomic, assign) BOOL istouch;
 @end
