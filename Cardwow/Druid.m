@@ -10,5 +10,10 @@
 
 
 @implementation Druid
-
+- (id)copyWithSelf:(CCLayer *)layer{
+    Druid *temp = [[Druid alloc] initWithFile:@"class_druid.jpg"];
+    temp.position = self.position;
+    [layer addChild:temp];
+    return temp;
+}
 @end

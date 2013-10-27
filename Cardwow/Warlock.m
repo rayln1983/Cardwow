@@ -10,5 +10,10 @@
 
 
 @implementation Warlock
-
+- (id)copyWithSelf:(CCLayer *)layer{
+    Warlock *temp = [[Warlock alloc] initWithFile:@"class_warlock.jpg"];
+    temp.position = self.position;
+    [layer addChild:temp];
+    return temp;
+}
 @end

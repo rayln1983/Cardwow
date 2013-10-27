@@ -10,5 +10,10 @@
 
 
 @implementation Priest
-
+- (id)copyWithSelf:(CCLayer *)layer{
+    Priest *temp = [[Priest alloc] initWithFile:@"class_priest.jpg"];
+    temp.position = self.position;
+    [layer addChild:temp];
+    return temp;
+}
 @end

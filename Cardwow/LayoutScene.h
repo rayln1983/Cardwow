@@ -31,4 +31,8 @@
 
 @property (nonatomic, strong) NSArray *occupation;
 @property (nonatomic, assign) BOOL istouch;
+@property (nonatomic, assign) BOOL isfixed;
+@property (nonatomic, strong) BaseSprite *moveSprite;
+@property (nonatomic, strong) NSMutableArray *layoutArray;
+@property (nonatomic, strong) NSMutableArray *wallArray;
 @end

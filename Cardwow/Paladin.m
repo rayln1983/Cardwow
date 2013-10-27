@@ -11,4 +11,10 @@
 
 @implementation Paladin
 
+- (id)copyWithSelf:(CCLayer *)layer{
+    Paladin *temp = [[Paladin alloc] initWithFile:@"class_paladin.jpg"];
+    temp.position = self.position;
+    [layer addChild:temp];
+    return temp;
+}
 @end

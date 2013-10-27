@@ -13,7 +13,8 @@
 
 - (id)init{
     if (self = [super init]) {
-        NSLog(@"==========================");
+        _layoutArray = [[NSMutableArray alloc] init];
+        _wallArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -21,7 +22,16 @@
 - (void)didLoadFromCCB{
     // init occupation
     _occupation = [[NSArray alloc] initWithObjects:_warrior,_hunter,_paladin,_shaman,_druid,_mage,_priest,_warlock, nil];
+    [self initCell];
+}
+- (void) initCell{
+    CCArray *arr = [self children];
     
+    for (CCNode *node in arr) {
+        if (node.tag == 2) {
+            [_wallArray addObject:node];
+        }
+    }
 }
 
 
@@ -35,9 +45,22 @@
         
         if(CGRectContainsPoint(rect, point)){
             stop = _istouch = YES;
+            _moveSprite = [sprite copyWithSelf:self];
         }
         
     }];
+    NSLog(@"===_layoutArray: %i", [_layoutArray count]);
+    
+    [_layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
+        CGRect rect = [sprite boundingBox];
+        
+        if(CGRectContainsPoint(rect, point)){
+            stop = _istouch = YES;
+            _moveSprite = sprite;
+            [_layoutArray removeObject:sprite];
+        }
+    }];
+    
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -47,12 +70,49 @@
     UITouch  *touch=[touches anyObject];
     CGPoint  touchLocation= [touch locationInView:[touch view]];
     CGPoint  point=[[CCDirector sharedDirector] convertToGL:touchLocation];
-    
+    [_moveSprite setPosition:point];
     NSLog(@"%f, %f", point.x, point.y);
+    [_wallArray enumerateObjectsUsingBlock:^(CCSprite *obj, NSUInteger idx, BOOL *stop) {
+        CGRect r = [obj boundingBox];
+        if(CGRectContainsPoint(r, point)){
+            [_moveSprite setPosition:obj.position];
+            stop = _isfixed = YES;
+        }else{
+            
+        }
+    }];
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     NSLog(@"end");
+    
+    if (_isfixed) {
+        [_layoutArray addObject:_moveSprite];
+    }else{
+        [_layoutArray removeObject:_moveSprite];
+        [self removeChild:_moveSprite cleanup:YES];
+    }
+    NSLog(@"===_layoutArray end: %i", [_layoutArray count]);
+    //[_moveSprite release];
+    _moveSprite = nil;
     _istouch = NO;
+    _isfixed = NO;
 }
+
+- (void)dealloc{
+    [_warrior release];
+    [_hunter release];
+    [_paladin release];
+    [_shaman release];
+    [_druid release];
+    [_mage release];
+    [_priest release];
+    [_warlock release];
+    [_occupation release];
+    [_moveSprite release];
+    [_layoutArray release];
+    [_wallArray release];
+    [super dealloc];
+}
+
 @end

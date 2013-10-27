@@ -10,5 +10,10 @@
 
 
 @implementation Shaman
-
+- (id)copyWithSelf:(CCLayer *)layer{
+    Shaman *temp = [[Shaman alloc] initWithFile:@"class_shaman.jpg"];
+    temp.position = self.position;
+    [layer addChild:temp];
+    return temp;
+}
 @end

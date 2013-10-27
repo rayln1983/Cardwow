@@ -13,7 +13,7 @@ typedef struct {
     int max;
 } Type;
 
-@interface BaseSprite : CCSprite {
+@interface BaseSprite : CCSprite <NSCopying> {
     
 }
 //life
@@ -22,4 +22,6 @@ typedef struct {
 @property (nonatomic,assign) Type power;
 @property (nonatomic,assign) Type armor;
 @property (nonatomic,assign) Type defense;
+
+- (id)copyWithSelf:(CCLayer *)layer;
 @end

@@ -11,4 +11,12 @@
 
 @implementation Warrior
 
+- (id)copyWithSelf:(CCLayer *)layer{
+    Warrior *temp = [[Warrior alloc] initWithFile:@"class_warrior.jpg"];
+    temp.position = self.position;
+    temp.tag = 1;
+    [layer addChild:temp];
+    
+    return temp;
+}
 @end

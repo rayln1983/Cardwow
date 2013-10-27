@@ -10,5 +10,10 @@
 
 
 @implementation Mage
-
+- (id)copyWithSelf:(CCLayer *)layer{
+    Mage *temp = [[Mage alloc] initWithFile:@"class_mage.jpg"];
+    temp.position = self.position;
+    [layer addChild:temp];
+    return temp;
+}
 @end
