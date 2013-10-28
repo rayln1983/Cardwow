@@ -63,5 +63,6 @@
 	//[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] withColor:ccWHITE]];
     CCScene *scene = [CCBReader sceneWithNodeGraphFromFile:@"Main.ccbi"];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:scene withColor:ccWHITE]];
+    
 }
 @end

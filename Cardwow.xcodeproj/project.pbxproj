@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24876F27181E2CC00081874C /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 24876F26181E2CC00081874C /* MainScene.m */; };
 		24F4B3F918181F1800F0F752 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3F818181F1800F0F752 /* QuartzCore.framework */; };
 		24F4B3FB18181F1800F0F752 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3FA18181F1800F0F752 /* OpenGLES.framework */; };
 		24F4B3FD18181F1800F0F752 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3FC18181F1800F0F752 /* OpenAL.framework */; };
@@ -259,6 +260,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24876F25181E2CC00081874C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
+		24876F26181E2CC00081874C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		24F4B3F518181F1800F0F752 /* Cardwow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardwow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F4B3F818181F1800F0F752 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		24F4B3FA18181F1800F0F752 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1465,6 +1468,8 @@
 			children = (
 				24F4B71A181832CA00F0F752 /* LayoutScene.h */,
 				24F4B71B181832CA00F0F752 /* LayoutScene.m */,
+				24876F25181E2CC00081874C /* MainScene.h */,
+				24876F26181E2CC00081874C /* MainScene.m */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -1631,6 +1636,7 @@
 				24F4B5BA18181F1A00F0F752 /* cpArbiter.c in Sources */,
 				24F4B46318181F1800F0F752 /* CCDirector.m in Sources */,
 				24F4B44118181F1800F0F752 /* CCActionManager.m in Sources */,
+				24876F27181E2CC00081874C /* MainScene.m in Sources */,
 				24F4B51A18181F1900F0F752 /* CCArray.m in Sources */,
 				24F4B52C18181F1900F0F752 /* CGPointExtension.m in Sources */,
 				24F4B42F18181F1800F0F752 /* CCActionCatmullRom.m in Sources */,
@@ -1899,6 +1905,7 @@
 				24F4B5F318181F1A00F0F752 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
