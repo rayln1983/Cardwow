@@ -13,7 +13,7 @@ typedef struct {
     int max;
 } Type;
 
-@interface BaseSprite : CCSprite <NSCopying> {
+@interface BaseSprite : CCSprite {
     
 }
 //life

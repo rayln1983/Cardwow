@@ -57,10 +57,10 @@
         if(CGRectContainsPoint(rect, point)){
             stop = _istouch = YES;
             _moveSprite = sprite;
-            [_layoutArray removeObject:sprite];
+            
         }
     }];
-    
+    [_layoutArray removeObject:_moveSprite];
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
