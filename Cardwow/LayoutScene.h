@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CCBReader.h"
 #import "Warrior.h"
 #import "Hunter.h"
 #import "Paladin.h"
@@ -35,4 +36,6 @@
 @property (nonatomic, strong) BaseSprite *moveSprite;
 @property (nonatomic, strong) NSMutableArray *layoutArray;
 @property (nonatomic, strong) NSMutableArray *wallArray;
+
+//- (void)click:(id)sender;
 @end
