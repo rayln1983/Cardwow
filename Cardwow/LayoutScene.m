@@ -100,8 +100,10 @@
 }
 
 - (void)click:(id)sender{
-    CCScene *scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
-    [[CCDirector sharedDirector] replaceScene:scene];
+    MainScene *main = [[MainScene alloc] initWithParams:_layoutArray];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0 scene:main.scene withColor:ccBLACK]];
+    [main release];
+    
 }
 
 - (void)dealloc{
