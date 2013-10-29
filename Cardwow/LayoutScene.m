@@ -99,7 +99,13 @@
     _isfixed = NO;
 }
 
+- (void)click:(id)sender{
+    CCScene *scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
+    [[CCDirector sharedDirector] replaceScene:scene];
+}
+
 - (void)dealloc{
+    _occupation = nil;
     [_warrior release];
     [_hunter release];
     [_paladin release];
@@ -108,7 +114,7 @@
     [_mage release];
     [_priest release];
     [_warlock release];
-    [_occupation release];
+    //[_occupation release];
     [_moveSprite release];
     [_layoutArray release];
     [_wallArray release];

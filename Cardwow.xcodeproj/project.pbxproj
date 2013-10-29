@@ -257,6 +257,7 @@
 		24F4B7311818340100F0F752 /* Mage.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7301818340100F0F752 /* Mage.m */; };
 		24F4B7341818341900F0F752 /* Priest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7331818341900F0F752 /* Priest.m */; };
 		24F4B7371818343200F0F752 /* Warlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F4B7361818343200F0F752 /* Warlock.m */; };
+		24FC734F181EBA1600AD57F4 /* MainScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 24FC734E181EBA1600AD57F4 /* MainScene.ccbi */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -712,6 +713,7 @@
 		24F4B7331818341900F0F752 /* Priest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Priest.m; sourceTree = "<group>"; };
 		24F4B7351818343200F0F752 /* Warlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Warlock.h; sourceTree = "<group>"; };
 		24F4B7361818343200F0F752 /* Warlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Warlock.m; sourceTree = "<group>"; };
+		24FC734E181EBA1600AD57F4 /* MainScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.ccbi; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1263,6 +1265,7 @@
 		24F4B5F41818252500F0F752 /* Cardwow */ = {
 			isa = PBXGroup;
 			children = (
+				24FC734E181EBA1600AD57F4 /* MainScene.ccbi */,
 				24F4B5F51818252500F0F752 /* Main.ccbi */,
 			);
 			name = Cardwow;
@@ -1584,6 +1587,7 @@
 				24F4B62C1818254900F0F752 /* class_monk.jpg in Resources */,
 				24F4B6271818254900F0F752 /* background@2x.png in Resources */,
 				24F4B40D18181F1800F0F752 /* Default.png in Resources */,
+				24FC734F181EBA1600AD57F4 /* MainScene.ccbi in Resources */,
 				24F4B42418181F1800F0F752 /* iTunesArtwork in Resources */,
 				24F4B6091818253900F0F752 /* ccbParticleSmoke.png in Resources */,
 				24F4B6071818253900F0F752 /* ccbDefaultImages.png in Resources */,
