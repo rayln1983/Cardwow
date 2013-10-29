@@ -17,6 +17,7 @@
 #import "Mage.h"
 #import "Priest.h"
 #import "Warlock.h"
+#import "MainScene.h"
 
 @interface LayoutScene : CCLayer {
     
