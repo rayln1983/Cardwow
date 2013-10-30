@@ -24,7 +24,7 @@
 }
 @property (nonatomic, strong) CCScene *scene;
 @property (nonatomic, strong) NSMutableArray *layoutArray;
-
+@property (nonatomic, strong) NSMutableArray *spriteArray;
 - (id) initWithParams:(NSMutableArray *)layoutArray;
 
 @end

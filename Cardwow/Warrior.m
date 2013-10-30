@@ -7,7 +7,12 @@
 //
 
 #import "Warrior.h"
-
+#define LIFE 200;
+#define POWER 0;
+#define ARMOR 20;
+#define DEFENSE 10;
+#define ATTACK 30;
+#define MAGICATTACK 0;
 
 @implementation Warrior
 
@@ -16,7 +21,45 @@
     temp.position = self.position;
     temp.tag = 1;
     [layer addChild:temp];
-    
+    [self initAttribute];
     return temp;
+}
+
+- (void)initAttribute{
+    _life.current = LIFE;
+    _life.max = LIFE;
+    
+    _power.current = POWER;
+    _power.max = POWER;
+    
+    _armor.current = ARMOR;
+    _armor.max = ARMOR;
+    
+    _defense.current = DEFENSE;
+    _defense.max = DEFENSE;
+    
+    _attack.current = ATTACK;
+    _attack.max = ATTACK;
+    
+    _magicAttack.current = MAGICATTACK;
+    _magicAttack.max = MAGICATTACK;
+}
+
+- (void)draw{
+    
+    [super draw];
+    [self drawLife];
+    [self drawPower];
+}
+
+- (void)drawLife{
+    glLineWidth( 7.0f );
+    INIT_LIFE_COLOR;
+    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width, 3) );
+}
+- (void)drawPower{
+    glLineWidth( 5.0f );
+    INIT_POWER_COLOR;
+    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width, 0) );
 }
 @end

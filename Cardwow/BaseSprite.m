@@ -11,4 +11,8 @@
 
 @implementation BaseSprite
 
+- (void)setLife:(float)damage{
+    _life.current = _life.current - damage;
+    NSLog(@"_life.current: %f",_life.current);
+}
 @end

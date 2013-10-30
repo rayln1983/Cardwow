@@ -8,20 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#define INIT_LIFE_COLOR ccDrawColor4B(81,133,54,255)
+#define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
+
 typedef struct {
-    int current;
-    int max;
+    float current;
+    float max;
 } Type;
 
 @interface BaseSprite : CCSprite {
-    
+    //life
+    Type _life;
+    //power
+    Type _power;
+    Type _armor;
+    Type _defense;
+    Type _attack;
+    Type _magicAttack;
 }
-//life
-@property (nonatomic,assign) Type life;
-//power
-@property (nonatomic,assign) Type power;
-@property (nonatomic,assign) Type armor;
-@property (nonatomic,assign) Type defense;
 
 - (id)copyWithSelf:(CCLayer *)layer;
+- (void)setLife:(float)damage;
 @end

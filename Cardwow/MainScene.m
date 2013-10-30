@@ -14,6 +14,8 @@
 - (id)initWithParams:(NSMutableArray *)layoutArray{
     if (self = [super init]) {
         self.scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
+        self.isTouchEnabled = YES;
+        ///self.scene = [CCScene node];
         self.layoutArray = layoutArray;
         [self initLayout];
     }
@@ -21,9 +23,11 @@
 }
 
 - (void)initLayout{
+    _spriteArray = [[NSMutableArray alloc] init];
     [_scene addChild:self];
     [_layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
-        [sprite copyWithSelf:self];
+        BaseSprite *s = [[sprite copyWithSelf:self] autorelease];
+        [_spriteArray addObject:s];
     }];
 }
 
@@ -33,9 +37,17 @@
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:scene withColor:ccBLACK]];
     
 }
+
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    NSLog(@"touch!!!");
+    BaseSprite *base = [_spriteArray objectAtIndex:0];
+    [base setLife:20.0f];
+}
+
 - (void)dealloc{
     [_scene release];
     [_layoutArray release];
+    [_spriteArray release];
     [super dealloc];
 }
 @end
