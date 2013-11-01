@@ -8,7 +8,7 @@
 
 #import "Hunter.h"
 #define LIFE 200;
-#define POWER 0;
+#define POWER 200;
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 30;
@@ -62,14 +62,13 @@
     glLineWidth( 7.0f );
     INIT_LIFE_COLOR;
     float percent = _life.current/_life.max;
-    //NSLog(@"_life.current: %f, %f, %f",_life.current,_life.max,percent);
-    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width*percent, 3) );
+    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
 }
 - (void)drawPower{
     glLineWidth( 5.0f );
     INIT_POWER_COLOR;
-    float percent = _life.current/_life.max;
-    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width*percent, 0) );
+    float percent = _power.current/_power.max;
+    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
 }
 
 @end

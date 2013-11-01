@@ -13,6 +13,9 @@
 
 - (void)setLife:(float)damage{
     _life.current = _life.current - damage;
+    if (_life.current <0) {
+        _life.current = 0;
+    }
     NSLog(@"_life.current: %f",_life.current);
 }
 @end

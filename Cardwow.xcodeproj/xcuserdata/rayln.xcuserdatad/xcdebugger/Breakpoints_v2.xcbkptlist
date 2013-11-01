@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/BaseSprite.m"
-            timestampString = "404844845.633048"
+            timestampString = "405013268.375514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "@implementation BaseSprite"
             landmarkType = "3">
          </BreakpointContent>
@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "-initLayout"
+            landmarkName = "-initLayout:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -79,8 +79,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "-initLayout"
-            landmarkType = "5">
+            landmarkName = "@implementation MainScene"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

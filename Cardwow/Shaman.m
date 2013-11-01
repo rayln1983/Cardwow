@@ -8,17 +8,24 @@
 
 #import "Shaman.h"
 #define LIFE 200;
-#define POWER 0;
+#define POWER 200;
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 30;
 #define MAGICATTACK 0;
 
 @implementation Shaman
+- (id)init{
+    if (self = [super init]) {
+        [self initAttribute];
+    }
+    return self;
+}
 - (id)copyWithSelf:(CCLayer *)layer{
     Shaman *temp = [[Shaman alloc] initWithFile:@"class_shaman.jpg"];
     temp.position = self.position;
     [layer addChild:temp];
+    [temp initAttribute];
     return temp;
 }
 
@@ -52,12 +59,14 @@
 - (void)drawLife{
     glLineWidth( 7.0f );
     INIT_LIFE_COLOR;
-    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width, 3) );
+    float percent = _life.current/_life.max;
+    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
 }
 - (void)drawPower{
     glLineWidth( 5.0f );
     INIT_POWER_COLOR;
-    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width, 0) );
+    float percent = _power.current/_power.max;
+    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
 }
 
 @end

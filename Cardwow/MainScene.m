@@ -15,17 +15,15 @@
     if (self = [super init]) {
         self.scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
         self.isTouchEnabled = YES;
-        ///self.scene = [CCScene node];
-        self.layoutArray = layoutArray;
-        [self initLayout];
+        [self initLayout:layoutArray];
     }
     return self;
 }
 
-- (void)initLayout{
+- (void)initLayout:(NSMutableArray *)layoutArray{
     _spriteArray = [[NSMutableArray alloc] init];
     [_scene addChild:self];
-    [_layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
+    [layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
         BaseSprite *s = [[sprite copyWithSelf:self] autorelease];
         [_spriteArray addObject:s];
     }];
@@ -46,7 +44,6 @@
 
 - (void)dealloc{
     [_scene release];
-    [_layoutArray release];
     [_spriteArray release];
     [super dealloc];
 }
