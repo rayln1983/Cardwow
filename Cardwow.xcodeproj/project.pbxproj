@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2404843318248AB0008C9B37 /* menustart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2404843218248AB0008C9B37 /* menustart.png */; };
 		24876F27181E2CC00081874C /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 24876F26181E2CC00081874C /* MainScene.m */; };
 		24F4B3F918181F1800F0F752 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3F818181F1800F0F752 /* QuartzCore.framework */; };
 		24F4B3FB18181F1800F0F752 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3FA18181F1800F0F752 /* OpenGLES.framework */; };
@@ -261,6 +262,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2404843218248AB0008C9B37 /* menustart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menustart.png; sourceTree = "<group>"; };
 		24876F25181E2CC00081874C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		24876F26181E2CC00081874C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		24F4B3F518181F1800F0F752 /* Cardwow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardwow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1293,6 +1295,7 @@
 		24F4B60C1818254900F0F752 /* cardwow */ = {
 			isa = PBXGroup;
 			children = (
+				2404843218248AB0008C9B37 /* menustart.png */,
 				24F4B706181830BC00F0F752 /* class_druid@2x.jpg */,
 				24F4B707181830BC00F0F752 /* class_hunter@2x.jpg */,
 				24F4B708181830BC00F0F752 /* class_mage@2x.jpg */,
@@ -1591,6 +1594,7 @@
 				24F4B42418181F1800F0F752 /* iTunesArtwork in Resources */,
 				24F4B6091818253900F0F752 /* ccbParticleSmoke.png in Resources */,
 				24F4B6071818253900F0F752 /* ccbDefaultImages.png in Resources */,
+				2404843318248AB0008C9B37 /* menustart.png in Resources */,
 				24F4B6EA181825CA00F0F752 /* README.md in Resources */,
 				24F4B62D1818254900F0F752 /* class_paladin.jpg in Resources */,
 				24F4B6301818254900F0F752 /* class_shaman.jpg in Resources */,

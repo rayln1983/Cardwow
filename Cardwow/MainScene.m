@@ -7,7 +7,10 @@
 //
 
 #import "MainScene.h"
-
+typedef struct {
+    int index;
+    int type;
+} GroupType;
 
 @implementation MainScene
 
@@ -15,18 +18,64 @@
     if (self = [super init]) {
         self.scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
         self.isTouchEnabled = YES;
+        [self initButton];
         [self initLayout:layoutArray];
+        
     }
     return self;
 }
 
+- (void)initButton{
+    _startButton = [[CCSprite alloc] initWithFile:@"menustart.png"];
+    [_startButton setPosition:ccp(160, 240)];
+    [self addChild:_startButton];
+    
+}
+
 - (void)initLayout:(NSMutableArray *)layoutArray{
-    _spriteArray = [[NSMutableArray alloc] init];
+    _groupA = [[NSMutableArray alloc] initWithObjects: [[[NSMutableArray alloc] init] autorelease], [[[NSMutableArray alloc] init] autorelease], [[[NSMutableArray alloc] init] autorelease], nil];
+    _groupB = [[NSMutableArray alloc] initWithObjects: [[[NSMutableArray alloc] init] autorelease], [[[NSMutableArray alloc] init] autorelease], [[[NSMutableArray alloc] init] autorelease], nil];
+    
+    _groupALayout = [[NSArray alloc] initWithObjects: [[NSNumber numberWithFloat:328.0f] autorelease], [[NSNumber numberWithFloat:388.0f] autorelease],[[NSNumber numberWithFloat:448.0f] autorelease], nil];
+    _groupBLayout = [[NSArray alloc] initWithObjects: [[NSNumber numberWithFloat:152.0f] autorelease], [[NSNumber numberWithFloat:92.0f] autorelease],[[NSNumber numberWithFloat:32.0f] autorelease], nil];
     [_scene addChild:self];
     [layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
         BaseSprite *s = [[sprite copyWithSelf:self] autorelease];
-        [_spriteArray addObject:s];
+        NSLog(@"positon: %f, %f", s.position.x, s.position.y);
+        GroupType type = [self getIndex:s.position.y];
+        NSLog(@"====%i, %i", type.index, type.type);
+        if (type.type == 0) {
+            NSMutableArray *array = [_groupA objectAtIndex:type.index];
+            [array addObject:s];
+        }else{
+            NSMutableArray *array = [_groupB objectAtIndex:type.index];
+            [array addObject:s];
+        }
+        //[_spriteArray addObject:s];
     }];
+    NSLog(@"_groupA: %@", _groupA);
+    NSLog(@"_groupB: %@", _groupB);
+}
+
+- (GroupType)getIndex:(float)y{
+    GroupType t;
+    for (int i = 0; i < [_groupALayout count]; i++) {
+        NSNumber *num = [_groupALayout objectAtIndex:i];
+        if ([num floatValue] == y) {
+            t.index = i;
+            t.type = 0;
+            return t;
+        }
+    }
+    for (int i = 0; i < [_groupBLayout count]; i++) {
+        NSNumber *num = [_groupBLayout objectAtIndex:i];
+        if ([num floatValue] == y) {
+            t.index = i;
+            t.type = 1;
+            return t;
+        }
+    }
+    return t;
 }
 
 
@@ -37,14 +86,41 @@
 }
 
 - (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"touch!!!");
-    BaseSprite *base = [_spriteArray objectAtIndex:0];
-    [base setLife:20.0f];
+    //BaseSprite *base = [_spriteArray objectAtIndex:0];
+    //[base setLife:20.0f];
+    
+    UITouch  *touch=[touches anyObject];
+    CGPoint  touchLocation= [touch locationInView:[touch view]];
+    CGPoint  point=[[CCDirector sharedDirector] convertToGL:touchLocation];
+    
+    if([self isTouchObject:point :_startButton]){
+        _attackGroup = 0;
+        [self startWar];
+    }
+}
+
+- (void)startWar{
+    NSLog(@"%i, %i, %i, %i", 0%2, 1%2, 2%2, 3%2);
+    if (_attackGroup%2 == 0) {
+        
+    }else{
+        
+    }
+    _attackGroup++;
+}
+
+- (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{
+    CGRect rect = [sprite boundingBox];
+    return CGRectContainsPoint(rect, point);
 }
 
 - (void)dealloc{
     [_scene release];
-    [_spriteArray release];
+    [_groupA release];
+    [_groupB release];
+    [_groupALayout release];
+    [_groupBLayout release];
+    [_startButton release];
     [super dealloc];
 }
 @end

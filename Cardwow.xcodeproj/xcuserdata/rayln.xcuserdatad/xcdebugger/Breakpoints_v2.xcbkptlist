@@ -42,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/MainScene.m"
-            timestampString = "404847981.024755"
+            timestampString = "405049261.475325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "-ccTouchesBegan:withEvent:"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "-isTouchObject::"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/MainScene.m"
-            timestampString = "404847981.024755"
+            timestampString = "405048419.98958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-initLayout:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/MainScene.m"
-            timestampString = "404847981.024755"
+            timestampString = "405048419.98958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "@implementation MainScene"
             landmarkType = "3">
             <Locations>
@@ -134,11 +134,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/MainScene.m"
-            timestampString = "404847981.024755"
+            timestampString = "405049261.475325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-ccTouchesBegan:withEvent:"
             landmarkType = "5">
          </BreakpointContent>

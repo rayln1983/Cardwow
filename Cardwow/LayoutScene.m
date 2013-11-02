@@ -49,7 +49,6 @@
         }
         
     }];
-    NSLog(@"===_layoutArray: %i", [_layoutArray count]);
     
     [_layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
         CGRect rect = [sprite boundingBox];
@@ -71,7 +70,6 @@
     CGPoint  touchLocation= [touch locationInView:[touch view]];
     CGPoint  point=[[CCDirector sharedDirector] convertToGL:touchLocation];
     [_moveSprite setPosition:point];
-    NSLog(@"%f, %f", point.x, point.y);
     [_wallArray enumerateObjectsUsingBlock:^(CCSprite *obj, NSUInteger idx, BOOL *stop) {
         CGRect r = [obj boundingBox];
         if(CGRectContainsPoint(r, point)){
@@ -84,7 +82,6 @@
 }
 
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-    NSLog(@"end");
     
     if (_isfixed) {
         [_layoutArray addObject:_moveSprite];
@@ -92,7 +89,6 @@
         [_layoutArray removeObject:_moveSprite];
         [self removeChild:_moveSprite cleanup:YES];
     }
-    NSLog(@"===_layoutArray end: %i", [_layoutArray count]);
     //[_moveSprite release];
     _moveSprite = nil;
     _istouch = NO;

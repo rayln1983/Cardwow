@@ -23,7 +23,12 @@
     
 }
 @property (nonatomic, strong) CCScene *scene;
-@property (nonatomic, strong) NSMutableArray *spriteArray;
+@property (nonatomic, strong) NSMutableArray *groupA;
+@property (nonatomic, strong) NSMutableArray *groupB;
+@property (nonatomic, strong) NSArray *groupALayout;
+@property (nonatomic, strong) NSArray *groupBLayout;
+@property (nonatomic, strong) CCSprite *startButton;
+@property (nonatomic, assign) int attackGroup;
 - (id) initWithParams:(NSMutableArray *)layoutArray;
 
 @end
