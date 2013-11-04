@@ -17,6 +17,7 @@ typedef struct {
 } Type;
 
 @interface BaseSprite : CCSprite {
+    int _flag;
     //life
     Type _life;
     //power
@@ -25,8 +26,22 @@ typedef struct {
     Type _defense;
     Type _attack;
     Type _magicAttack;
+    
+    Type _stronge;
+    Type _agile;
+    Type _intelligence;
+    
 }
+//@property (nonatomic, assign) Type agile;
 
 - (id)copyWithSelf:(CCLayer *)layer;
 - (void)setLife:(float)damage;
+
+- (Type)getAgile;
+- (int)getFlag;
+- (void)setFlag:(int)flag;
+- (void)skill1:(NSMutableArray *)array;
+- (void)skill2:(NSMutableArray *)array;
+- (void)skill3:(NSMutableArray *)array;
+- (Type)getAttack;
 @end

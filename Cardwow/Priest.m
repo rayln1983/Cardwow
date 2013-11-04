@@ -13,6 +13,10 @@
 #define DEFENSE 10;
 #define ATTACK 30;
 #define MAGICATTACK 0;
+//attribute
+#define STRONGE 0;
+#define AGILE 5;
+#define INTELLIGENCE 30;
 
 @implementation Priest
 
@@ -48,6 +52,15 @@
     
     _magicAttack.current = MAGICATTACK;
     _magicAttack.max = MAGICATTACK;
+    
+    _stronge.current = STRONGE;
+    _stronge.max = STRONGE;
+    
+    _agile.current = AGILE;
+    _agile.max = AGILE;
+    
+    _intelligence.current = INTELLIGENCE;
+    _intelligence.max = INTELLIGENCE;
 }
 
 - (void)draw{

@@ -14,6 +14,10 @@
 #define ATTACK 30;
 #define MAGICATTACK 0;
 
+#define STRONGE 20;
+#define AGILE 5;
+#define INTELLIGENCE 0;
+
 @implementation Warrior
 - (id)init{
     if (self = [super init]) {
@@ -48,6 +52,15 @@
     
     _magicAttack.current = MAGICATTACK;
     _magicAttack.max = MAGICATTACK;
+    
+    _stronge.current = STRONGE;
+    _stronge.max = STRONGE;
+    
+    _agile.current = AGILE;
+    _agile.max = AGILE;
+    
+    _intelligence.current = INTELLIGENCE;
+    _intelligence.max = INTELLIGENCE;
 }
 
 - (void)draw{

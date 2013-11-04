@@ -44,6 +44,7 @@ typedef struct {
         NSLog(@"positon: %f, %f", s.position.x, s.position.y);
         GroupType type = [self getIndex:s.position.y];
         NSLog(@"====%i, %i", type.index, type.type);
+        [s setFlag:type.type];
         if (type.type == 0) {
             NSMutableArray *array = [_groupA objectAtIndex:type.index];
             [array addObject:s];
@@ -107,7 +108,39 @@ typedef struct {
         
     }
     _attackGroup++;
+    
+    for (int i = 0; i < 3; i++) {
+        NSMutableArray *groupATemp = [_groupA objectAtIndex:i];
+        NSMutableArray *groupBTemp = [_groupB objectAtIndex:i];
+        NSArray *newArr = [groupATemp arrayByAddingObjectsFromArray:groupBTemp];
+        NSArray *sortArr = [newArr sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
+            float agile1 = [obj1 getAgile].current;
+            float agile2 = [obj2 getAgile].current;
+            if (agile1 > agile2) {
+                return (NSComparisonResult)NSOrderedAscending;
+            }
+            
+            if (agile1 < agile2) {
+                return (NSComparisonResult)NSOrderedDescending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+            
+        }];
+        
+//        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"agile" ascending:NO];
+//        NSArray *sortArr = [newArr sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sort,nil]];
+
+        SEL selector = NSSelectorFromString(@"skill1:");
+        for (BaseSprite *sprite in sortArr) {
+            if (sprite.getFlag == 0) {
+                [sprite performSelector:selector withObject:groupBTemp];
+            }else{
+                [sprite performSelector:selector withObject:groupATemp];
+            }
+        }
+    }
 }
+
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{
     CGRect rect = [sprite boundingBox];

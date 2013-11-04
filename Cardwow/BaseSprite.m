@@ -18,4 +18,26 @@
     }
     NSLog(@"_life.current: %f",_life.current);
 }
+
+- (Type)getAgile{
+    return _agile;
+}
+
+- (int)getFlag{
+    return _flag;
+}
+
+- (void)setFlag:(int)flag{
+    _flag = flag;
+}
+
+- (Type)getAttack{
+    return _attack;
+}
+
+- (void)skill1:(NSMutableArray *)array{
+    for (BaseSprite *sprite in array) {
+        [sprite setLife:[self getAttack].current];
+    }
+}
 @end

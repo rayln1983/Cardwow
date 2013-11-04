@@ -13,6 +13,10 @@
 #define DEFENSE 10;
 #define ATTACK 30;
 #define MAGICATTACK 0;
+//attribute
+#define STRONGE 5;
+#define AGILE 20;
+#define INTELLIGENCE 0;
 
 @implementation Hunter
 
@@ -49,6 +53,15 @@
     
     _magicAttack.current = MAGICATTACK;
     _magicAttack.max = MAGICATTACK;
+    
+    _stronge.current = STRONGE;
+    _stronge.max = STRONGE;
+    
+    _agile.current = AGILE;
+    _agile.max = AGILE;
+    
+    _intelligence.current = INTELLIGENCE;
+    _intelligence.max = INTELLIGENCE;
 }
 
 - (void)draw{
@@ -70,5 +83,19 @@
     float percent = _power.current/_power.max;
     ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
 }
-
+- (void)skill1:(NSMutableArray *)array{
+    for (BaseSprite *sprite in array) {
+        [sprite setLife:[self getAttack].current];
+    }
+}
+- (void)skill2:(NSMutableArray *)array{
+    for (BaseSprite *sprite in array) {
+        [sprite setLife:[self getAttack].current];
+    }
+}
+- (void)skill3:(NSMutableArray *)array{
+    for (BaseSprite *sprite in array) {
+        [sprite setLife:[self getAttack].current];
+    }
+}
 @end
