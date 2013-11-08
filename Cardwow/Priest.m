@@ -31,6 +31,10 @@
     temp.position = self.position;
     [layer addChild:temp];
     [temp initAttribute];
+    
+    temp.point = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:20];
+    [temp.point setPosition:self.position];
+    [layer addChild:temp.point];
     return temp;
 }
 
@@ -73,13 +77,13 @@
 - (void)drawLife{
     glLineWidth( 7.0f );
     INIT_LIFE_COLOR;
-    float percent = _life.current/_life.max;
+    float percent = (float)_life.current/(float)_life.max;
     ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
 }
 - (void)drawPower{
     glLineWidth( 5.0f );
     INIT_POWER_COLOR;
-    float percent = _life.current/_life.max;
+    float percent = (float)_life.current/(float)_life.max;
     ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
 }
 

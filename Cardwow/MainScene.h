@@ -30,5 +30,5 @@
 @property (nonatomic, strong) CCSprite *startButton;
 @property (nonatomic, assign) int attackGroup;
 - (id) initWithParams:(NSMutableArray *)layoutArray;
-
+- (void)test:(id)sender;
 @end
