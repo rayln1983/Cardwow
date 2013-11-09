@@ -145,43 +145,10 @@ typedef struct {
     [self fight:params];
     
     
-//    for (int i = 0; i < 3; i++) {
-//        NSMutableArray *groupATemp = [_groupA objectAtIndex:i];
-//        NSMutableArray *groupBTemp = [_groupB objectAtIndex:i];
-//        NSArray *newArr = [groupATemp arrayByAddingObjectsFromArray:groupBTemp];
-//        NSArray *sortArr = [newArr sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
-//            int agile1 = [obj1 getAgile].current;
-//            int agile2 = [obj2 getAgile].current;
-//            if (agile1 > agile2) {
-//                return (NSComparisonResult)NSOrderedAscending;
-//            }
-//            
-//            if (agile1 < agile2) {
-//                return (NSComparisonResult)NSOrderedDescending;
-//            }
-//            return (NSComparisonResult)NSOrderedSame;
-//            
-//        }];
-//        NSMutableArray *sortMutArr = [[NSMutableArray alloc] initWithArray:sortArr];
-//
-////        SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", (i+1)]);
-////        for (BaseSprite *sprite in sortArr) {
-////            if ([sprite getLife].current > 0) {
-////                if (sprite.getFlag == 0) {
-////                    [sprite performSelector:selector withObject:groupBTemp withObject:self];
-////                }else{
-////                    [sprite performSelector:selector withObject:groupATemp withObject:self];
-////                }
-////            }
-////            
-////        }
-//        NSNumber *row = [NSNumber numberWithInt:i];
-//        NSMutableArray *params = [[NSMutableArray alloc]initWithObjects:groupBTemp,groupATemp,sortMutArr,row, nil];
-//        [self fight:params];
-//        NSLog(@"_groupA:%@", _groupA);
-//        NSLog(@"_groupB:%@", _groupB);
-//        [row release];
-//    }
+    [groupASum release];
+    [groupBSum release];
+    [sortMutSum release];
+    [params release];
 }
 - (void)test:(id)sender :(NSString *)data{
     NSLog(@"test!!!%@",data);
@@ -190,24 +157,20 @@ typedef struct {
 - (void)fight:(NSMutableArray *) params{
     NSMutableArray *sortMutArr = [params objectAtIndex:2];
     int count = [sortMutArr count];
-    NSLog(@"%@",sortMutArr);
     if (count == 0 ) {
         return;
     }
     
     BaseSprite *sprite = [sortMutArr objectAtIndex:(count-1)];
     if ([sprite getLife].current > 0) {
-        NSLog(@"====:%i",[sprite getRow]);
         SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", ([sprite getRow]+1)]);
         NSMutableArray *armyList = [[NSMutableArray alloc] init];
         if (sprite.getFlag == 0) {
-            //[sprite skilltest:[params objectAtIndex:0] :params :@selector(fight::)];
             [armyList addObject:_groupB];
             [armyList addObject:_groupA];
             [sprite performSelector:selector withObject:armyList withObject:self];
             
         }else{
-            //[sprite skilltest:[params objectAtIndex:1] :params :@selector(fight::)];
             [armyList addObject:_groupA];
             [armyList addObject:_groupB];
             [sprite performSelector:selector withObject:armyList withObject:self];
@@ -218,10 +181,6 @@ typedef struct {
         [self performSelector:@selector(fight:) withObject:params afterDelay:1];
     }
 }
-
-//- (void)fight:(NSMutableArray *)array :(CCLayer *)layer{
-//    
-//}
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{
     CGRect rect = [sprite boundingBox];
