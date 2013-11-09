@@ -24,6 +24,26 @@
         _life.current = 0;
         [array removeObject:self];
         [layer removeChild:self cleanup:YES];
+        [layer removeChild:[self point] cleanup:YES];
+        return YES;
+    }
+    return NO;
+}
+
+- (void)setGreenFont:(NSString *)str{
+    [_point setColor:ccGREEN];
+    [_point setOpacity:255];
+    [_point setString:str];
+    CCFadeOut *action = [CCFadeOut actionWithDuration:1];
+    [_point runAction:action];
+}
+
+- (BOOL)setHeal:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
+    [self setGreenFont:[NSString stringWithFormat:@"+%i",damage]];
+    _life.current = _life.current + damage;
+    if (_life.current >= _life.max) {
+        _life.current = _life.max;
+        
         return YES;
     }
     return NO;
@@ -67,6 +87,22 @@
     return _life;
 }
 
+- (void)setAgile:(int)agile{
+    _agile.current = _agile.current+agile;
+}
+
+- (int)getRow{
+    return _row;
+}
+
+- (void)setRow:(int)row{
+    _row = row;
+}
+
+- (Type)getMagicAttack{
+    return _magicAttack;
+}
+
 //- (void)skill1:(NSMutableArray *)array :(NSMutableArray *)params :(SEL)selector{
 //    CCLayer *layer = [params objectAtIndex:3];
 //    for (int i = [array count]-1 ; i >=0; i--) {
@@ -76,7 +112,10 @@
 //    }
 //    
 //}
-- (void)skill1:(NSMutableArray *)array :(CCLayer *)layer{
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [emeny objectAtIndex:0];
     for (int i = [array count]-1 ; i >=0; i--) {
         BaseSprite *sprite = [array objectAtIndex:i];
         [sprite setDamageFont:[self getAttack].current];
@@ -84,19 +123,27 @@
     }
     
 }
-- (void)skill2:(NSMutableArray *)array :(CCLayer *)layer{
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [alias objectAtIndex:0];
     for (int i = [array count]-1 ; i >=0; i--) {
         BaseSprite *sprite = [array objectAtIndex:i];
-        [sprite setDamageFont:[self getAttack].current];
-        [sprite setLife:[self getAttack].current :array :layer];
+//        [sprite setDamageFont:[self getAttack].current];
+//        [sprite setLife:[self getAttack].current :array :layer];
+        NSLog(@"====heal==%i",[self getMagicAttack].current);
+        [sprite setHeal:[self getMagicAttack].current :array :layer];
     }
     
 }
-- (void)skill3:(NSMutableArray *)array :(CCLayer *)layer{
+- (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [emeny objectAtIndex:0];
     for (int i = [array count]-1 ; i >=0; i--) {
         BaseSprite *sprite = [array objectAtIndex:i];
-        [sprite setDamageFont:[self getAttack].current];
-        [sprite setLife:[self getAttack].current :array :layer];
+//        [sprite setHeal:[self getAttack].current];
+        [sprite setHeal:[self getMagicAttack].current :array :layer];
     }
     
 }

@@ -12,7 +12,7 @@
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 30;
-#define MAGICATTACK 0;
+#define MAGICATTACK 40;
 //attribute
 #define STRONGE 5;
 #define AGILE 5;
@@ -32,7 +32,7 @@
     [layer addChild:temp];
     [temp initAttribute];
     
-    temp.point = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:20];
+    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:20];
     [temp.point setPosition:self.position];
     [layer addChild:temp.point];
     return temp;

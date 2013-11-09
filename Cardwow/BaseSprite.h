@@ -18,6 +18,7 @@ typedef struct {
 
 @interface BaseSprite : CCSprite {
     int _flag;
+    int _row;
     //life
     Type _life;
     //power
@@ -42,6 +43,8 @@ typedef struct {
 
 - (int)getFlag;
 - (void)setFlag:(int)flag;
+- (int)getRow;
+- (void)setRow:(int)row;
 - (void)skill1:(NSMutableArray *)array :(CCLayer *)layer;
 - (void)skill2:(NSMutableArray *)array :(CCLayer *)layer;
 - (void)skill3:(NSMutableArray *)array :(CCLayer *)layer;
@@ -51,5 +54,7 @@ typedef struct {
 
 - (Type)getAttack;
 - (Type)getLife;
+- (Type)getMagicAttack;
 - (Type)getAgile;
+- (void)setAgile:(int)agile;
 @end

@@ -32,7 +32,7 @@
     [layer addChild:temp];
     [temp initAttribute];
     
-    temp.point = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:20];
+    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:20];
     [temp.point setPosition:self.position];
     [layer addChild:temp.point];
     return temp;
