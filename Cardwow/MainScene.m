@@ -20,7 +20,6 @@ typedef struct {
         self.isTouchEnabled = YES;
         [self initButton];
         [self initLayout:layoutArray];
-        
     }
     return self;
 }
@@ -44,6 +43,7 @@ typedef struct {
         NSLog(@"positon: %f, %f", s.position.x, s.position.y);
         GroupType type = [self getIndex:s.position.y];
         NSLog(@"====%i, %i", type.index, type.type);
+        [s setFlag:type.type];
         if (type.type == 0) {
             NSMutableArray *array = [_groupA objectAtIndex:type.index];
             [array addObject:s];
@@ -94,20 +94,134 @@ typedef struct {
     CGPoint  point=[[CCDirector sharedDirector] convertToGL:touchLocation];
     
     if([self isTouchObject:point :_startButton]){
-        _attackGroup = 0;
-        [self startWar];
+//        [self startWar];
+//        [NSThread detachNewThreadSelector:@selector(thread) toTarget:self withObject:nil];
+        [self scheduleOnce:@selector(startWar) delay:0];
+        
+    }
+}
+- (void)addAgileBuff:(NSMutableArray *)array{
+    for (BaseSprite *sprite in array) {
+        [sprite setAgile:20];
     }
 }
 
-- (void)startWar{
-    NSLog(@"%i, %i, %i, %i", 0%2, 1%2, 2%2, 3%2);
-    if (_attackGroup%2 == 0) {
-        
-    }else{
-        
+- (void)setRow:(NSMutableArray *)array :(int)row{
+    for (BaseSprite *sprite in array) {
+        [sprite setRow:row];
     }
-    _attackGroup++;
 }
+- (void)startWar{
+    NSMutableArray *groupASum = [[NSMutableArray alloc] init];
+    NSMutableArray *groupBSum = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 3; i++) {
+        NSMutableArray *tempA =[_groupA objectAtIndex:i];
+        NSMutableArray *tempB =[_groupB objectAtIndex:i];
+        if (i == 1) {
+            [self addAgileBuff:tempA];
+            [self addAgileBuff:tempB];
+        }
+        [self setRow:tempA :i];
+        [self setRow:tempB :i];
+        [groupASum addObjectsFromArray:tempA];
+        [groupBSum addObjectsFromArray:tempB];
+    }
+    NSArray *sum = [groupASum arrayByAddingObjectsFromArray:groupBSum];
+    NSArray *sortSum = [sum sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
+        int agile1 = [obj1 getAgile].current;
+        int agile2 = [obj2 getAgile].current;
+        if (agile1 > agile2) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if (agile1 < agile2) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+        
+    }];
+    NSMutableArray *sortMutSum = [[NSMutableArray alloc] initWithArray:sortSum];
+    NSMutableArray *params = [[NSMutableArray alloc]initWithObjects:_groupB,_groupA,sortMutSum, nil];
+    [self fight:params];
+    
+    
+//    for (int i = 0; i < 3; i++) {
+//        NSMutableArray *groupATemp = [_groupA objectAtIndex:i];
+//        NSMutableArray *groupBTemp = [_groupB objectAtIndex:i];
+//        NSArray *newArr = [groupATemp arrayByAddingObjectsFromArray:groupBTemp];
+//        NSArray *sortArr = [newArr sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
+//            int agile1 = [obj1 getAgile].current;
+//            int agile2 = [obj2 getAgile].current;
+//            if (agile1 > agile2) {
+//                return (NSComparisonResult)NSOrderedAscending;
+//            }
+//            
+//            if (agile1 < agile2) {
+//                return (NSComparisonResult)NSOrderedDescending;
+//            }
+//            return (NSComparisonResult)NSOrderedSame;
+//            
+//        }];
+//        NSMutableArray *sortMutArr = [[NSMutableArray alloc] initWithArray:sortArr];
+//
+////        SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", (i+1)]);
+////        for (BaseSprite *sprite in sortArr) {
+////            if ([sprite getLife].current > 0) {
+////                if (sprite.getFlag == 0) {
+////                    [sprite performSelector:selector withObject:groupBTemp withObject:self];
+////                }else{
+////                    [sprite performSelector:selector withObject:groupATemp withObject:self];
+////                }
+////            }
+////            
+////        }
+//        NSNumber *row = [NSNumber numberWithInt:i];
+//        NSMutableArray *params = [[NSMutableArray alloc]initWithObjects:groupBTemp,groupATemp,sortMutArr,row, nil];
+//        [self fight:params];
+//        NSLog(@"_groupA:%@", _groupA);
+//        NSLog(@"_groupB:%@", _groupB);
+//        [row release];
+//    }
+}
+- (void)test:(id)sender :(NSString *)data{
+    NSLog(@"test!!!%@",data);
+}
+
+- (void)fight:(NSMutableArray *) params{
+    NSMutableArray *sortMutArr = [params objectAtIndex:2];
+    int count = [sortMutArr count];
+    NSLog(@"%@",sortMutArr);
+    if (count == 0 ) {
+        return;
+    }
+    
+    BaseSprite *sprite = [sortMutArr objectAtIndex:(count-1)];
+    if ([sprite getLife].current > 0) {
+        NSLog(@"====:%i",[sprite getRow]);
+        SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", ([sprite getRow]+1)]);
+        NSMutableArray *armyList = [[NSMutableArray alloc] init];
+        if (sprite.getFlag == 0) {
+            //[sprite skilltest:[params objectAtIndex:0] :params :@selector(fight::)];
+            [armyList addObject:_groupB];
+            [armyList addObject:_groupA];
+            [sprite performSelector:selector withObject:armyList withObject:self];
+            
+        }else{
+            //[sprite skilltest:[params objectAtIndex:1] :params :@selector(fight::)];
+            [armyList addObject:_groupA];
+            [armyList addObject:_groupB];
+            [sprite performSelector:selector withObject:armyList withObject:self];
+            
+        }
+        [sortMutArr removeObject:sprite];
+        [armyList release];
+        [self performSelector:@selector(fight:) withObject:params afterDelay:1];
+    }
+}
+
+//- (void)fight:(NSMutableArray *)array :(CCLayer *)layer{
+//    
+//}
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{
     CGRect rect = [sprite boundingBox];

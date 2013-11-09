@@ -14,6 +14,10 @@
 #define ATTACK 30;
 #define MAGICATTACK 0;
 
+#define STRONGE 20;
+#define AGILE 5;
+#define INTELLIGENCE 0;
+
 @implementation Warrior
 - (id)init{
     if (self = [super init]) {
@@ -27,6 +31,10 @@
     temp.tag = 1;
     [layer addChild:temp];
     [temp initAttribute];
+    
+    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:20];
+    [temp.point setPosition:self.position];
+    [layer addChild:temp.point];
     return temp;
 }
 
@@ -48,6 +56,15 @@
     
     _magicAttack.current = MAGICATTACK;
     _magicAttack.max = MAGICATTACK;
+    
+    _stronge.current = STRONGE;
+    _stronge.max = STRONGE;
+    
+    _agile.current = AGILE;
+    _agile.max = AGILE;
+    
+    _intelligence.current = INTELLIGENCE;
+    _intelligence.max = INTELLIGENCE;
 }
 
 - (void)draw{
@@ -60,13 +77,21 @@
 - (void)drawLife{
     glLineWidth( 7.0f );
     INIT_LIFE_COLOR;
-    float percent = _life.current/_life.max;
+    float percent = (float)_life.current/(float)_life.max;
     ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
+    
 }
 - (void)drawPower{
     glLineWidth( 5.0f );
     INIT_POWER_COLOR;
-    float percent = _power.current/_power.max;
+    float percent = (float)_power.current/(float)_power.max;
     ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
 }
+//- (void)skill1:(NSMutableArray *)array :(CCLayer *)layer{
+//    for (BaseSprite *sprite in array) {
+//        [sprite setDamageFont:[self getAttack].current :layer];
+//        [sprite setLife:[self getAttack].current :array :layer];
+//    }
+//    
+//}
 @end

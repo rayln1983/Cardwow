@@ -12,11 +12,13 @@
 #define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
 
 typedef struct {
-    float current;
-    float max;
+    int current;
+    int max;
 } Type;
 
 @interface BaseSprite : CCSprite {
+    int _flag;
+    int _row;
     //life
     Type _life;
     //power
@@ -25,8 +27,34 @@ typedef struct {
     Type _defense;
     Type _attack;
     Type _magicAttack;
+    
+    Type _stronge;
+    Type _agile;
+    Type _intelligence;
+    
+    CCLabelTTF *_point;
 }
+//@property (nonatomic, assign) Type agile;
+@property (nonatomic, retain) CCLabelTTF *point;
 
 - (id)copyWithSelf:(CCLayer *)layer;
-- (void)setLife:(float)damage;
+- (BOOL)setLife:(int)damage;
+
+
+- (int)getFlag;
+- (void)setFlag:(int)flag;
+- (int)getRow;
+- (void)setRow:(int)row;
+- (void)skill1:(NSMutableArray *)array :(CCLayer *)layer;
+- (void)skill2:(NSMutableArray *)array :(CCLayer *)layer;
+- (void)skill3:(NSMutableArray *)array :(CCLayer *)layer;
+- (void)skilltest:(NSMutableArray *)array :(NSMutableArray *)layer :(SEL)selector;
+- (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
+- (void)setDamageFont:(int)damage :(CCLayer *)layer;
+
+- (Type)getAttack;
+- (Type)getLife;
+- (Type)getMagicAttack;
+- (Type)getAgile;
+- (void)setAgile:(int)agile;
 @end
