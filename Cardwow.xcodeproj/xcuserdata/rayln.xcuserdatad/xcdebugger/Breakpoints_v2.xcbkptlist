@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/BaseSprite.m"
-            timestampString = "405698869.224825"
+            timestampString = "405747538.764942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150">
+            startingLineNumber = "162"
+            endingLineNumber = "162">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -148,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/Hunter.m"
-            timestampString = "405611556.106503"
+            timestampString = "405747393.704374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -163,7 +163,7 @@
                   symbolName = "-[Hunter skill1:]"
                   moduleName = "Cardwow"
                   urlString = "file:///Users/rayln/Documents/cocos2dproject/Cardwow/Cardwow/Hunter.m"
-                  timestampString = "405698869.652918"
+                  timestampString = "405747671.892538"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -177,7 +177,7 @@
                   symbolName = "-[Hunter skill1:]"
                   moduleName = "Cardwow"
                   urlString = "file:///Users/rayln/Documents/cocos2dproject/Cardwow/Cardwow/Hunter.m"
-                  timestampString = "405698869.653215"
+                  timestampString = "405747671.892782"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -258,11 +258,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/BaseSprite.m"
-            timestampString = "405673907.159188"
+            timestampString = "405747538.764942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-setGreenFont:"
             landmarkType = "5">
          </BreakpointContent>
@@ -274,12 +274,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cardwow/BaseSprite.m"
-            timestampString = "405697674.761018"
+            timestampString = "405747538.764942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-skill2::"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cardwow/BaseSprite.m"
+            timestampString = "405747538.764942"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-setDamageFont:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

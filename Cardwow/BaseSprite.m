@@ -23,19 +23,26 @@
     if (_life.current <=0) {
         _life.current = 0;
         [array removeObject:self];
+        [layer removeChild:_point cleanup:YES];
         [layer removeChild:self cleanup:YES];
-        [layer removeChild:[self point] cleanup:YES];
         return YES;
     }
     return NO;
 }
-
+- (void)fontAnimation{
+    CCScaleTo *scale1 = [CCScaleTo actionWithDuration:.1 scale:1.5];
+    CCScaleTo *scale2 = [CCScaleTo actionWithDuration:.1 scale:1.0];
+    CCFadeOut *action = [CCFadeOut actionWithDuration:.8];
+    CCSequence *se = [CCSequence actions:scale1,scale2,action, nil];
+    [_point runAction:se];
+}
 - (void)setGreenFont:(NSString *)str{
     [_point setColor:ccGREEN];
     [_point setOpacity:255];
     [_point setString:str];
-    CCFadeOut *action = [CCFadeOut actionWithDuration:1];
-    [_point runAction:action];
+//    CCFadeOut *action = [CCFadeOut actionWithDuration:1];
+//    [_point runAction:action];
+    [self fontAnimation];
 }
 
 - (BOOL)setHeal:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
@@ -55,12 +62,12 @@
 }
 
 - (void)setDamageFont:(int)damage{
-    
+    [_point setOpacity:255];
     [_point setColor:ccRED];
     [_point setString:[NSString stringWithFormat:@"-%i",damage]];
-    CCFadeOut *action = [CCFadeOut actionWithDuration:1];
-    [_point runAction:action];
-    
+//    CCFadeOut *action = [CCFadeOut actionWithDuration:1];
+//    [_point runAction:action];
+    [self fontAnimation];
 }
 
 - (Type)getAgile{
@@ -117,10 +124,13 @@
     NSMutableArray *emeny = [armyList objectAtIndex:0];
 //    NSMutableArray *alias = [armyList objectAtIndex:1];
     NSMutableArray *array = [emeny objectAtIndex:0];
-    int random = [Util random:0 :[array count]-1 ];
-    BaseSprite *sprite = [array objectAtIndex:random];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        
+        [sprite setHurt:[self getAttack].current :array :layer];
+    }
     
-    [sprite setHurt:[self getAttack].current :array :layer];
 }
 - (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
