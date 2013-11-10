@@ -29,6 +29,9 @@
 @property (nonatomic, strong) NSArray *groupBLayout;
 @property (nonatomic, strong) CCSprite *startButton;
 @property (nonatomic, assign) int attackGroup;
+@property (nonatomic, strong) NSMutableArray *groupAPosition;
+@property (nonatomic, strong) NSMutableArray *groupBPosition;
+
 - (id) initWithParams:(NSMutableArray *)layoutArray;
 - (void)test:(id)sender;
 @end

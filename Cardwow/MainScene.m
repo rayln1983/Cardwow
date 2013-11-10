@@ -18,10 +18,17 @@ typedef struct {
     if (self = [super init]) {
         self.scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
         self.isTouchEnabled = YES;
+        [self initPosition];
         [self initButton];
         [self initLayout:layoutArray];
+        
     }
     return self;
+}
+
+- (void)initPosition{
+    _groupAPosition = [[NSMutableArray alloc] initWithObjects:@"328",@"388",@"448", nil];
+    _groupBPosition = [[NSMutableArray alloc] initWithObjects:@"152",@"92",@"32", nil];
 }
 
 - (void)initButton{
@@ -55,6 +62,35 @@ typedef struct {
     }];
     NSLog(@"_groupA: %@", _groupA);
     NSLog(@"_groupB: %@", _groupB);
+}
+
+- (void)exchangeArrayLayout{
+    NSMutableArray *groupARow1 = [_groupA objectAtIndex:0];
+    [_groupA addObject:groupARow1];
+    [_groupA removeObjectAtIndex:0];
+    
+    NSMutableArray *groupBRow1 = [_groupB objectAtIndex:0];
+    [_groupB addObject:groupBRow1];
+    [_groupB removeObjectAtIndex:0];
+}
+
+- (void)exchangeArrayPosition{
+    [_groupA enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
+        int y = [[_groupAPosition objectAtIndex:idx] intValue];
+        for (BaseSprite *sprite in array) {
+            CCMoveTo *move = [CCMoveTo actionWithDuration:.5 position:ccp(sprite.position.x, y)];
+            [sprite runAction:move];
+            [sprite initFontLayout:ccp(sprite.position.x, y)];
+        }
+    }];
+    [_groupB enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
+        int y = [[_groupBPosition objectAtIndex:idx] intValue];
+        for (BaseSprite *sprite in array) {
+            CCMoveTo *move = [CCMoveTo actionWithDuration:.5 position:ccp(sprite.position.x, y)];
+            [sprite runAction:move];
+            [sprite initFontLayout:ccp(sprite.position.x, y)];
+        }
+    }];
 }
 
 - (GroupType)getIndex:(float)y{
@@ -157,7 +193,9 @@ typedef struct {
 - (void)fight:(NSMutableArray *) params{
     NSMutableArray *sortMutArr = [params objectAtIndex:2];
     int count = [sortMutArr count];
+    NSLog(@"count:%i",count);
     if (count == 0 ) {
+        [self warfinish];
         return;
     }
     
@@ -179,7 +217,16 @@ typedef struct {
         [sortMutArr removeObject:sprite];
         [armyList release];
         [self performSelector:@selector(fight:) withObject:params afterDelay:1];
+    }else{
+        [sortMutArr removeObject:sprite];
+        [self performSelector:@selector(fight:) withObject:params];
     }
+}
+
+- (void)warfinish{
+    NSLog(@"finish!!");
+    [self exchangeArrayLayout];
+    [self exchangeArrayPosition];
 }
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{
@@ -194,6 +241,8 @@ typedef struct {
     [_groupALayout release];
     [_groupBLayout release];
     [_startButton release];
+    [_groupAPosition release];
+    [_groupBPosition release];
     [super dealloc];
 }
 @end

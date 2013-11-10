@@ -58,4 +58,5 @@ typedef struct {
 - (Type)getMagicAttack;
 - (Type)getAgile;
 - (void)setAgile:(int)agile;
+- (void)initFontLayout:(CGPoint)point;
 @end

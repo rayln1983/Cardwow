@@ -119,6 +119,10 @@
     [self runAction:se];
 }
 
+- (void)initFontLayout:(CGPoint)point{
+    [_point setPosition:point];
+}
+
 - (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
     NSMutableArray *emeny = [armyList objectAtIndex:0];
@@ -146,9 +150,9 @@
 }
 - (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
-    NSMutableArray *emeny = [armyList objectAtIndex:0];
-//    NSMutableArray *alias = [armyList objectAtIndex:1];
-    NSMutableArray *array = [emeny objectAtIndex:0];
+//    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [alias objectAtIndex:0];
     for (int i = [array count]-1 ; i >=0; i--) {
         BaseSprite *sprite = [array objectAtIndex:i];
         [sprite setHeal:[self getMagicAttack].current :array :layer];
