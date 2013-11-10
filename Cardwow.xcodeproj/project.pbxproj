@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2404843318248AB0008C9B37 /* menustart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2404843218248AB0008C9B37 /* menustart.png */; };
+		240C4C09182E1167008CEB5E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 240C4C08182E1167008CEB5E /* Util.m */; };
 		24876F27181E2CC00081874C /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 24876F26181E2CC00081874C /* MainScene.m */; };
 		2494661A182A973400EA8DFA /* bg_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24946618182A973400EA8DFA /* bg_01.jpg */; };
 		2494661B182A973400EA8DFA /* bg_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24946619182A973400EA8DFA /* bg_02.jpg */; };
@@ -265,6 +266,8 @@
 
 /* Begin PBXFileReference section */
 		2404843218248AB0008C9B37 /* menustart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menustart.png; sourceTree = "<group>"; };
+		240C4C07182E1167008CEB5E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		240C4C08182E1167008CEB5E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		24876F25181E2CC00081874C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		24876F26181E2CC00081874C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		24946618182A973400EA8DFA /* bg_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_01.jpg; path = Resources/assets/Resource/plane/bg_01.jpg; sourceTree = "<group>"; };
@@ -742,6 +745,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240C4C06182E1151008CEB5E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				240C4C07182E1167008CEB5E /* Util.h */,
+				240C4C08182E1167008CEB5E /* Util.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
 		24F4B3EC18181F1800F0F752 = {
 			isa = PBXGroup;
 			children = (
@@ -778,6 +790,7 @@
 		24F4B40A18181F1800F0F752 /* Cardwow */ = {
 			isa = PBXGroup;
 			children = (
+				240C4C06182E1151008CEB5E /* Util */,
 				24F4B7191818328300F0F752 /* Entity */,
 				24F4B7181818326E00F0F752 /* Scene */,
 				24F4B5E118181F1A00F0F752 /* AppDelegate.h */,
@@ -1732,6 +1745,7 @@
 				24F4B52918181F1900F0F752 /* CCVertex.m in Sources */,
 				24F4B50618181F1900F0F752 /* CCTouchHandler.m in Sources */,
 				24F4B56C18181F1A00F0F752 /* mat4.c in Sources */,
+				240C4C09182E1167008CEB5E /* Util.m in Sources */,
 				24F4B6D8181825CA00F0F752 /* CCBKeyframe.m in Sources */,
 				24F4B57018181F1A00F0F752 /* plane.c in Sources */,
 				24F4B44418181F1800F0F752 /* CCActionPageTurn3D.m in Sources */,

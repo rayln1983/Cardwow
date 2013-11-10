@@ -18,10 +18,17 @@ typedef struct {
     if (self = [super init]) {
         self.scene = [CCBReader sceneWithNodeGraphFromFile:@"MainScene.ccbi"];
         self.isTouchEnabled = YES;
+        [self initPosition];
         [self initButton];
         [self initLayout:layoutArray];
+        
     }
     return self;
+}
+
+- (void)initPosition{
+    _groupAPosition = [[NSMutableArray alloc] initWithObjects:@"328",@"388",@"448", nil];
+    _groupBPosition = [[NSMutableArray alloc] initWithObjects:@"152",@"92",@"32", nil];
 }
 
 - (void)initButton{
@@ -55,6 +62,35 @@ typedef struct {
     }];
     NSLog(@"_groupA: %@", _groupA);
     NSLog(@"_groupB: %@", _groupB);
+}
+
+- (void)exchangeArrayLayout{
+    NSMutableArray *groupARow1 = [_groupA objectAtIndex:0];
+    [_groupA addObject:groupARow1];
+    [_groupA removeObjectAtIndex:0];
+    
+    NSMutableArray *groupBRow1 = [_groupB objectAtIndex:0];
+    [_groupB addObject:groupBRow1];
+    [_groupB removeObjectAtIndex:0];
+}
+
+- (void)exchangeArrayPosition{
+    [_groupA enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
+        int y = [[_groupAPosition objectAtIndex:idx] intValue];
+        for (BaseSprite *sprite in array) {
+            CCMoveTo *move = [CCMoveTo actionWithDuration:.5 position:ccp(sprite.position.x, y)];
+            [sprite runAction:move];
+            [sprite initFontLayout:ccp(sprite.position.x, y)];
+        }
+    }];
+    [_groupB enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
+        int y = [[_groupBPosition objectAtIndex:idx] intValue];
+        for (BaseSprite *sprite in array) {
+            CCMoveTo *move = [CCMoveTo actionWithDuration:.5 position:ccp(sprite.position.x, y)];
+            [sprite runAction:move];
+            [sprite initFontLayout:ccp(sprite.position.x, y)];
+        }
+    }];
 }
 
 - (GroupType)getIndex:(float)y{
@@ -145,43 +181,10 @@ typedef struct {
     [self fight:params];
     
     
-//    for (int i = 0; i < 3; i++) {
-//        NSMutableArray *groupATemp = [_groupA objectAtIndex:i];
-//        NSMutableArray *groupBTemp = [_groupB objectAtIndex:i];
-//        NSArray *newArr = [groupATemp arrayByAddingObjectsFromArray:groupBTemp];
-//        NSArray *sortArr = [newArr sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
-//            int agile1 = [obj1 getAgile].current;
-//            int agile2 = [obj2 getAgile].current;
-//            if (agile1 > agile2) {
-//                return (NSComparisonResult)NSOrderedAscending;
-//            }
-//            
-//            if (agile1 < agile2) {
-//                return (NSComparisonResult)NSOrderedDescending;
-//            }
-//            return (NSComparisonResult)NSOrderedSame;
-//            
-//        }];
-//        NSMutableArray *sortMutArr = [[NSMutableArray alloc] initWithArray:sortArr];
-//
-////        SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", (i+1)]);
-////        for (BaseSprite *sprite in sortArr) {
-////            if ([sprite getLife].current > 0) {
-////                if (sprite.getFlag == 0) {
-////                    [sprite performSelector:selector withObject:groupBTemp withObject:self];
-////                }else{
-////                    [sprite performSelector:selector withObject:groupATemp withObject:self];
-////                }
-////            }
-////            
-////        }
-//        NSNumber *row = [NSNumber numberWithInt:i];
-//        NSMutableArray *params = [[NSMutableArray alloc]initWithObjects:groupBTemp,groupATemp,sortMutArr,row, nil];
-//        [self fight:params];
-//        NSLog(@"_groupA:%@", _groupA);
-//        NSLog(@"_groupB:%@", _groupB);
-//        [row release];
-//    }
+    [groupASum release];
+    [groupBSum release];
+    [sortMutSum release];
+    [params release];
 }
 - (void)test:(id)sender :(NSString *)data{
     NSLog(@"test!!!%@",data);
@@ -190,24 +193,22 @@ typedef struct {
 - (void)fight:(NSMutableArray *) params{
     NSMutableArray *sortMutArr = [params objectAtIndex:2];
     int count = [sortMutArr count];
-    NSLog(@"%@",sortMutArr);
+    NSLog(@"count:%i",count);
     if (count == 0 ) {
+        [self warfinish];
         return;
     }
     
     BaseSprite *sprite = [sortMutArr objectAtIndex:(count-1)];
     if ([sprite getLife].current > 0) {
-        NSLog(@"====:%i",[sprite getRow]);
         SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", ([sprite getRow]+1)]);
         NSMutableArray *armyList = [[NSMutableArray alloc] init];
         if (sprite.getFlag == 0) {
-            //[sprite skilltest:[params objectAtIndex:0] :params :@selector(fight::)];
             [armyList addObject:_groupB];
             [armyList addObject:_groupA];
             [sprite performSelector:selector withObject:armyList withObject:self];
             
         }else{
-            //[sprite skilltest:[params objectAtIndex:1] :params :@selector(fight::)];
             [armyList addObject:_groupA];
             [armyList addObject:_groupB];
             [sprite performSelector:selector withObject:armyList withObject:self];
@@ -216,12 +217,17 @@ typedef struct {
         [sortMutArr removeObject:sprite];
         [armyList release];
         [self performSelector:@selector(fight:) withObject:params afterDelay:1];
+    }else{
+        [sortMutArr removeObject:sprite];
+        [self performSelector:@selector(fight:) withObject:params];
     }
 }
 
-//- (void)fight:(NSMutableArray *)array :(CCLayer *)layer{
-//    
-//}
+- (void)warfinish{
+    NSLog(@"finish!!");
+    [self exchangeArrayLayout];
+    [self exchangeArrayPosition];
+}
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{
     CGRect rect = [sprite boundingBox];
@@ -235,6 +241,8 @@ typedef struct {
     [_groupALayout release];
     [_groupBLayout release];
     [_startButton release];
+    [_groupAPosition release];
+    [_groupBPosition release];
     [super dealloc];
 }
 @end

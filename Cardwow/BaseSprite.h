@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Util.h"
 #define INIT_LIFE_COLOR ccDrawColor4B(81,133,54,255)
 #define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
 
@@ -57,4 +58,5 @@ typedef struct {
 - (Type)getMagicAttack;
 - (Type)getAgile;
 - (void)setAgile:(int)agile;
+- (void)initFontLayout:(CGPoint)point;
 @end

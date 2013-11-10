@@ -18,6 +18,8 @@
 #define AGILE 5;
 #define INTELLIGENCE 0;
 
+#define FONTSIZE 30;
+
 @implementation Warrior
 - (id)init{
     if (self = [super init]) {
@@ -32,9 +34,9 @@
     [layer addChild:temp];
     [temp initAttribute];
     
-    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:20];
+    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30 ];
     [temp.point setPosition:self.position];
-    [layer addChild:temp.point];
+    [layer addChild:temp.point z:100];
     return temp;
 }
 
