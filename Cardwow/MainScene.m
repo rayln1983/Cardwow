@@ -21,7 +21,11 @@ typedef struct {
         [self initPosition];
         [self initButton];
         [self initLayout:layoutArray];
-        
+//        DK *dk = [[DK alloc]init];
+//        dk.position = ccp(200, 200);
+//        [self addChild:dk];
+//        
+//        NSLog(@"====content:%f, %f == %f, %f", [dk boundingBox].size.width, [dk boundingBox].size.height, [dk boundingBox].origin.x, [dk boundingBox].origin.y);
     }
     return self;
 }

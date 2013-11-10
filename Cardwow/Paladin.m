@@ -23,6 +23,7 @@
     if (self = [super init]) {
         [self initAttribute];
     }
+    
     return self;
 }
 - (id)copyWithSelf:(CCLayer *)layer{
