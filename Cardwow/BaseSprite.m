@@ -33,16 +33,22 @@
     self.contentSize = size;
     self.tag = 1;
     self.position = point;
+    self.point = damage;
+    self.status = status;
 }
 - (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
-    _life.current = _life.current - damage;
-    if (_life.current <=0) {
-        _life.current = 0;
+    Type life = self.status.life;
+    life.current = life.current - damage;
+//    self.status.life.current = self.status.life.current - damage;
+    if (self.status.life.current <=0) {
+        life.current = 0;
         [array removeObject:self];
         [layer removeChild:_point cleanup:YES];
         [layer removeChild:self cleanup:YES];
+        self.status.life = life;
         return YES;
     }
+    self.status.life = life;
     return NO;
 }
 - (void)fontAnimation{
@@ -63,12 +69,14 @@
 
 - (BOOL)setHeal:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
     [self setGreenFont:[NSString stringWithFormat:@"+%i",damage]];
-    _life.current = _life.current + damage;
-    if (_life.current >= _life.max) {
-        _life.current = _life.max;
-        
+    Type life = self.status.life;
+    life.current = life.current + damage;
+    if (self.status.life.current >= self.status.life.max) {
+        life.current = life.max;
+        self.status.life = life;
         return YES;
     }
+    self.status.life = life;
     return NO;
 }
 
@@ -102,9 +110,6 @@
     return _attack;
 }
 
-- (Type)getLife{
-    return _life;
-}
 
 - (void)setAgile:(int)agile{
     _agile.current = _agile.current+agile;

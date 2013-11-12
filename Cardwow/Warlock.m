@@ -22,11 +22,18 @@
 - (id)init{
     if (self = [super init]) {
         [self initAttribute];
-        [self initElements];
+        [self initElements:ccp(280, 210)];
     }
     return self;
 }
-- (void)initElements{
+- (id)initWithPosition:(CGPoint)point{
+    if (self = [super init]) {
+        [self initAttribute];
+        [self initElements:point];
+    }
+    return self;
+}
+- (void)initElements:(CGPoint)point{
     
     CGSize size = CGSizeMake(56, 56);
     CCSprite *sprite = [CCSprite spriteWithFile:@"class_warlock.jpg"];
@@ -35,18 +42,18 @@
     Type rage; rage.current = POWER; rage.max = POWER;
     Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
     
-    [super initElements:ccp(280, 210) :sprite :status];
+    [super initElements:point :sprite :status];
 }
 - (id)copyWithSelf{
-    return [[Warlock alloc] init];
+    return [[Warlock alloc] initWithPosition:[self position]];
 }
 
 - (void)initAttribute{
-    _life.current = LIFE;
-    _life.max = LIFE;
+    Type life; life.current = LIFE; life.max = LIFE;
+    self.status.life = life;
     
-    _power.current = POWER;
-    _power.max = POWER;
+    Type power; power.current = POWER; power.max = POWER;
+    self.status.power = power;
     
     _armor.current = ARMOR;
     _armor.max = ARMOR;

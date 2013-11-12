@@ -17,9 +17,9 @@
     int _flag;
     int _row;
     //life
-    Type _life;
+    //Type _life;
     //power
-    Type _power;
+    //Type _power;
     Type _armor;
     Type _defense;
     Type _attack;
@@ -33,6 +33,7 @@
 }
 //@property (nonatomic, assign) Type agile;
 @property (nonatomic, retain) CCLabelTTF *point;
+@property (nonatomic, strong) Status *status;
 
 - (id)copyWithSelf;
 - (BOOL)setLife:(int)damage;
