@@ -22,5 +22,12 @@
     }
     return self;
 }
-
+- (void)draw{
+    
+    glLineWidth( 7.0f );
+    ccDrawColor4B(81,133,54,255);
+    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * 1, 3) );
+    [super draw];
+//    NSLog(@"111");
+}
 @end

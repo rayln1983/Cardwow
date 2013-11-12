@@ -8,7 +8,7 @@
 
 #import "Warrior.h"
 #define LIFE 200;
-#define POWER 200;
+#define POWER 100;
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 30;
@@ -24,20 +24,23 @@
 - (id)init{
     if (self = [super init]) {
         [self initAttribute];
+        [self initElements];
     }
     return self;
 }
-- (id)copyWithSelf:(CCLayer *)layer{
-    Warrior *temp = [[Warrior alloc] initWithFile:@"class_warrior.jpg"];
-    temp.position = self.position;
-    temp.tag = 1;
-    [layer addChild:temp];
-    [temp initAttribute];
+- (void)initElements{
     
-    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30 ];
-    [temp.point setPosition:self.position];
-    [layer addChild:temp.point z:100];
-    return temp;
+    CGSize size = CGSizeMake(56, 56);
+    CCSprite *sprite = [CCSprite spriteWithFile:@"class_warrior.jpg"];
+    
+    Type life; life.current = LIFE; life.max = LIFE;
+    Type rage; rage.current = POWER; rage.max = POWER;
+    Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
+    
+    [super initElements:ccp(40, 270) :sprite :status];
+}
+- (id)copyWithSelf{
+    return [[Warrior alloc] init];
 }
 
 - (void)initAttribute{
@@ -70,30 +73,6 @@
 }
 
 - (void)draw{
-    
     [super draw];
-    [self drawLife];
-    [self drawPower];
 }
-
-- (void)drawLife{
-    glLineWidth( 7.0f );
-    INIT_LIFE_COLOR;
-    float percent = (float)_life.current/(float)_life.max;
-    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
-    
-}
-- (void)drawPower{
-    glLineWidth( 5.0f );
-    INIT_POWER_COLOR;
-    float percent = (float)_power.current/(float)_power.max;
-    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
-}
-//- (void)skill1:(NSMutableArray *)array :(CCLayer *)layer{
-//    for (BaseSprite *sprite in array) {
-//        [sprite setDamageFont:[self getAttack].current :layer];
-//        [sprite setLife:[self getAttack].current :array :layer];
-//    }
-//    
-//}
 @end

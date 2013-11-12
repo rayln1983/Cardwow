@@ -17,7 +17,23 @@
     }
     return self;
 }
-
+- (void)initElements:(CGPoint)point :(CCSprite *)sprite :(Status *)status{
+    //init icon
+    CGSize size = CGSizeMake(56, 56);
+    [self addChild:sprite];
+    
+    //init status
+    [self addChild:status];
+    
+    //init font
+    CCLabelTTF *damage = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30 ];
+    [self addChild:damage z:1];
+    
+    //init node status
+    self.contentSize = size;
+    self.tag = 1;
+    self.position = point;
+}
 - (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
     _life.current = _life.current - damage;
     if (_life.current <=0) {

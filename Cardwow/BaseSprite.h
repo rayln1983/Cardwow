@@ -9,15 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Util.h"
+#import "Status.h"
 #define INIT_LIFE_COLOR ccDrawColor4B(81,133,54,255)
 #define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
 
-typedef struct {
-    int current;
-    int max;
-} Type;
-
-@interface BaseSprite : CCSprite {
+@interface BaseSprite : CCNode {
     int _flag;
     int _row;
     //life
@@ -38,7 +34,7 @@ typedef struct {
 //@property (nonatomic, assign) Type agile;
 @property (nonatomic, retain) CCLabelTTF *point;
 
-- (id)copyWithSelf:(CCLayer *)layer;
+- (id)copyWithSelf;
 - (BOOL)setLife:(int)damage;
 
 
@@ -52,7 +48,7 @@ typedef struct {
 - (void)skilltest:(NSMutableArray *)array :(NSMutableArray *)layer :(SEL)selector;
 - (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
 - (void)setDamageFont:(int)damage :(CCLayer *)layer;
-
+- (void)initElements:(CGPoint)point :(CCSprite *)sprite :(Status *)status;
 - (Type)getAttack;
 - (Type)getLife;
 - (Type)getMagicAttack;

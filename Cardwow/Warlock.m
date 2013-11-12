@@ -22,19 +22,23 @@
 - (id)init{
     if (self = [super init]) {
         [self initAttribute];
+        [self initElements];
     }
     return self;
 }
-- (id)copyWithSelf:(CCLayer *)layer{
-    Warlock *temp = [[Warlock alloc] initWithFile:@"class_warlock.jpg"];
-    temp.position = self.position;
-    [layer addChild:temp];
-    [temp initAttribute];
+- (void)initElements{
     
-    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30];
-    [temp.point setPosition:self.position];
-    [layer addChild:temp.point z:100];
-    return temp;
+    CGSize size = CGSizeMake(56, 56);
+    CCSprite *sprite = [CCSprite spriteWithFile:@"class_warlock.jpg"];
+    
+    Type life; life.current = LIFE; life.max = LIFE;
+    Type rage; rage.current = POWER; rage.max = POWER;
+    Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
+    
+    [super initElements:ccp(280, 210) :sprite :status];
+}
+- (id)copyWithSelf{
+    return [[Warlock alloc] init];
 }
 
 - (void)initAttribute{
@@ -67,23 +71,6 @@
 }
 
 - (void)draw{
-    
     [super draw];
-    [self drawLife];
-    [self drawPower];
 }
-
-- (void)drawLife{
-    glLineWidth( 7.0f );
-    INIT_LIFE_COLOR;
-    float percent = (float)_life.current/(float)_life.max;
-    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
-}
-- (void)drawPower{
-    glLineWidth( 5.0f );
-    INIT_POWER_COLOR;
-    float percent = (float)_life.current/(float)_life.max;
-    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
-}
-
 @end
