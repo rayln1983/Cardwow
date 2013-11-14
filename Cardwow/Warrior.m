@@ -81,4 +81,57 @@
 - (void)draw{
     [super draw];
 }
+
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [emeny objectAtIndex:0];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        [sprite setHurt:[self getAttack].current :array :layer];
+        
+        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :3 :0 :0];
+        [self setDebuff:sprite :debuff];
+    }
+    
+    
+}
+
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [alias objectAtIndex:0];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        //[sprite setHurt:[self getAttack].current :array :layer];
+        
+        Buff *debuff = [[Buff alloc] initWithBuff:@"warrior-row2.ico" :1 :0 :1];
+        [self setBuff:sprite :debuff];
+    }
+    
+    
+}
+
+
+
+- (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff{
+    
+    [sprite clearDebuff:debuff];
+    [sprite.debuffList addObject:debuff];
+    [sprite addChild:debuff];
+    [debuff move:[sprite getDebuffPosition]];
+}
+
+- (void)setBuff:(BaseSprite *)sprite :(Buff *)buff{
+    
+    [sprite clearBuff:buff];
+    [sprite.buffList addObject:buff];
+    [sprite addChild:buff];
+    [buff move:[sprite getBuffPosition]];
+}
+
+
+
 @end

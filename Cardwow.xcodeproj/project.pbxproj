@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2404843318248AB0008C9B37 /* menustart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2404843218248AB0008C9B37 /* menustart.png */; };
 		240C4C09182E1167008CEB5E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 240C4C08182E1167008CEB5E /* Util.m */; };
+		2411042718350D72008E26E4 /* Debuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 2411042618350D72008E26E4 /* Debuff.m */; };
+		2411042A18350D7F008E26E4 /* Buff.m in Sources */ = {isa = PBXBuildFile; fileRef = 2411042918350D7F008E26E4 /* Buff.m */; };
 		2411AD38182FB59C00170E8C /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 2411AD37182FB59C00170E8C /* Status.m */; };
 		243DD18C1832832000851D0F /* druid-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD18B1832832000851D0F /* druid-row1.ico */; };
 		243DD18E1832832600851D0F /* druid-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD18D1832832600851D0F /* druid-row2.ico */; };
@@ -293,6 +295,10 @@
 		2404843218248AB0008C9B37 /* menustart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menustart.png; sourceTree = "<group>"; };
 		240C4C07182E1167008CEB5E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		240C4C08182E1167008CEB5E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		2411042518350D72008E26E4 /* Debuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debuff.h; sourceTree = "<group>"; };
+		2411042618350D72008E26E4 /* Debuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debuff.m; sourceTree = "<group>"; };
+		2411042818350D7F008E26E4 /* Buff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buff.h; sourceTree = "<group>"; };
+		2411042918350D7F008E26E4 /* Buff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buff.m; sourceTree = "<group>"; };
 		2411AD36182FB59C00170E8C /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
 		2411AD37182FB59C00170E8C /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
 		243DD18B1832832000851D0F /* druid-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "druid-row1.ico"; sourceTree = "<group>"; };
@@ -1607,6 +1613,10 @@
 				24E2BFF8182F9E35004AC292 /* DK.m */,
 				2411AD36182FB59C00170E8C /* Status.h */,
 				2411AD37182FB59C00170E8C /* Status.m */,
+				2411042518350D72008E26E4 /* Debuff.h */,
+				2411042618350D72008E26E4 /* Debuff.m */,
+				2411042818350D7F008E26E4 /* Buff.h */,
+				2411042918350D7F008E26E4 /* Buff.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -1844,6 +1854,7 @@
 				24F4B50A18181F1900F0F752 /* CCDirectorMac.m in Sources */,
 				24F4B5D418181F1A00F0F752 /* cpSpaceStep.c in Sources */,
 				24F4B5EC18181F1A00F0F752 /* PhysicsSprite.m in Sources */,
+				2411042718350D72008E26E4 /* Debuff.m in Sources */,
 				24F4B51318181F1900F0F752 /* CCWindow.m in Sources */,
 				24F4B5CA18181F1A00F0F752 /* cpShape.c in Sources */,
 				24F4B57C18181F1A00F0F752 /* vec4.c in Sources */,
@@ -1853,6 +1864,7 @@
 				24F4B49A18181F1900F0F752 /* CCParticleSystem.m in Sources */,
 				24F4B4C318181F1900F0F752 /* CCSpriteBatchNode.m in Sources */,
 				24F4B4C018181F1900F0F752 /* CCSprite.m in Sources */,
+				2411042A18350D7F008E26E4 /* Buff.m in Sources */,
 				24F4B5E918181F1A00F0F752 /* IntroLayer.m in Sources */,
 				24F4B52918181F1900F0F752 /* CCVertex.m in Sources */,
 				24F4B50618181F1900F0F752 /* CCTouchHandler.m in Sources */,

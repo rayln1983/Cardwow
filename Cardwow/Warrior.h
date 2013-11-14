@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "BaseSprite.h"
+#import "Debuff.h"
+#import "Buff.h"
 
 @interface Warrior : BaseSprite {
     

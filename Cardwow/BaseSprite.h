@@ -10,6 +10,9 @@
 #import "cocos2d.h"
 #import "Util.h"
 #import "Status.h"
+#import "Debuff.h"
+#import "Buff.h"
+
 #define INIT_LIFE_COLOR ccDrawColor4B(81,133,54,255)
 #define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
 
@@ -35,6 +38,9 @@
 @property (nonatomic, retain) CCLabelTTF *point;
 @property (nonatomic, strong) Status *status;
 
+@property (nonatomic, strong) NSMutableArray *debuffList;
+@property (nonatomic, strong) NSMutableArray *buffList;
+
 - (id)copyWithSelf;
 - (BOOL)setLife:(int)damage;
 
@@ -56,4 +62,11 @@
 - (Type)getAgile;
 - (void)setAgile:(int)agile;
 - (void)initFontLayout:(CGPoint)point;
+- (CGPoint)getDebuffPosition;
+- (CGPoint)getBuffPosition;
+
+- (void)shooter;
+- (BOOL)setHurt:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
+- (void)clearDebuff:(Debuff *)debuff;
+- (void)clearBuff:(Buff *)buff;
 @end

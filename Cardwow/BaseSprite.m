@@ -13,7 +13,8 @@
 
 - (id)init{
     if (self = [super init]) {
-        
+        _debuffList = [[NSMutableArray alloc] init];
+        _buffList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -179,6 +180,45 @@
         [sprite setHeal:[self getMagicAttack].current :array :layer];
     }
     
+}
+
+- (void)clearDebuff:(Debuff *)debuff{
+    [_debuffList enumerateObjectsUsingBlock:^(Debuff *obj, NSUInteger idx, BOOL *stop) {
+        if (obj.row == debuff.row && obj.nType == debuff.nType ) {
+            [_debuffList removeObject:obj];
+            [self removeChild:obj cleanup:YES];
+            stop = YES;
+        }
+    }];
+}
+
+- (void)clearBuff:(Buff *)buff{
+    [_buffList enumerateObjectsUsingBlock:^(Buff *obj, NSUInteger idx, BOOL *stop) {
+        if (obj.row == buff.row && obj.nType == buff.nType ) {
+            [_buffList removeObject:obj];
+            [self removeChild:obj cleanup:YES];
+            stop = YES;
+        }
+    }];
+}
+
+- (CGPoint)getDebuffPosition{
+    CGPoint initPosition = ccp(28, 28);
+    initPosition.y = initPosition.y - ([_debuffList count] - 1)*12;
+    return initPosition;
+}
+
+- (CGPoint)getBuffPosition{
+    CGPoint initPosition = ccp(-28, 28);
+    initPosition.y = initPosition.y - ([_buffList count] - 1)*12;
+    return initPosition;
+}
+- (void)dealloc{
+    [_status release];
+    [_point release];
+    [_debuffList release];
+    [_buffList release];
+    [super dealloc];
 }
 
 @end
