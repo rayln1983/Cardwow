@@ -8,7 +8,7 @@
 
 #import "Warrior.h"
 #define LIFE 200;
-#define POWER 200;
+#define POWER 100;
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 30;
@@ -24,28 +24,37 @@
 - (id)init{
     if (self = [super init]) {
         [self initAttribute];
+        [self initElements:ccp(40, 270)];
     }
     return self;
 }
-- (id)copyWithSelf:(CCLayer *)layer{
-    Warrior *temp = [[Warrior alloc] initWithFile:@"class_warrior.jpg"];
-    temp.position = self.position;
-    temp.tag = 1;
-    [layer addChild:temp];
-    [temp initAttribute];
+- (id)initWithPosition:(CGPoint)point{
+    if (self = [super init]) {
+        [self initAttribute];
+        [self initElements:point];
+    }
+    return self;
+}
+- (void)initElements:(CGPoint)point{
     
-    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30 ];
-    [temp.point setPosition:self.position];
-    [layer addChild:temp.point z:100];
-    return temp;
+    CGSize size = CGSizeMake(56, 56);
+    CCSprite *sprite = [CCSprite spriteWithFile:@"class_warrior.jpg"];
+    
+    Type life; life.current = LIFE; life.max = LIFE;
+    Type rage; rage.current = POWER; rage.max = POWER;
+    Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
+    
+    [super initElements:point :sprite :status];
+}
+- (id)copyWithSelf{
+    return [[Warrior alloc] initWithPosition:[self position]];
 }
 
 - (void)initAttribute{
-    _life.current = LIFE;
-    _life.max = LIFE;
-    
-    _power.current = POWER;
-    _power.max = POWER;
+    Type life; life.current = LIFE; life.max = LIFE;
+    self.status.life = life;
+    Type power; power.current = POWER; power.max = POWER;
+    self.status.power = power;
     
     _armor.current = ARMOR;
     _armor.max = ARMOR;
@@ -70,30 +79,59 @@
 }
 
 - (void)draw{
-    
     [super draw];
-    [self drawLife];
-    [self drawPower];
 }
 
-- (void)drawLife{
-    glLineWidth( 7.0f );
-    INIT_LIFE_COLOR;
-    float percent = (float)_life.current/(float)_life.max;
-    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [emeny objectAtIndex:0];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        [sprite setHurt:[self getAttack].current :array :layer];
+        
+        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :3 :0 :0];
+        [self setDebuff:sprite :debuff];
+    }
+    
     
 }
-- (void)drawPower{
-    glLineWidth( 5.0f );
-    INIT_POWER_COLOR;
-    float percent = (float)_power.current/(float)_power.max;
-    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
+
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [alias objectAtIndex:0];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        //[sprite setHurt:[self getAttack].current :array :layer];
+        
+        Buff *debuff = [[Buff alloc] initWithBuff:@"warrior-row2.ico" :1 :0 :1];
+        [self setBuff:sprite :debuff];
+    }
+    
+    
 }
-//- (void)skill1:(NSMutableArray *)array :(CCLayer *)layer{
-//    for (BaseSprite *sprite in array) {
-//        [sprite setDamageFont:[self getAttack].current :layer];
-//        [sprite setLife:[self getAttack].current :array :layer];
-//    }
-//    
-//}
+
+
+
+- (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff{
+    
+    [sprite clearDebuff:debuff];
+    [sprite.debuffList addObject:debuff];
+    [sprite addChild:debuff];
+    [debuff move:[sprite getDebuffPosition]];
+}
+
+- (void)setBuff:(BaseSprite *)sprite :(Buff *)buff{
+    
+    [sprite clearBuff:buff];
+    [sprite.buffList addObject:buff];
+    [sprite addChild:buff];
+    [buff move:[sprite getBuffPosition]];
+}
+
+
+
 @end

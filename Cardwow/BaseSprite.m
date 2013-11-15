@@ -13,20 +13,43 @@
 
 - (id)init{
     if (self = [super init]) {
-        
+        _debuffList = [[NSMutableArray alloc] init];
+        _buffList = [[NSMutableArray alloc] init];
     }
     return self;
 }
-
+- (void)initElements:(CGPoint)point :(CCSprite *)sprite :(Status *)status{
+    //init icon
+    CGSize size = CGSizeMake(56, 56);
+    [self addChild:sprite];
+    
+    //init status
+    [self addChild:status];
+    
+    //init font
+    CCLabelTTF *damage = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30 ];
+    [self addChild:damage z:1];
+    
+    //init node status
+    self.contentSize = size;
+    self.tag = 1;
+    self.position = point;
+    self.point = damage;
+    self.status = status;
+}
 - (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
-    _life.current = _life.current - damage;
-    if (_life.current <=0) {
-        _life.current = 0;
+    Type life = self.status.life;
+    life.current = life.current - damage;
+//    self.status.life.current = self.status.life.current - damage;
+    if (self.status.life.current <=0) {
+        life.current = 0;
         [array removeObject:self];
         [layer removeChild:_point cleanup:YES];
         [layer removeChild:self cleanup:YES];
+        self.status.life = life;
         return YES;
     }
+    self.status.life = life;
     return NO;
 }
 - (void)fontAnimation{
@@ -47,12 +70,14 @@
 
 - (BOOL)setHeal:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
     [self setGreenFont:[NSString stringWithFormat:@"+%i",damage]];
-    _life.current = _life.current + damage;
-    if (_life.current >= _life.max) {
-        _life.current = _life.max;
-        
+    Type life = self.status.life;
+    life.current = life.current + damage;
+    if (self.status.life.current >= self.status.life.max) {
+        life.current = life.max;
+        self.status.life = life;
         return YES;
     }
+    self.status.life = life;
     return NO;
 }
 
@@ -86,9 +111,6 @@
     return _attack;
 }
 
-- (Type)getLife{
-    return _life;
-}
 
 - (void)setAgile:(int)agile{
     _agile.current = _agile.current+agile;
@@ -158,6 +180,45 @@
         [sprite setHeal:[self getMagicAttack].current :array :layer];
     }
     
+}
+
+- (void)clearDebuff:(Debuff *)debuff{
+    [_debuffList enumerateObjectsUsingBlock:^(Debuff *obj, NSUInteger idx, BOOL *stop) {
+        if (obj.row == debuff.row && obj.nType == debuff.nType ) {
+            [_debuffList removeObject:obj];
+            [self removeChild:obj cleanup:YES];
+            stop = YES;
+        }
+    }];
+}
+
+- (void)clearBuff:(Buff *)buff{
+    [_buffList enumerateObjectsUsingBlock:^(Buff *obj, NSUInteger idx, BOOL *stop) {
+        if (obj.row == buff.row && obj.nType == buff.nType ) {
+            [_buffList removeObject:obj];
+            [self removeChild:obj cleanup:YES];
+            stop = YES;
+        }
+    }];
+}
+
+- (CGPoint)getDebuffPosition{
+    CGPoint initPosition = ccp(28, 28);
+    initPosition.y = initPosition.y - ([_debuffList count] - 1)*12;
+    return initPosition;
+}
+
+- (CGPoint)getBuffPosition{
+    CGPoint initPosition = ccp(-28, 28);
+    initPosition.y = initPosition.y - ([_buffList count] - 1)*12;
+    return initPosition;
+}
+- (void)dealloc{
+    [_status release];
+    [_point release];
+    [_debuffList release];
+    [_buffList release];
+    [super dealloc];
 }
 
 @end

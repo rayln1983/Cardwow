@@ -19,31 +19,40 @@
 #define INTELLIGENCE 25;
 
 @implementation Druid
-
 - (id)init{
     if (self = [super init]) {
         [self initAttribute];
+        [self initElements:ccp(40, 210)];
     }
     return self;
 }
-- (id)copyWithSelf:(CCLayer *)layer{
-    Druid *temp = [[Druid alloc] initWithFile:@"class_druid.jpg"];
-    temp.position = self.position;
-    [layer addChild:temp];
-    [temp initAttribute];
+- (id)initWithPosition:(CGPoint)point{
+    if (self = [super init]) {
+        [self initAttribute];
+        [self initElements:point];
+    }
+    return self;
+}
+- (void)initElements:(CGPoint)point{
     
-    temp.point = [CCLabelTTF labelWithString:@"" fontName:@"Marker Felt" fontSize:30];
-    [temp.point setPosition:self.position];
-    [layer addChild:temp.point z:100];
-    return temp;
+    CGSize size = CGSizeMake(56, 56);
+    CCSprite *sprite = [CCSprite spriteWithFile:@"class_druid.jpg"];
+    
+    Type life; life.current = LIFE; life.max = LIFE;
+    Type rage; rage.current = POWER; rage.max = POWER;
+    Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
+    
+    [super initElements:point :sprite :status];
+}
+- (id)copyWithSelf{
+    return [[Druid alloc] initWithPosition:[self position]];
 }
 
 - (void)initAttribute{
-    _life.current = LIFE;
-    _life.max = LIFE;
-    
-    _power.current = POWER;
-    _power.max = POWER;
+    Type life; life.current = LIFE; life.max = LIFE;
+    self.status.life = life;
+    Type power; power.current = POWER; power.max = POWER;
+    self.status.power = power;
     
     _armor.current = ARMOR;
     _armor.max = ARMOR;
@@ -68,23 +77,7 @@
 }
 
 - (void)draw{
-    
     [super draw];
-    [self drawLife];
-    [self drawPower];
-}
-
-- (void)drawLife{
-    glLineWidth( 7.0f );
-    INIT_LIFE_COLOR;
-    float percent = (float)_life.current/(float)_life.max;
-    ccDrawLine( ccp(0, 3), ccp(self.contentSize.width * percent, 3) );
-}
-- (void)drawPower{
-    glLineWidth( 5.0f );
-    INIT_POWER_COLOR;
-    float percent = (float)_power.current/(float)_power.max;
-    ccDrawLine( ccp(0, 0), ccp(self.contentSize.width * percent, 0) );
 }
 
 @end

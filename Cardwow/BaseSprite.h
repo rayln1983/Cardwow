@@ -9,21 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Util.h"
+#import "Status.h"
+#import "Debuff.h"
+#import "Buff.h"
+
 #define INIT_LIFE_COLOR ccDrawColor4B(81,133,54,255)
 #define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
 
-typedef struct {
-    int current;
-    int max;
-} Type;
-
-@interface BaseSprite : CCSprite {
+@interface BaseSprite : CCNode {
     int _flag;
     int _row;
     //life
-    Type _life;
+    //Type _life;
     //power
-    Type _power;
+    //Type _power;
     Type _armor;
     Type _defense;
     Type _attack;
@@ -37,8 +36,12 @@ typedef struct {
 }
 //@property (nonatomic, assign) Type agile;
 @property (nonatomic, retain) CCLabelTTF *point;
+@property (nonatomic, strong) Status *status;
 
-- (id)copyWithSelf:(CCLayer *)layer;
+@property (nonatomic, strong) NSMutableArray *debuffList;
+@property (nonatomic, strong) NSMutableArray *buffList;
+
+- (id)copyWithSelf;
 - (BOOL)setLife:(int)damage;
 
 
@@ -52,11 +55,18 @@ typedef struct {
 - (void)skilltest:(NSMutableArray *)array :(NSMutableArray *)layer :(SEL)selector;
 - (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
 - (void)setDamageFont:(int)damage :(CCLayer *)layer;
-
+- (void)initElements:(CGPoint)point :(CCSprite *)sprite :(Status *)status;
 - (Type)getAttack;
 - (Type)getLife;
 - (Type)getMagicAttack;
 - (Type)getAgile;
 - (void)setAgile:(int)agile;
 - (void)initFontLayout:(CGPoint)point;
+- (CGPoint)getDebuffPosition;
+- (CGPoint)getBuffPosition;
+
+- (void)shooter;
+- (BOOL)setHurt:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
+- (void)clearDebuff:(Debuff *)debuff;
+- (void)clearBuff:(Buff *)buff;
 @end

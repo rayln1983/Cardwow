@@ -19,6 +19,8 @@
 #import "Warlock.h"
 #import "MainScene.h"
 
+#import "DK.h"
+
 @interface MainScene : CCLayer {
     
 }

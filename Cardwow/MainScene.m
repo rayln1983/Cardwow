@@ -21,7 +21,11 @@ typedef struct {
         [self initPosition];
         [self initButton];
         [self initLayout:layoutArray];
-        
+//        DK *dk = [[DK alloc]init];
+//        dk.position = ccp(200, 200);
+//        [self addChild:dk];
+//        
+//        NSLog(@"====content:%f, %f == %f, %f", [dk boundingBox].size.width, [dk boundingBox].size.height, [dk boundingBox].origin.x, [dk boundingBox].origin.y);
     }
     return self;
 }
@@ -46,7 +50,7 @@ typedef struct {
     _groupBLayout = [[NSArray alloc] initWithObjects: [[NSNumber numberWithFloat:152.0f] autorelease], [[NSNumber numberWithFloat:92.0f] autorelease],[[NSNumber numberWithFloat:32.0f] autorelease], nil];
     [_scene addChild:self];
     [layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
-        BaseSprite *s = [[sprite copyWithSelf:self] autorelease];
+        BaseSprite *s = [[sprite copyWithSelf] autorelease];
         NSLog(@"positon: %f, %f", s.position.x, s.position.y);
         GroupType type = [self getIndex:s.position.y];
         NSLog(@"====%i, %i", type.index, type.type);
@@ -58,6 +62,7 @@ typedef struct {
             NSMutableArray *array = [_groupB objectAtIndex:type.index];
             [array addObject:s];
         }
+        [self addChild:s];
         //[_spriteArray addObject:s];
     }];
     NSLog(@"_groupA: %@", _groupA);
@@ -80,7 +85,7 @@ typedef struct {
         for (BaseSprite *sprite in array) {
             CCMoveTo *move = [CCMoveTo actionWithDuration:.5 position:ccp(sprite.position.x, y)];
             [sprite runAction:move];
-            [sprite initFontLayout:ccp(sprite.position.x, y)];
+            //[sprite initFontLayout:ccp(sprite.position.x, y)];
         }
     }];
     [_groupB enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
@@ -88,7 +93,7 @@ typedef struct {
         for (BaseSprite *sprite in array) {
             CCMoveTo *move = [CCMoveTo actionWithDuration:.5 position:ccp(sprite.position.x, y)];
             [sprite runAction:move];
-            [sprite initFontLayout:ccp(sprite.position.x, y)];
+            //[sprite initFontLayout:ccp(sprite.position.x, y)];
         }
     }];
 }
@@ -200,7 +205,7 @@ typedef struct {
     }
     
     BaseSprite *sprite = [sortMutArr objectAtIndex:(count-1)];
-    if ([sprite getLife].current > 0) {
+    if ([sprite status].life.current > 0) {
         SEL selector = NSSelectorFromString([NSString stringWithFormat:@"skill%i::", ([sprite getRow]+1)]);
         NSMutableArray *armyList = [[NSMutableArray alloc] init];
         if (sprite.getFlag == 0) {

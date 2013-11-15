@@ -1,18 +1,15 @@
 //
-//  Warrior.h
+//  DK.h
 //  Cardwow
 //
-//  Created by rayln on 13-10-24.
+//  Created by rayln on 13-11-10.
 //  Copyright 2013年 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "BaseSprite.h"
-#import "Debuff.h"
-#import "Buff.h"
 
-@interface Warrior : BaseSprite {
+@interface DK : CCNode {
     
 }
 

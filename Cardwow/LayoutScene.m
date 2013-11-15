@@ -21,6 +21,16 @@
 
 - (void)didLoadFromCCB{
     // init occupation
+    _warrior = [[Warrior alloc] init]; [self addChild:_warrior];
+    _hunter = [[Hunter alloc] init]; [self addChild:_hunter];
+    _paladin = [[Paladin alloc] init]; [self addChild:_paladin];
+    _shaman = [[Shaman alloc] init]; [self addChild:_shaman];
+    
+    _druid = [[Druid alloc] init]; [self addChild:_druid];
+    _mage = [[Mage alloc] init]; [self addChild:_mage];
+    _priest = [[Priest alloc] init]; [self addChild:_priest];
+    _warlock = [[Warlock alloc] init]; [self addChild:_warlock];
+    
     _occupation = [[NSArray alloc] initWithObjects:_warrior,_hunter,_paladin,_shaman,_druid,_mage,_priest,_warlock, nil];
     [self initCell];
 }
@@ -42,17 +52,20 @@
     CGPoint  point=[[CCDirector sharedDirector] convertToGL:touchLocation];
     [_occupation enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
         CGRect rect = [sprite boundingBox];
-        
+        rect.origin.x = rect.origin.x - rect.size.width/2;
+        rect.origin.y = rect.origin.y - rect.size.height/2;
         if(CGRectContainsPoint(rect, point)){
             stop = _istouch = YES;
-            _moveSprite = [sprite copyWithSelf:self];
+            _moveSprite = [sprite copyWithSelf];
+            [self addChild:_moveSprite];
         }
         
     }];
     
     [_layoutArray enumerateObjectsUsingBlock:^(BaseSprite *sprite, NSUInteger idx, BOOL *stop) {
         CGRect rect = [sprite boundingBox];
-        
+        rect.origin.x = rect.origin.x - rect.size.width/2;
+        rect.origin.y = rect.origin.y - rect.size.height/2;
         if(CGRectContainsPoint(rect, point)){
             stop = _istouch = YES;
             _moveSprite = sprite;
@@ -72,6 +85,7 @@
     [_moveSprite setPosition:point];
     [_wallArray enumerateObjectsUsingBlock:^(CCSprite *obj, NSUInteger idx, BOOL *stop) {
         CGRect r = [obj boundingBox];
+        
         if(CGRectContainsPoint(r, point)){
             [_moveSprite setPosition:obj.position];
             stop = _isfixed = YES;

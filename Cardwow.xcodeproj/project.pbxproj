@@ -9,9 +9,36 @@
 /* Begin PBXBuildFile section */
 		2404843318248AB0008C9B37 /* menustart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2404843218248AB0008C9B37 /* menustart.png */; };
 		240C4C09182E1167008CEB5E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 240C4C08182E1167008CEB5E /* Util.m */; };
+		2411042718350D72008E26E4 /* Debuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 2411042618350D72008E26E4 /* Debuff.m */; };
+		2411042A18350D7F008E26E4 /* Buff.m in Sources */ = {isa = PBXBuildFile; fileRef = 2411042918350D7F008E26E4 /* Buff.m */; };
+		2411AD38182FB59C00170E8C /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 2411AD37182FB59C00170E8C /* Status.m */; };
+		243DD18C1832832000851D0F /* druid-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD18B1832832000851D0F /* druid-row1.ico */; };
+		243DD18E1832832600851D0F /* druid-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD18D1832832600851D0F /* druid-row2.ico */; };
+		243DD1901832838500851D0F /* druid-row3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD18F1832838500851D0F /* druid-row3.ico */; };
+		243DD192183283C100851D0F /* rogue-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD191183283C100851D0F /* rogue-row1.ico */; };
+		243DD1941832848D00851D0F /* warrior-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1931832848D00851D0F /* warrior-row1.ico */; };
+		243DD1961832854900851D0F /* warrior-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1951832854900851D0F /* warrior-row2.ico */; };
+		243DD1981832854E00851D0F /* warrior-row3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1971832854E00851D0F /* warrior-row3.ico */; };
+		243DD19A183285BE00851D0F /* hunter-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD199183285BE00851D0F /* hunter-row1.ico */; };
+		243DD19C183285C300851D0F /* hunter-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD19B183285C300851D0F /* hunter-row2.ico */; };
+		243DD19E1832863700851D0F /* paladin-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD19D1832863700851D0F /* paladin-row1.ico */; };
+		243DD1A01832864000851D0F /* paladin-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD19F1832864000851D0F /* paladin-row2.ico */; };
+		243DD1A21832864500851D0F /* paladin-row3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1A11832864500851D0F /* paladin-row3.ico */; };
+		243DD1A4183286AB00851D0F /* priest-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1A3183286AB00851D0F /* priest-row1.ico */; };
+		243DD1A6183286BA00851D0F /* priest-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1A5183286BA00851D0F /* priest-row2.ico */; };
+		243DD1A8183286C000851D0F /* priest-row3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1A7183286C000851D0F /* priest-row3.ico */; };
+		243DD1AA1832889500851D0F /* warlock-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1A91832889500851D0F /* warlock-row1.ico */; };
+		243DD1AC183288B600851D0F /* warlock-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1AB183288B600851D0F /* warlock-row2.ico */; };
+		243DD1AE1832891400851D0F /* warlock-row3.png in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1AD1832891400851D0F /* warlock-row3.png */; };
+		243DD1B01832898700851D0F /* mage-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1AF1832898700851D0F /* mage-row1.ico */; };
+		243DD1B2183289EF00851D0F /* mage-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1B1183289EF00851D0F /* mage-row2.ico */; };
+		243DD1B418328A0B00851D0F /* shaman-row1.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1B318328A0B00851D0F /* shaman-row1.ico */; };
+		243DD1B618328A9700851D0F /* shaman-row2.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1B518328A9700851D0F /* shaman-row2.ico */; };
+		243DD1B818328AAC00851D0F /* shaman-row3.ico in Resources */ = {isa = PBXBuildFile; fileRef = 243DD1B718328AAC00851D0F /* shaman-row3.ico */; };
 		24876F27181E2CC00081874C /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 24876F26181E2CC00081874C /* MainScene.m */; };
 		2494661A182A973400EA8DFA /* bg_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24946618182A973400EA8DFA /* bg_01.jpg */; };
 		2494661B182A973400EA8DFA /* bg_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24946619182A973400EA8DFA /* bg_02.jpg */; };
+		24E2BFF9182F9E35004AC292 /* DK.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E2BFF8182F9E35004AC292 /* DK.m */; };
 		24F4B3F918181F1800F0F752 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3F818181F1800F0F752 /* QuartzCore.framework */; };
 		24F4B3FB18181F1800F0F752 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3FA18181F1800F0F752 /* OpenGLES.framework */; };
 		24F4B3FD18181F1800F0F752 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F4B3FC18181F1800F0F752 /* OpenAL.framework */; };
@@ -268,10 +295,41 @@
 		2404843218248AB0008C9B37 /* menustart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menustart.png; sourceTree = "<group>"; };
 		240C4C07182E1167008CEB5E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
 		240C4C08182E1167008CEB5E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
+		2411042518350D72008E26E4 /* Debuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Debuff.h; sourceTree = "<group>"; };
+		2411042618350D72008E26E4 /* Debuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Debuff.m; sourceTree = "<group>"; };
+		2411042818350D7F008E26E4 /* Buff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Buff.h; sourceTree = "<group>"; };
+		2411042918350D7F008E26E4 /* Buff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Buff.m; sourceTree = "<group>"; };
+		2411AD36182FB59C00170E8C /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		2411AD37182FB59C00170E8C /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		243DD18B1832832000851D0F /* druid-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "druid-row1.ico"; sourceTree = "<group>"; };
+		243DD18D1832832600851D0F /* druid-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "druid-row2.ico"; sourceTree = "<group>"; };
+		243DD18F1832838500851D0F /* druid-row3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "druid-row3.ico"; sourceTree = "<group>"; };
+		243DD191183283C100851D0F /* rogue-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "rogue-row1.ico"; sourceTree = "<group>"; };
+		243DD1931832848D00851D0F /* warrior-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "warrior-row1.ico"; sourceTree = "<group>"; };
+		243DD1951832854900851D0F /* warrior-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "warrior-row2.ico"; sourceTree = "<group>"; };
+		243DD1971832854E00851D0F /* warrior-row3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "warrior-row3.ico"; sourceTree = "<group>"; };
+		243DD199183285BE00851D0F /* hunter-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "hunter-row1.ico"; sourceTree = "<group>"; };
+		243DD19B183285C300851D0F /* hunter-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "hunter-row2.ico"; sourceTree = "<group>"; };
+		243DD19D1832863700851D0F /* paladin-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "paladin-row1.ico"; sourceTree = "<group>"; };
+		243DD19F1832864000851D0F /* paladin-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "paladin-row2.ico"; sourceTree = "<group>"; };
+		243DD1A11832864500851D0F /* paladin-row3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "paladin-row3.ico"; sourceTree = "<group>"; };
+		243DD1A3183286AB00851D0F /* priest-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "priest-row1.ico"; sourceTree = "<group>"; };
+		243DD1A5183286BA00851D0F /* priest-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "priest-row2.ico"; sourceTree = "<group>"; };
+		243DD1A7183286C000851D0F /* priest-row3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "priest-row3.ico"; sourceTree = "<group>"; };
+		243DD1A91832889500851D0F /* warlock-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "warlock-row1.ico"; sourceTree = "<group>"; };
+		243DD1AB183288B600851D0F /* warlock-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "warlock-row2.ico"; sourceTree = "<group>"; };
+		243DD1AD1832891400851D0F /* warlock-row3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warlock-row3.png"; sourceTree = "<group>"; };
+		243DD1AF1832898700851D0F /* mage-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "mage-row1.ico"; sourceTree = "<group>"; };
+		243DD1B1183289EF00851D0F /* mage-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "mage-row2.ico"; sourceTree = "<group>"; };
+		243DD1B318328A0B00851D0F /* shaman-row1.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "shaman-row1.ico"; sourceTree = "<group>"; };
+		243DD1B518328A9700851D0F /* shaman-row2.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "shaman-row2.ico"; sourceTree = "<group>"; };
+		243DD1B718328AAC00851D0F /* shaman-row3.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "shaman-row3.ico"; sourceTree = "<group>"; };
 		24876F25181E2CC00081874C /* MainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScene.h; sourceTree = "<group>"; };
 		24876F26181E2CC00081874C /* MainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScene.m; sourceTree = "<group>"; };
 		24946618182A973400EA8DFA /* bg_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_01.jpg; path = Resources/assets/Resource/plane/bg_01.jpg; sourceTree = "<group>"; };
 		24946619182A973400EA8DFA /* bg_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg_02.jpg; path = Resources/assets/Resource/plane/bg_02.jpg; sourceTree = "<group>"; };
+		24E2BFF7182F9E35004AC292 /* DK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DK.h; sourceTree = "<group>"; };
+		24E2BFF8182F9E35004AC292 /* DK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DK.m; sourceTree = "<group>"; };
 		24F4B3F518181F1800F0F752 /* Cardwow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardwow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24F4B3F818181F1800F0F752 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		24F4B3FA18181F1800F0F752 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -754,6 +812,36 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		243DD1851832820B00851D0F /* skill */ = {
+			isa = PBXGroup;
+			children = (
+				243DD18B1832832000851D0F /* druid-row1.ico */,
+				243DD18D1832832600851D0F /* druid-row2.ico */,
+				243DD18F1832838500851D0F /* druid-row3.ico */,
+				243DD191183283C100851D0F /* rogue-row1.ico */,
+				243DD1931832848D00851D0F /* warrior-row1.ico */,
+				243DD1951832854900851D0F /* warrior-row2.ico */,
+				243DD1971832854E00851D0F /* warrior-row3.ico */,
+				243DD199183285BE00851D0F /* hunter-row1.ico */,
+				243DD19B183285C300851D0F /* hunter-row2.ico */,
+				243DD19D1832863700851D0F /* paladin-row1.ico */,
+				243DD19F1832864000851D0F /* paladin-row2.ico */,
+				243DD1A11832864500851D0F /* paladin-row3.ico */,
+				243DD1A3183286AB00851D0F /* priest-row1.ico */,
+				243DD1A5183286BA00851D0F /* priest-row2.ico */,
+				243DD1A7183286C000851D0F /* priest-row3.ico */,
+				243DD1A91832889500851D0F /* warlock-row1.ico */,
+				243DD1AB183288B600851D0F /* warlock-row2.ico */,
+				243DD1AD1832891400851D0F /* warlock-row3.png */,
+				243DD1AF1832898700851D0F /* mage-row1.ico */,
+				243DD1B1183289EF00851D0F /* mage-row2.ico */,
+				243DD1B318328A0B00851D0F /* shaman-row1.ico */,
+				243DD1B518328A9700851D0F /* shaman-row2.ico */,
+				243DD1B718328AAC00851D0F /* shaman-row3.ico */,
+			);
+			name = skill;
+			sourceTree = "<group>";
+		};
 		24F4B3EC18181F1800F0F752 = {
 			isa = PBXGroup;
 			children = (
@@ -809,6 +897,7 @@
 		24F4B40B18181F1800F0F752 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				243DD1851832820B00851D0F /* skill */,
 				24946618182A973400EA8DFA /* bg_01.jpg */,
 				24946619182A973400EA8DFA /* bg_02.jpg */,
 				24F4B60C1818254900F0F752 /* cardwow */,
@@ -1520,6 +1609,14 @@
 				24F4B7331818341900F0F752 /* Priest.m */,
 				24F4B7351818343200F0F752 /* Warlock.h */,
 				24F4B7361818343200F0F752 /* Warlock.m */,
+				24E2BFF7182F9E35004AC292 /* DK.h */,
+				24E2BFF8182F9E35004AC292 /* DK.m */,
+				2411AD36182FB59C00170E8C /* Status.h */,
+				2411AD37182FB59C00170E8C /* Status.m */,
+				2411042518350D72008E26E4 /* Debuff.h */,
+				2411042618350D72008E26E4 /* Debuff.m */,
+				2411042818350D7F008E26E4 /* Buff.h */,
+				2411042918350D7F008E26E4 /* Buff.m */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -1575,6 +1672,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24F4B41B18181F1800F0F752 /* Icon-Small.png in Resources */,
+				243DD1A4183286AB00851D0F /* priest-row1.ico in Resources */,
 				24F4B6351818254900F0F752 /* hunter.png in Resources */,
 				24F4B6381818254900F0F752 /* priest.png in Resources */,
 				24F4B62F1818254900F0F752 /* class_rogue.jpg in Resources */,
@@ -1585,17 +1683,24 @@
 				24F4B63C1818254900F0F752 /* warrior.png in Resources */,
 				24F4B717181830BD00F0F752 /* class_warrior@2x.jpg in Resources */,
 				24F4B6311818254900F0F752 /* class_warlock.jpg in Resources */,
+				243DD1AE1832891400851D0F /* warlock-row3.png in Resources */,
+				243DD19C183285C300851D0F /* hunter-row2.ico in Resources */,
 				24F4B63A1818254900F0F752 /* shaman.png in Resources */,
 				24F4B6321818254900F0F752 /* class_warrior.jpg in Resources */,
 				24F4B60B1818253900F0F752 /* ccbParticleStars.png in Resources */,
 				24F4B40F18181F1800F0F752 /* Default-Landscape~ipad.png in Resources */,
+				243DD192183283C100851D0F /* rogue-row1.ico in Resources */,
 				24F4B711181830BD00F0F752 /* class_mage@2x.jpg in Resources */,
+				243DD18E1832832600851D0F /* druid-row2.ico in Resources */,
 				24F4B62A1818254900F0F752 /* class_hunter.jpg in Resources */,
 				24F4B41F18181F1800F0F752 /* Icon.png in Resources */,
+				243DD19A183285BE00851D0F /* hunter-row1.ico in Resources */,
 				24F4B70518182D0B00F0F752 /* class_warrior@2x.png in Resources */,
 				24F4B716181830BD00F0F752 /* class_warlock@2x.jpg in Resources */,
 				24F4B6EC181825CA00F0F752 /* LICENSE in Resources */,
 				24F4B41918181F1800F0F752 /* Icon-Small-50.png in Resources */,
+				243DD1B01832898700851D0F /* mage-row1.ico in Resources */,
+				243DD1A21832864500851D0F /* paladin-row3.ico in Resources */,
 				24F4B60A1818253900F0F752 /* ccbParticleSnow.png in Resources */,
 				24F4B714181830BD00F0F752 /* class_rogue@2x.jpg in Resources */,
 				24F4B70218182D0B00F0F752 /* class_rogue@2x.png in Resources */,
@@ -1606,40 +1711,54 @@
 				24F4B59D18181F1A00F0F752 /* README.textile in Resources */,
 				2494661B182A973400EA8DFA /* bg_02.jpg in Resources */,
 				24F4B42118181F1800F0F752 /* Icon@2x.png in Resources */,
+				243DD1B418328A0B00851D0F /* shaman-row1.ico in Resources */,
 				24F4B62B1818254900F0F752 /* class_mage.jpg in Resources */,
 				24F4B6281818254900F0F752 /* class_death-knight.jpg in Resources */,
 				24F4B62C1818254900F0F752 /* class_monk.jpg in Resources */,
+				243DD18C1832832000851D0F /* druid-row1.ico in Resources */,
+				243DD1B818328AAC00851D0F /* shaman-row3.ico in Resources */,
 				24F4B6271818254900F0F752 /* background@2x.png in Resources */,
 				24F4B40D18181F1800F0F752 /* Default.png in Resources */,
 				24FC734F181EBA1600AD57F4 /* MainScene.ccbi in Resources */,
 				24F4B42418181F1800F0F752 /* iTunesArtwork in Resources */,
 				24F4B6091818253900F0F752 /* ccbParticleSmoke.png in Resources */,
+				243DD1A8183286C000851D0F /* priest-row3.ico in Resources */,
+				243DD1B618328A9700851D0F /* shaman-row2.ico in Resources */,
 				24F4B6071818253900F0F752 /* ccbDefaultImages.png in Resources */,
 				2404843318248AB0008C9B37 /* menustart.png in Resources */,
+				243DD1AC183288B600851D0F /* warlock-row2.ico in Resources */,
 				24F4B6EA181825CA00F0F752 /* README.md in Resources */,
 				24F4B62D1818254900F0F752 /* class_paladin.jpg in Resources */,
 				24F4B6301818254900F0F752 /* class_shaman.jpg in Resources */,
 				24F4B6FF18182D0B00F0F752 /* class_mage@2x.png in Resources */,
+				243DD1AA1832889500851D0F /* warlock-row1.ico in Resources */,
 				24F4B70118182D0B00F0F752 /* class_priest@2x.png in Resources */,
+				243DD19E1832863700851D0F /* paladin-row1.ico in Resources */,
 				24F4B6081818253900F0F752 /* ccbParticleFire.png in Resources */,
 				24F4B6041818253900F0F752 /* ccbDefaultImages-ipad.plist in Resources */,
+				243DD1A01832864000851D0F /* paladin-row2.ico in Resources */,
 				24F4B63B1818254900F0F752 /* warlock.png in Resources */,
+				243DD1901832838500851D0F /* druid-row3.ico in Resources */,
 				24F4B6371818254900F0F752 /* paladin.png in Resources */,
 				24F4B56218181F1A00F0F752 /* ChangeLog in Resources */,
+				243DD1961832854900851D0F /* warrior-row2.ico in Resources */,
 				24F4B6021818253900F0F752 /* ccbDefaultImages-hd.plist in Resources */,
 				24F4B41518181F1800F0F752 /* fps_images-ipadhd.png in Resources */,
 				24F4B41118181F1800F0F752 /* fps_images.png in Resources */,
+				243DD1B2183289EF00851D0F /* mage-row2.ico in Resources */,
 				24F4B6031818253900F0F752 /* ccbDefaultImages-hd.png in Resources */,
 				24F4B6FE18182D0B00F0F752 /* class_hunter@2x.png in Resources */,
 				24F4B63D1818254900F0F752 /* 白素贞.png in Resources */,
 				24F4B712181830BD00F0F752 /* class_paladin@2x.jpg in Resources */,
 				24F4B63E1818254900F0F752 /* 白素贞@2x.png in Resources */,
 				24F4B6FD18182D0B00F0F752 /* class_druid@2x.png in Resources */,
+				243DD1A6183286BA00851D0F /* priest-row2.ico in Resources */,
 				24F4B715181830BD00F0F752 /* class_shaman@2x.jpg in Resources */,
 				24F4B6061818253900F0F752 /* ccbDefaultImages.plist in Resources */,
 				24F4B70318182D0B00F0F752 /* class_shaman@2x.png in Resources */,
 				24F4B713181830BD00F0F752 /* class_priest@2x.jpg in Resources */,
 				24F4B6F31818282D00F0F752 /* frame@2x.png in Resources */,
+				243DD1941832848D00851D0F /* warrior-row1.ico in Resources */,
 				24F4B710181830BD00F0F752 /* class_hunter@2x.jpg in Resources */,
 				24F4B5F61818252500F0F752 /* Main.ccbi in Resources */,
 				24F4B70F181830BD00F0F752 /* class_druid@2x.jpg in Resources */,
@@ -1648,6 +1767,7 @@
 				24F4B41318181F1800F0F752 /* fps_images-hd.png in Resources */,
 				24F4B6261818254900F0F752 /* background.png in Resources */,
 				24F4B41718181F1800F0F752 /* Icon-72.png in Resources */,
+				243DD1981832854E00851D0F /* warrior-row3.ico in Resources */,
 				24F4B6391818254900F0F752 /* rogue.png in Resources */,
 				24F4B6361818254900F0F752 /* mage.png in Resources */,
 			);
@@ -1674,6 +1794,7 @@
 				24F4B4FF18181F1900F0F752 /* CCGLView.m in Sources */,
 				24F4B7311818340100F0F752 /* Mage.m in Sources */,
 				24F4B46018181F1800F0F752 /* ccDeprecated.m in Sources */,
+				24E2BFF9182F9E35004AC292 /* DK.m in Sources */,
 				24F4B4A418181F1900F0F752 /* CCRenderTexture.m in Sources */,
 				24F4B54A18181F1900F0F752 /* SimpleAudioEngine.m in Sources */,
 				24F4B49D18181F1900F0F752 /* CCParticleSystemQuad.m in Sources */,
@@ -1698,6 +1819,7 @@
 				24F4B5CC18181F1A00F0F752 /* cpSpace.c in Sources */,
 				24F4B44718181F1800F0F752 /* CCActionProgressTimer.m in Sources */,
 				24F4B6E1181825CA00F0F752 /* CCControlPotentiometer.m in Sources */,
+				2411AD38182FB59C00170E8C /* Status.m in Sources */,
 				24F4B72B181833C900F0F752 /* Shaman.m in Sources */,
 				24F4B49718181F1800F0F752 /* CCParticleExamples.m in Sources */,
 				24F4B7371818343200F0F752 /* Warlock.m in Sources */,
@@ -1732,6 +1854,7 @@
 				24F4B50A18181F1900F0F752 /* CCDirectorMac.m in Sources */,
 				24F4B5D418181F1A00F0F752 /* cpSpaceStep.c in Sources */,
 				24F4B5EC18181F1A00F0F752 /* PhysicsSprite.m in Sources */,
+				2411042718350D72008E26E4 /* Debuff.m in Sources */,
 				24F4B51318181F1900F0F752 /* CCWindow.m in Sources */,
 				24F4B5CA18181F1A00F0F752 /* cpShape.c in Sources */,
 				24F4B57C18181F1A00F0F752 /* vec4.c in Sources */,
@@ -1741,6 +1864,7 @@
 				24F4B49A18181F1900F0F752 /* CCParticleSystem.m in Sources */,
 				24F4B4C318181F1900F0F752 /* CCSpriteBatchNode.m in Sources */,
 				24F4B4C018181F1900F0F752 /* CCSprite.m in Sources */,
+				2411042A18350D7F008E26E4 /* Buff.m in Sources */,
 				24F4B5E918181F1A00F0F752 /* IntroLayer.m in Sources */,
 				24F4B52918181F1900F0F752 /* CCVertex.m in Sources */,
 				24F4B50618181F1900F0F752 /* CCTouchHandler.m in Sources */,
