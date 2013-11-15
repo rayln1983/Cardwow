@@ -82,8 +82,8 @@
 }
 
 - (BOOL)setHurt:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
-    [self setDamageFont:[self getAttack].current];
-    return [self setLife:[self getAttack].current :array :layer];
+    [self setDamageFont:damage];
+    return [self setLife:damage :array :layer];
 }
 
 - (void)setDamageFont:(int)damage{
@@ -213,6 +213,45 @@
     initPosition.y = initPosition.y - ([_buffList count] - 1)*12;
     return initPosition;
 }
+
+- (int)getDamage:(BaseSprite *)emeny{
+    int damage = [self getAttack].current;
+    NSMutableArray *bufflist = [emeny buffList];
+    for (int i = [bufflist count] - 1; i >= 0; i--) {
+        Buff *buff = [bufflist objectAtIndex:i];
+        if ([buff nType]==0 && [buff row]==1) {
+            damage = 0;
+            [bufflist removeObject:buff];
+            [buff removeFromParentAndCleanup:YES];
+            break;
+        }
+    }
+
+    return damage;
+}
+
+- (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff{
+    
+    [sprite clearDebuff:debuff];
+    [sprite addChild:debuff];
+    if ([debuff duration]>0) {
+        [sprite.debuffList addObject:debuff];
+        
+    }
+    [debuff move:[sprite getDebuffPosition]];
+}
+
+- (void)setBuff:(BaseSprite *)sprite :(Buff *)buff{
+    
+    [sprite clearBuff:buff];
+    [sprite addChild:buff];
+    if ([buff duration]>0) {
+        [sprite.buffList addObject:buff];
+        [buff move:[sprite getBuffPosition]];
+    }
+    
+}
+
 - (void)dealloc{
     [_status release];
     [_point release];

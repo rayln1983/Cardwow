@@ -158,10 +158,10 @@ typedef struct {
     for (int i = 0; i < 3; i++) {
         NSMutableArray *tempA =[_groupA objectAtIndex:i];
         NSMutableArray *tempB =[_groupB objectAtIndex:i];
-        if (i == 1) {
-            [self addAgileBuff:tempA];
-            [self addAgileBuff:tempB];
-        }
+//        if (i == 1) {
+//            [self addAgileBuff:tempA];
+//            [self addAgileBuff:tempB];
+//        }
         [self setRow:tempA :i];
         [self setRow:tempB :i];
         [groupASum addObjectsFromArray:tempA];
@@ -171,6 +171,12 @@ typedef struct {
     NSArray *sortSum = [sum sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
         int agile1 = [obj1 getAgile].current;
         int agile2 = [obj2 getAgile].current;
+        if ([obj1 getRow]==1) {
+            agile1 += 20;
+        }
+        if ([obj2 getRow]==1) {
+            agile2 += 20;
+        }
         if (agile1 > agile2) {
             return (NSComparisonResult)NSOrderedDescending;
         }
@@ -232,6 +238,35 @@ typedef struct {
     NSLog(@"finish!!");
     [self exchangeArrayLayout];
     [self exchangeArrayPosition];
+    [self checkRound];
+}
+
+- (void)checkRound{
+    
+    [self clearBuff:_groupA];
+    [self clearBuff:_groupB];
+}
+
+- (void)clearBuff:(NSMutableArray *)arr{
+    [arr enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
+        for (BaseSprite *sprite in array) {
+            [self dealBuff: [sprite buffList]];
+            [self dealBuff: [sprite debuffList]];
+        }
+    }];
+}
+
+- (void)dealBuff:(NSMutableArray *)bufflist{
+    for (int i = [bufflist count] - 1; i >= 0; i--) {
+        Buff *buff = [bufflist objectAtIndex:i];
+        buff.duration = buff.duration - 1;
+        if (buff.duration <= 0) {
+            [bufflist removeObject:buff];
+            [buff removeFromParentAndCleanup:YES];
+        }else{
+            [buff updateStatus];
+        }
+    }
 }
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{

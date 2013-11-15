@@ -27,6 +27,7 @@
         [self setAnchorPoint:ccp(0, 0)];
         [self addChild:_icon];
         [self addChild:_value];
+//        [self scheduleUpdate];
     }
     return self;
 }
@@ -38,4 +39,9 @@
     //    [self runAction:action2];
     [self runAction:seq];
 }
+- (void)updateStatus{
+    NSLog(@"======%i====",_duration);
+    [_value setString:[NSString stringWithFormat:@"%i",_duration]];
+}
+
 @end

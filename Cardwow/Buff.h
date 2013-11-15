@@ -21,4 +21,5 @@
 
 - (id)initWithBuff:(NSString *)icon :(int)duration :(int)type :(int)row;
 - (void)move:(CGPoint)position;
+- (void)updateStatus;
 @end

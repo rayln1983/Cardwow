@@ -32,10 +32,19 @@
 }
 - (void)move:(CGPoint)position{
     CCScaleTo *action1 = [CCScaleTo actionWithDuration:.2 scale:.5];
-    CCMoveTo *action2 = [CCMoveTo actionWithDuration:.2 position:position];
-    CCSequence *seq = [CCSequence actions:action1, action2, nil];
-//    [self runAction:action1];
-//    [self runAction:action2];
-    [self runAction:seq];
+    if (_duration > 0) {
+        CCMoveTo *action2 = [CCMoveTo actionWithDuration:.2 position:position];
+        CCSequence *seq = [CCSequence actions:action1, action2, nil];
+        [self runAction:seq];
+    }else{
+        CCFadeOut *action2 = [CCFadeOut actionWithDuration:.2];
+        CCSequence *seq = [CCSequence actions:action1, action2, nil];
+        [self runAction:seq];
+    }
+    
+}
+- (void)updateStatus{
+    NSLog(@"======%i====",_duration);
+    [_value setString:[NSString stringWithFormat:@"%i",_duration]];
 }
 @end

@@ -76,6 +76,26 @@
     _intelligence.max = INTELLIGENCE;
 }
 
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSLog(@"=====1========%@",armyList);
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [emeny objectAtIndex:0];
+    NSMutableArray *temp2 = [emeny objectAtIndex:1];
+    [array  addObjectsFromArray:temp2];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        int damage = [self getDamage:sprite];
+        [sprite setHurt:damage :array :layer];
+        
+//        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"hunter-row1.ico" :0 :1 :0];
+//        [self setDebuff:sprite :debuff];
+    }
+    NSLog(@"=====2========%@",armyList);
+    
+}
+
 - (void)draw{
     [super draw];
 }

@@ -67,6 +67,12 @@
 
 - (void)shooter;
 - (BOOL)setHurt:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
+- (BOOL)setHeal:(int)damage :(NSMutableArray *)array :(CCLayer *)layer;
 - (void)clearDebuff:(Debuff *)debuff;
 - (void)clearBuff:(Buff *)buff;
+
+- (int)getDamage:(BaseSprite *)emeny;
+- (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff;
+- (void)setBuff:(BaseSprite *)sprite :(Buff *)buff;
+
 @end

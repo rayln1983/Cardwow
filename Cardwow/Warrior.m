@@ -89,7 +89,8 @@
     if ([array count] > 0) {
         int random = [Util random:0 :[array count]-1 ];
         BaseSprite *sprite = [array objectAtIndex:random];
-        [sprite setHurt:[self getAttack].current :array :layer];
+        int damage = [self getDamage:sprite];
+        [sprite setHurt:damage :array :layer];
         
         Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :3 :0 :0];
         [self setDebuff:sprite :debuff];
@@ -107,30 +108,22 @@
         BaseSprite *sprite = [array objectAtIndex:random];
         //[sprite setHurt:[self getAttack].current :array :layer];
         
-        Buff *debuff = [[Buff alloc] initWithBuff:@"warrior-row2.ico" :1 :0 :1];
-        [self setBuff:sprite :debuff];
+        Buff *buff = [[Buff alloc] initWithBuff:@"warrior-row2.ico" :1 :0 :1];
+        [self setBuff:sprite :buff];
     }
     
     
 }
 
-
-
-- (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff{
+- (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    [self setHeal: [self.status life].max/10 :armyList :layer];
     
-    [sprite clearDebuff:debuff];
-    [sprite.debuffList addObject:debuff];
-    [sprite addChild:debuff];
-    [debuff move:[sprite getDebuffPosition]];
 }
 
-- (void)setBuff:(BaseSprite *)sprite :(Buff *)buff{
-    
-    [sprite clearBuff:buff];
-    [sprite.buffList addObject:buff];
-    [sprite addChild:buff];
-    [buff move:[sprite getBuffPosition]];
-}
+
+
+
 
 
 
