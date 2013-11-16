@@ -74,5 +74,6 @@
 - (int)getDamage:(BaseSprite *)emeny;
 - (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff;
 - (void)setBuff:(BaseSprite *)sprite :(Buff *)buff;
-
+- (BaseSprite *)randomHunter:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList;
+- (NSMutableArray *)getEmenyList:(NSMutableArray *)emeny;
 @end

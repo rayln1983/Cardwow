@@ -249,9 +249,15 @@ typedef struct {
 
 - (void)clearBuff:(NSMutableArray *)arr{
     [arr enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
-        for (BaseSprite *sprite in array) {
+        
+        for (int i = [array count] - 1; i >= 0; i--) {
+            BaseSprite *sprite = [array objectAtIndex:i];
             [self dealBuff: [sprite buffList]];
             [self dealBuff: [sprite debuffList]];
+            Status *status = [sprite status];
+            if ([status life].current <= 0) {
+                [array removeObject:sprite];
+            }
         }
     }];
 }

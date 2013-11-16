@@ -31,14 +31,17 @@
     return self;
 }
 - (void)move:(CGPoint)position{
-    CCScaleTo *action1 = [CCScaleTo actionWithDuration:.2 scale:.5];
+    
     if (_duration > 0) {
+        CCScaleTo *action1 = [CCScaleTo actionWithDuration:.2 scale:.5];
         CCMoveTo *action2 = [CCMoveTo actionWithDuration:.2 position:position];
         CCSequence *seq = [CCSequence actions:action1, action2, nil];
         [self runAction:seq];
     }else{
-        CCFadeOut *action2 = [CCFadeOut actionWithDuration:.2];
-        CCSequence *seq = [CCSequence actions:action1, action2, nil];
+        //[self setAnchorPoint:ccp(.5, .5)];
+        CCScaleTo *action1 = [CCScaleTo actionWithDuration:.2 scale:1.5];
+        CCScaleTo *action2 = [CCScaleTo actionWithDuration:.5 scale:0];
+        CCSequence *seq = [CCSequence actions: action1, action2, nil];
         [self runAction:seq];
     }
     

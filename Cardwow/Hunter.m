@@ -78,23 +78,42 @@
 
 - (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
-    NSLog(@"=====1========%@",armyList);
     NSMutableArray *emeny = [armyList objectAtIndex:0];
-    NSMutableArray *array = [emeny objectAtIndex:0];
-    NSMutableArray *temp2 = [emeny objectAtIndex:1];
+    int row1 = 0;
+    int row2 = 1;
+    if ([[emeny objectAtIndex:0] count]<=0) {
+        row1 = 1;
+        row2 = 2;
+    }
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[emeny objectAtIndex:row1]];
+    NSMutableArray *temp2 = [[NSMutableArray alloc] initWithArray:[emeny objectAtIndex:row2]];
     [array  addObjectsFromArray:temp2];
     if ([array count] > 0) {
-        int random = [Util random:0 :[array count]-1 ];
-        BaseSprite *sprite = [array objectAtIndex:random];
-        int damage = [self getDamage:sprite];
-        [sprite setHurt:damage :array :layer];
+        BaseSprite *sprite = [self randomHunter:array :layer :armyList];
+        [array removeObject:sprite];
+        if ([array count] > 0) {
+            [self randomHunter:array :layer :armyList];
+        }
         
-//        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"hunter-row1.ico" :0 :1 :0];
-//        [self setDebuff:sprite :debuff];
     }
-    NSLog(@"=====2========%@",armyList);
     
+    [array release];
+    [temp2 release];
 }
+
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:emeny];
+    if ([array count] > 0) {
+        [self randomHunter:array :layer :armyList];
+        
+    }
+    
+    //[array release];
+}
+
+
 
 - (void)draw{
     [super draw];

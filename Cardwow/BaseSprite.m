@@ -41,12 +41,12 @@
     Type life = self.status.life;
     life.current = life.current - damage;
 //    self.status.life.current = self.status.life.current - damage;
-    if (self.status.life.current <=0) {
+    if (life.current <=0) {
         life.current = 0;
-        [array removeObject:self];
+        self.status.life = life;
+//        [array removeObject:self];
         [layer removeChild:_point cleanup:YES];
         [layer removeChild:self cleanup:YES];
-        self.status.life = life;
         return YES;
     }
     self.status.life = life;
@@ -250,6 +250,42 @@
         [buff move:[sprite getBuffPosition]];
     }
     
+}
+
+- (BaseSprite *)randomHunter:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList{
+    int random = [Util random:0 :[array count]-1 ];
+    BaseSprite *sprite = [array objectAtIndex:random];
+    int damage = [self getDamage:sprite];
+    BOOL isdead = [sprite setHurt:damage :array :layer];
+    if (isdead) {
+        [self clearDeadSprite:armyList :sprite];
+    }
+    return sprite;
+}
+
+- (void)clearDeadSprite:(NSMutableArray *)armyList :(BaseSprite *)sprite{
+    for (NSMutableArray *army in armyList) {
+        for (NSMutableArray *row in army) {
+            for (int i = [row count] - 1; i >= 0; i--) {
+                BaseSprite *temp = [row objectAtIndex:i];
+
+                Status *status = [temp status];
+                if ([status life].current <= 0) {
+                    [row removeObject:temp];
+                }
+            }
+        }
+    }
+}
+
+- (NSMutableArray *)getEmenyList:(NSMutableArray *)emeny{
+    if ([[emeny objectAtIndex:0] count] > 0) {
+        return [emeny objectAtIndex:0];
+    }else if ([[emeny objectAtIndex:1] count] > 0){
+        return [emeny objectAtIndex:1];
+    }else{
+        return [emeny objectAtIndex:2];
+    }
 }
 
 - (void)dealloc{

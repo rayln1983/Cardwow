@@ -85,12 +85,9 @@
 - (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
     NSMutableArray *emeny = [armyList objectAtIndex:0];
-    NSMutableArray *array = [emeny objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:emeny];
     if ([array count] > 0) {
-        int random = [Util random:0 :[array count]-1 ];
-        BaseSprite *sprite = [array objectAtIndex:random];
-        int damage = [self getDamage:sprite];
-        [sprite setHurt:damage :array :layer];
+        BaseSprite *sprite = [self randomHunter:array :layer :armyList];
         
         Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :3 :0 :0];
         [self setDebuff:sprite :debuff];
@@ -102,7 +99,7 @@
 - (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
     NSMutableArray *alias = [armyList objectAtIndex:1];
-    NSMutableArray *array = [alias objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:alias];
     if ([array count] > 0) {
         int random = [Util random:0 :[array count]-1 ];
         BaseSprite *sprite = [array objectAtIndex:random];
