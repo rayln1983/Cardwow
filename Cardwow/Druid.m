@@ -43,6 +43,8 @@
     Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
     
     [super initElements:point :sprite :status];
+    
+    [status release];
 }
 - (id)copyWithSelf{
     return [[Druid alloc] initWithPosition:[self position]];

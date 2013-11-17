@@ -11,7 +11,7 @@
 #define POWER 100;
 #define ARMOR 20;
 #define DEFENSE 10;
-#define ATTACK 30;
+#define ATTACK 40;
 #define MAGICATTACK 0;
 
 #define STRONGE 20;
@@ -45,6 +45,8 @@
     Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
     
     [super initElements:point :sprite :status];
+    
+    [status release];
 }
 - (id)copyWithSelf{
     return [[Warrior alloc] initWithPosition:[self position]];
@@ -91,6 +93,8 @@
         
         Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :3 :0 :0];
         [self setDebuff:sprite :debuff];
+        
+        [debuff release];
     }
     
     
@@ -107,6 +111,8 @@
         
         Buff *buff = [[Buff alloc] initWithBuff:@"warrior-row2.ico" :1 :0 :1];
         [self setBuff:sprite :buff];
+        
+        [buff release];
     }
     
     

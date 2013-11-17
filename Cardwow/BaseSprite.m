@@ -19,6 +19,7 @@
     return self;
 }
 - (void)initElements:(CGPoint)point :(CCSprite *)sprite :(Status *)status{
+    [status retain];
     //init icon
     CGSize size = CGSizeMake(56, 56);
     [self addChild:sprite];
@@ -183,6 +184,8 @@
 }
 
 - (void)clearDebuff:(Debuff *)debuff{
+    NSLog(@"_===%@", _debuffList);
+    NSLog(@"%@",debuff);
     [_debuffList enumerateObjectsUsingBlock:^(Debuff *obj, NSUInteger idx, BOOL *stop) {
         if (obj.row == debuff.row && obj.nType == debuff.nType ) {
             [_debuffList removeObject:obj];
@@ -286,6 +289,21 @@
     }else{
         return [emeny objectAtIndex:2];
     }
+}
+
+- (NSMutableArray *)getEmeny2RowList:(NSMutableArray *)emeny{
+    int row1 = 0;
+    int row2 = 1;
+    if ([[emeny objectAtIndex:0] count]<=0) {
+        row1 = 1;
+        row2 = 2;
+    }
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[emeny objectAtIndex:row1]];
+    NSMutableArray *temp2 = [[NSMutableArray alloc] initWithArray:[emeny objectAtIndex:row2]];
+    [array  addObjectsFromArray:temp2];
+    [temp2 release];
+//    [array release];
+    return array;
 }
 
 - (void)dealloc{

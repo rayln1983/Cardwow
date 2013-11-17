@@ -11,7 +11,7 @@
 #define POWER 200;
 #define ARMOR 20;
 #define DEFENSE 10;
-#define ATTACK 30;
+#define ATTACK 40;
 #define MAGICATTACK 20;
 //attribute
 #define STRONGE 5;
@@ -43,6 +43,8 @@
     Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
     
     [super initElements:point :sprite :status];
+    
+    [status release];
 }
 - (id)copyWithSelf{
     return [[Paladin alloc] initWithPosition:[self position]];
@@ -81,13 +83,8 @@
     NSMutableArray *emeny = [armyList objectAtIndex:0];
     NSMutableArray *array = [self getEmenyList:emeny];
     if ([array count] > 0) {
-        BaseSprite *sprite = [self randomHunter:array :layer :armyList];
-        
-//        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"paladin-row1.ico" :0 :2 :0];
-//        [self setDebuff:sprite :debuff];
+        [self randomHunter:array :layer :armyList];
     }
-    
-    
 }
 
 - (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
@@ -97,12 +94,22 @@
     if ([array count] > 0) {
         int random = [Util random:0 :[array count]-1 ];
         BaseSprite *sprite = [array objectAtIndex:random];
-        //[sprite setHurt:[self getAttack].current :array :layer];
-        
         Buff *buff = [[Buff alloc] initWithBuff:@"paladin-row2.ico" :2 :2 :1];
         [self setBuff:sprite :buff];
+        
+        [buff release];
+    }
+}
+
+- (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [self getEmenyList:alias];
+    if ([array count] > 0) {
+        
     }
     
+    [self setHeal: [self.status life].max/10 :armyList :layer];
     
 }
 

@@ -44,6 +44,8 @@
     Status *status = [[Status alloc] initWithSizeAndStatus:size Life:life Energy:rage];
     
     [super initElements:point :sprite :status];
+    
+    [status release];
 }
 - (id)copyWithSelf{
     return [[Shaman alloc] initWithPosition:[self position]];

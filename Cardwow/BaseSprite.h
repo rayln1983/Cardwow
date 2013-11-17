@@ -76,4 +76,5 @@
 - (void)setBuff:(BaseSprite *)sprite :(Buff *)buff;
 - (BaseSprite *)randomHunter:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList;
 - (NSMutableArray *)getEmenyList:(NSMutableArray *)emeny;
+- (NSMutableArray *)getEmeny2RowList:(NSMutableArray *)emeny;
 @end
