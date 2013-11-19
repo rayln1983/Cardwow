@@ -44,4 +44,5 @@
     [_value setString:[NSString stringWithFormat:@"%i",_duration]];
 }
 
+
 @end

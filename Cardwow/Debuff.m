@@ -7,7 +7,16 @@
 //
 
 #import "Debuff.h"
-
+enum Job{
+    WARRIOR = 0,
+    HUNTER = 1,
+    PALADIN = 2,
+    SHAMAN = 3,
+    DRUID = 4,
+    MAGE = 5,
+    PRIEST = 6,
+    WARLOCK = 7
+} JobVal;
 
 @implementation Debuff
 

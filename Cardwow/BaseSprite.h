@@ -16,6 +16,17 @@
 #define INIT_LIFE_COLOR ccDrawColor4B(81,133,54,255)
 #define INIT_POWER_COLOR ccDrawColor4B(0,169,227,255)
 
+enum Job{
+    WARRIOR = 0,
+    HUNTER = 1,
+    PALADIN = 2,
+    SHAMAN = 3,
+    DRUID = 4,
+    MAGE = 5,
+    PRIEST = 6,
+    WARLOCK = 7
+} JobVal;
+
 @interface BaseSprite : CCNode {
     int _flag;
     int _row;
@@ -38,6 +49,15 @@
 @property (nonatomic, retain) CCLabelTTF *point;
 @property (nonatomic, strong) Status *status;
 
+@property (nonatomic, assign) Type armor;
+@property (nonatomic, assign) Type defense;
+@property (nonatomic, assign) Type attack;
+@property (nonatomic, assign) Type magicAttack;
+@property (nonatomic, assign) Type intelligence;
+@property (nonatomic, assign) Type stronge;
+
+@property (nonatomic, assign) int dot;
+
 @property (nonatomic, strong) NSMutableArray *debuffList;
 @property (nonatomic, strong) NSMutableArray *buffList;
 
@@ -57,9 +77,9 @@
 - (void)setDamageFont:(int)damage :(CCLayer *)layer;
 - (void)initElements:(CGPoint)point :(CCSprite *)sprite :(Status *)status;
 - (Type)getAttack;
-- (Type)getLife;
 - (Type)getMagicAttack;
 - (Type)getAgile;
+
 - (void)setAgile:(int)agile;
 - (void)initFontLayout:(CGPoint)point;
 - (CGPoint)getDebuffPosition;
@@ -75,6 +95,13 @@
 - (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff;
 - (void)setBuff:(BaseSprite *)sprite :(Buff *)buff;
 - (BaseSprite *)randomHunter:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList;
+- (BaseSprite *)randomHunterByDot:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList :(float)rate :(float)dotRate;
+- (BaseSprite *)randomHunterByMagic:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList;
 - (NSMutableArray *)getEmenyList:(NSMutableArray *)emeny;
 - (NSMutableArray *)getEmeny2RowList:(NSMutableArray *)emeny;
+- (NSArray *)sortListByLif:(NSMutableArray *)array;
+
+- (void)setHealToTarget:(int)value :(BaseSprite *)target;
+- (int)getHealValue:(BaseSprite *)target;
+- (void)calcBuffAndDebuff:(NSMutableArray *)armyList;
 @end

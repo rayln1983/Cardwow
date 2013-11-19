@@ -91,7 +91,7 @@
     if ([array count] > 0) {
         BaseSprite *sprite = [self randomHunter:array :layer :armyList];
         
-        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :3 :0 :0];
+        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warrior-row1.ico" :1 :0 :0];
         [self setDebuff:sprite :debuff];
         
         [debuff release];

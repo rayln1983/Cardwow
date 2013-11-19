@@ -18,8 +18,10 @@
 //0: 治疗量为0
 @property (nonatomic, assign) int nType;
 @property (nonatomic, assign) int row;
+@property (nonatomic, assign) int effect;
 
 - (id)initWithBuff:(NSString *)icon :(int)duration :(int)type :(int)row;
 - (void)move:(CGPoint)position;
 - (void)updateStatus;
+
 @end

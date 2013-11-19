@@ -12,7 +12,7 @@
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 30;
-#define MAGICATTACK 30;
+#define MAGICATTACK 50;
 //attribute
 #define STRONGE 5;
 #define AGILE 10;
@@ -77,6 +77,54 @@
     
     _intelligence.current = INTELLIGENCE;
     _intelligence.max = INTELLIGENCE;
+}
+
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:emeny];
+    if ([array count] > 0) {
+        [self randomHunterByMagic:array :layer :armyList];
+    }
+}
+
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [self getEmenyList:alias];
+
+    for (BaseSprite *sprite in array) {
+        Buff *buff = [[Buff alloc] initWithBuff:@"shaman-row2.ico" :2 :3 :1];
+        [self setBuff:sprite :buff];
+        [sprite calcBuffAndDebuff:armyList];
+        [buff release];
+    }
+}
+
+- (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [self getEmeny2RowList:alias];
+    if ([array count] > 0) {
+        NSArray *sortArray = [self sortListByLif:array];
+        BaseSprite *sprite1 = [sortArray objectAtIndex:0];
+        int healvalue = [self getHealValue:sprite1];
+        [self setHealToTarget:healvalue/3*2 :sprite1];
+        
+        if ([sortArray count] >= 2) {
+            BaseSprite *sprite2 = [sortArray objectAtIndex:1];
+            int healvalue = [self getHealValue:sprite2];
+            [self setHealToTarget:healvalue/3*2 :sprite2];
+        }
+        if ([sortArray count] >= 3) {
+            BaseSprite *sprite2 = [sortArray objectAtIndex:2];
+            int healvalue = [self getHealValue:sprite2];
+            [self setHealToTarget:healvalue/3*2 :sprite2];
+        }
+    }
+    
+    
+    
 }
 
 - (void)draw{

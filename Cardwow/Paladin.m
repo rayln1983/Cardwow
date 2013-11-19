@@ -12,7 +12,7 @@
 #define ARMOR 20;
 #define DEFENSE 10;
 #define ATTACK 40;
-#define MAGICATTACK 20;
+#define MAGICATTACK 60;
 //attribute
 #define STRONGE 5;
 #define AGILE 5;
@@ -96,7 +96,8 @@
         BaseSprite *sprite = [array objectAtIndex:random];
         Buff *buff = [[Buff alloc] initWithBuff:@"paladin-row2.ico" :2 :2 :1];
         [self setBuff:sprite :buff];
-        
+        //[sprite armor].current = [sprite armor].current/2 + [sprite armor].current;
+        [sprite calcBuffAndDebuff:armyList];
         [buff release];
     }
 }
@@ -104,13 +105,14 @@
 - (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
     NSMutableArray *alias = [armyList objectAtIndex:1];
-    NSMutableArray *array = [self getEmenyList:alias];
+    NSMutableArray *array = [self getEmeny2RowList:alias];
     if ([array count] > 0) {
+        NSArray *sortArray = [self sortListByLif:array];
+        BaseSprite *sprite1 = [sortArray objectAtIndex:0];
+        int healvalue = [self getHealValue:sprite1];
+        [self setHealToTarget:healvalue :sprite1];
         
     }
-    
-    [self setHeal: [self.status life].max/10 :armyList :layer];
-    
 }
 
 - (void)draw{

@@ -245,20 +245,44 @@ typedef struct {
     
     [self clearBuff:_groupA];
     [self clearBuff:_groupB];
+    
 }
 
 - (void)clearBuff:(NSMutableArray *)arr{
+    NSMutableArray *armyList = [[NSMutableArray alloc] initWithObjects:arr, nil];
     [arr enumerateObjectsUsingBlock:^(NSMutableArray *array, NSUInteger idx, BOOL *stop) {
         
         for (int i = [array count] - 1; i >= 0; i--) {
             BaseSprite *sprite = [array objectAtIndex:i];
             [self dealBuff: [sprite buffList]];
             [self dealBuff: [sprite debuffList]];
+            
             Status *status = [sprite status];
             if ([status life].current <= 0) {
                 [array removeObject:sprite];
             }
+            NSLog(@"=====%@",armyList);
+            [sprite calcBuffAndDebuff:armyList];
+            [self moveBuff:sprite];
         }
+    }];
+    [armyList release];
+}
+
+- (void)moveBuff:(BaseSprite *)sprite{
+    NSMutableArray *bufflist = [sprite buffList];
+    
+    [bufflist enumerateObjectsUsingBlock:^(Buff *buff, NSUInteger idx, BOOL *stop) {
+        CGPoint initPosition = ccp(-28, 28);
+        initPosition.y = initPosition.y - idx*12;
+        [buff move:initPosition];
+    }];
+    
+    NSMutableArray *debufflist = [sprite debuffList];
+    [debufflist enumerateObjectsUsingBlock:^(Debuff *debuff, NSUInteger idx, BOOL *stop) {
+        CGPoint initPosition = ccp(28, 28);
+        initPosition.y = initPosition.y - idx*12;
+        [debuff move:initPosition];
     }];
 }
 
@@ -273,6 +297,7 @@ typedef struct {
             [buff updateStatus];
         }
     }
+    
 }
 
 - (bool)isTouchObject:(CGPoint) point :(CCSprite *)sprite{

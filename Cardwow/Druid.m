@@ -11,10 +11,10 @@
 #define POWER 200;
 #define ARMOR 20;
 #define DEFENSE 10;
-#define ATTACK 30;
+#define ATTACK 50;
 #define MAGICATTACK 20;
 //attribute
-#define STRONGE 5;
+#define STRONGE 25;
 #define AGILE 10;
 #define INTELLIGENCE 25;
 
@@ -78,6 +78,73 @@
     _intelligence.max = INTELLIGENCE;
 }
 
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:emeny];
+    if ([array count] > 0) {
+        BaseSprite *sprite = [self randomHunterByDot:array :layer :armyList :.5 :.3];
+        
+        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"druid-row1.ico" :3 :4 :0];
+        [debuff setEffect:sprite.dot];
+        [self setDebuff:sprite :debuff];
+        
+        [debuff release];
+    }
+    
+    
+}
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [self getEmenyList:alias];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        Buff *buff = [[Buff alloc] initWithBuff:@"druid-row2.ico" :3 :4 :1];
+//        [buff setEffect: [self getHealValue:self]/2];
+        [self setBuff:sprite :buff];
+        //[sprite armor].current = [sprite armor].current/2 + [sprite armor].current;
+        [sprite calcBuffAndDebuff:armyList];
+        [buff release];
+    }
+}
+
+- (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [self getEmeny2RowList:alias];
+    if ([array count] > 0) {
+        NSArray *sortArray = [self sortListByLif:array];
+        BaseSprite *sprite1 = [sortArray objectAtIndex:0];
+        int healvalue = [self getHealValue:sprite1];
+        [self setHealToTarget:healvalue/2 :sprite1];
+        [self setBuffAll:sprite1 :armyList];
+        if ([sortArray count] >= 2) {
+            BaseSprite *sprite2 = [sortArray objectAtIndex:1];
+            int healvalue = [self getHealValue:sprite2];
+            [self setHealToTarget:healvalue/2 :sprite2];
+            [self setBuffAll:sprite2 :armyList];
+        }
+        if ([sortArray count] >= 3) {
+            BaseSprite *sprite2 = [sortArray objectAtIndex:2];
+            int healvalue = [self getHealValue:sprite2];
+            [self setHealToTarget:healvalue/2 :sprite2];
+            [self setBuffAll:sprite2 :armyList];
+        }
+    }
+    
+    
+    
+}
+
+- (void)setBuffAll:(BaseSprite *)sprite :(NSMutableArray *)armyList{
+    Buff *buff = [[Buff alloc] initWithBuff:@"druid-row3.ico" :3 :4 :2];
+    [buff setEffect: [self getHealValue:self]/3];
+    [self setBuff:sprite :buff];
+    [sprite calcBuffAndDebuff:armyList];
+    [buff release];
+}
 - (void)draw{
     [super draw];
 }

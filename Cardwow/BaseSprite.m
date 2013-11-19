@@ -41,13 +41,22 @@
 - (BOOL)setLife:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
     Type life = self.status.life;
     life.current = life.current - damage;
-//    self.status.life.current = self.status.life.current - damage;
     if (life.current <=0) {
         life.current = 0;
         self.status.life = life;
-//        [array removeObject:self];
         [layer removeChild:_point cleanup:YES];
         [layer removeChild:self cleanup:YES];
+        return YES;
+    }
+    self.status.life = life;
+    return NO;
+}
+- (BOOL)setLifeByDot:(int)damage{
+    Type life = self.status.life;
+    life.current = life.current - damage;
+    if (life.current <=0) {
+        life.current = 0;
+        self.status.life = life;
         return YES;
     }
     self.status.life = life;
@@ -82,9 +91,36 @@
     return NO;
 }
 
+- (int)getHealValue:(BaseSprite *)target{
+    int value = [self intelligence].current + [self getMagicAttack].current;
+    NSMutableArray *debuffList = [target debuffList];
+    for (Debuff *debuff in debuffList) {
+        if ([debuff nType] == WARRIOR && [debuff row] == 0) {
+            value = 0;
+        }
+    }
+    return value;
+};
+
+- (void)setHealToTarget:(int)value :(BaseSprite *)target{
+    [target setGreenFont:[NSString stringWithFormat:@"+%i",value]];
+    Type life = target.status.life;
+    life.current = life.current + value;
+    if (life.current >= life.max) {
+        life.current = life.max;
+        target.status.life = life;
+    }
+    target.status.life = life;
+}
+
 - (BOOL)setHurt:(int)damage :(NSMutableArray *)array :(CCLayer *)layer{
     [self setDamageFont:damage];
     return [self setLife:damage :array :layer];
+}
+
+- (BOOL)setHurtByDot:(int)damage{
+    [self setDamageFont:damage];
+    return [self setLifeByDot:damage];
 }
 
 - (void)setDamageFont:(int)damage{
@@ -184,8 +220,6 @@
 }
 
 - (void)clearDebuff:(Debuff *)debuff{
-    NSLog(@"_===%@", _debuffList);
-    NSLog(@"%@",debuff);
     [_debuffList enumerateObjectsUsingBlock:^(Debuff *obj, NSUInteger idx, BOOL *stop) {
         if (obj.row == debuff.row && obj.nType == debuff.nType ) {
             [_debuffList removeObject:obj];
@@ -218,7 +252,10 @@
 }
 
 - (int)getDamage:(BaseSprite *)emeny{
-    int damage = [self getAttack].current;
+    int damage = [self getAttack].current + [self stronge].current - [emeny armor].current;
+    if (damage <= 0) {
+        damage = 1;
+    }
     NSMutableArray *bufflist = [emeny buffList];
     for (int i = [bufflist count] - 1; i >= 0; i--) {
         Buff *buff = [bufflist objectAtIndex:i];
@@ -230,6 +267,24 @@
         }
     }
 
+    return damage;
+}
+- (int)getDamageByMagic:(BaseSprite *)emeny{
+    int damage = [self getMagicAttack].current + [self intelligence].current - [emeny defense].current;
+    if (damage <= 0) {
+        damage = 1;
+    }
+    NSMutableArray *bufflist = [emeny buffList];
+    for (int i = [bufflist count] - 1; i >= 0; i--) {
+        Buff *buff = [bufflist objectAtIndex:i];
+        if ([buff nType]==0 && [buff row]==1) {
+            damage = 0;
+            [bufflist removeObject:buff];
+            [buff removeFromParentAndCleanup:YES];
+            break;
+        }
+    }
+    
     return damage;
 }
 
@@ -259,7 +314,29 @@
     int random = [Util random:0 :[array count]-1 ];
     BaseSprite *sprite = [array objectAtIndex:random];
     int damage = [self getDamage:sprite];
-    BOOL isdead = [sprite setHurt:damage :array :layer];
+    BOOL isdead = [sprite setHurt:damage*1.2 :array :layer];
+    if (isdead) {
+        [self clearDeadSprite:armyList :sprite];
+    }
+    return sprite;
+}
+- (BaseSprite *)randomHunterByMagic:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList{
+    int random = [Util random:0 :[array count]-1 ];
+    BaseSprite *sprite = [array objectAtIndex:random];
+    int damage = [self getDamageByMagic:sprite];
+    BOOL isdead = [sprite setHurt:damage*1.2 :array :layer];
+    if (isdead) {
+        [self clearDeadSprite:armyList :sprite];
+    }
+    return sprite;
+}
+
+- (BaseSprite *)randomHunterByDot:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList :(float)rate :(float)dotRate{
+    int random = [Util random:0 :[array count]-1 ];
+    BaseSprite *sprite = [array objectAtIndex:random];
+    int damage = [self getDamage:sprite];
+    BOOL isdead = [sprite setHurt:damage*rate :array :layer];
+    [sprite setDot:damage*rate*dotRate];
     if (isdead) {
         [self clearDeadSprite:armyList :sprite];
     }
@@ -304,6 +381,87 @@
     [temp2 release];
 //    [array release];
     return array;
+}
+
+- (NSArray *)sortListByLif:(NSMutableArray *)array{
+    NSArray *sortArray = [array sortedArrayUsingComparator:^NSComparisonResult(BaseSprite *obj1, BaseSprite *obj2) {
+        int agile1 = [obj1 status].life.current;
+        int agile2 = [obj2 status].life.current;
+        if (agile1 > agile2) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if (agile1 < agile2) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+        
+    }];
+    return sortArray;
+}
+
+- (void)initAttr{
+    
+//    @property (nonatomic, assign) Type armor;
+//    @property (nonatomic, assign) Type defense;
+//    @property (nonatomic, assign) Type attack;
+//    @property (nonatomic, assign) Type magicAttack;
+//    @property (nonatomic, assign) Type intelligence;
+//    @property (nonatomic, assign) Type stronge;
+    Type armor = [self armor]; armor.current = armor.max; [self setArmor:armor];
+    Type defense = [self defense]; defense.current = defense.max; [self setDefense:defense];
+    Type attack = [self attack]; attack.current = attack.max; [self setAttack:attack];
+    Type magicAttack = [self magicAttack]; magicAttack.current = magicAttack.max; [self setMagicAttack:magicAttack];
+    Type intelligence = [self intelligence]; intelligence.current = intelligence.max; [self setIntelligence:intelligence];
+    Type stronge = [self stronge]; stronge.current = stronge.max; [self setStronge:stronge];
+}
+
+- (void)calcBuffAndDebuff:(NSMutableArray *)armyList{
+    NSLog(@"----------------------------");
+    [self initAttr];
+    NSMutableArray *buffList = [self buffList];
+    for (Buff *buff in buffList) {
+        if ([buff nType] == PALADIN && [buff row] == 1) {
+            Type armor = [self armor];
+            armor.current = armor.current + armor.current/2;
+            [self setArmor:armor];
+            
+            Type defense = [self defense];
+            defense.current = defense.current/2 + defense.current;
+            [self setDefense:defense];
+        }
+        if ([buff nType] == SHAMAN && [buff row] == 1) {
+            Type attack = [self attack];
+            attack.current = attack.current + attack.current/2;
+            [self setAttack:attack];
+            
+            Type magicAttack = [self magicAttack];
+            magicAttack.current = magicAttack.current + magicAttack.current/2;
+            [self setMagicAttack:magicAttack];
+        }
+        if ([buff nType] == DRUID && [buff row] == 1) {
+            Type armor = [self armor];
+            armor.current = armor.current + armor.current/3;
+            [self setArmor:armor];
+            
+            Type defense = [self defense];
+            defense.current = defense.current/3 + defense.current;
+            [self setDefense:defense];
+        }
+        if ([buff nType] == DRUID && [buff row] == 2) {
+            [self setHealToTarget:buff.effect :self];
+        }
+    }
+    
+    NSMutableArray *debuffList = [self debuffList];
+    for (Debuff *debuff in debuffList) {
+        if ([debuff nType] == DRUID && [debuff row] == 0) {
+            if([self setHurtByDot: debuff.effect]){
+                [self removeFromParentAndCleanup:YES];
+                [self clearDeadSprite:armyList :self];
+            }
+        }
+    }
 }
 
 - (void)dealloc{

@@ -14,7 +14,7 @@
 #define ATTACK 30;
 #define MAGICATTACK 0;
 //attribute
-#define STRONGE 5;
+#define STRONGE 25;
 #define AGILE 20;
 #define INTELLIGENCE 0;
 
@@ -81,15 +81,6 @@
 - (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
     [self shooter];
     NSMutableArray *emeny = [armyList objectAtIndex:0];
-//    int row1 = 0;
-//    int row2 = 1;
-//    if ([[emeny objectAtIndex:0] count]<=0) {
-//        row1 = 1;
-//        row2 = 2;
-//    }
-//    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[emeny objectAtIndex:row1]];
-//    NSMutableArray *temp2 = [[NSMutableArray alloc] initWithArray:[emeny objectAtIndex:row2]];
-//    [array  addObjectsFromArray:temp2];
     NSMutableArray *array = [self getEmeny2RowList:emeny];
     if ([array count] > 0) {
         BaseSprite *sprite = [self randomHunter:array :layer :armyList];
