@@ -133,9 +133,6 @@
             [self setBuffAll:sprite2 :armyList];
         }
     }
-    
-    
-    
 }
 
 - (void)setBuffAll:(BaseSprite *)sprite :(NSMutableArray *)armyList{

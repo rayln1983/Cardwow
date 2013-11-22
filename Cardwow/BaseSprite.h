@@ -92,6 +92,7 @@ enum Job{
 - (void)clearBuff:(Buff *)buff;
 
 - (int)getDamage:(BaseSprite *)emeny;
+- (int)getDamageByMagic:(BaseSprite *)emeny;
 - (void)setDebuff:(BaseSprite *)sprite :(Debuff *)debuff;
 - (void)setBuff:(BaseSprite *)sprite :(Buff *)buff;
 - (BaseSprite *)randomHunter:(NSMutableArray *)array :(CCLayer *)layer :(NSMutableArray *)armyList;

@@ -78,6 +78,37 @@
     _intelligence.max = INTELLIGENCE;
 }
 
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:alias];
+    
+    for (int i = [array count] - 1; i >= 0; i--) {
+        BaseSprite *sprite = [array objectAtIndex:i];
+        [sprite setHurt:[self getDamageByMagic:self]/3*2 :array :layer];
+    }
+}
+
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:alias];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"mage-row2.ico" :3 :5 :1];
+        [self setDebuff:sprite :debuff];
+        
+        [debuff release];
+    }
+    
+    
+}
+
+- (void)skill3:(NSMutableArray *)array :(CCLayer *)layer{
+
+}
+
 - (void)draw{
     [super draw];
 }

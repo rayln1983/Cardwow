@@ -79,6 +79,44 @@
     _intelligence.max = INTELLIGENCE;
 }
 
+- (void)skill1:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *emeny = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:emeny];
+    if ([array count] > 0) {
+        [self randomHunter:array :layer :armyList];
+    }
+}
+
+- (void)skill2:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:0];
+    NSMutableArray *array = [self getEmenyList:alias];
+    if ([array count] > 0) {
+        int random = [Util random:0 :[array count]-1 ];
+        BaseSprite *sprite = [array objectAtIndex:random];
+        Debuff *debuff = [[Debuff alloc] initWithDebuff:@"warlock-row2.ico" :3 :7 :1];
+        [self setDebuff:sprite :debuff];
+        
+        [debuff release];
+    }
+    
+    
+}
+
+- (void)skill3:(NSMutableArray *)armyList :(CCLayer *)layer{
+    [self shooter];
+    NSMutableArray *alias = [armyList objectAtIndex:1];
+    NSMutableArray *array = [self getEmeny2RowList:alias];
+    if ([array count] > 0) {
+        NSArray *sortArray = [self sortListByLif:array];
+        BaseSprite *sprite1 = [sortArray objectAtIndex:0];
+        int healvalue = [self getHealValue:sprite1];
+        [self setHealToTarget:healvalue :sprite1];
+        
+    }
+}
+
 - (void)draw{
     [super draw];
 }

@@ -92,7 +92,7 @@
 }
 
 - (int)getHealValue:(BaseSprite *)target{
-    int value = [self intelligence].current + [self getMagicAttack].current;
+    int value = [self intelligence].current + [self getMagicAttack].current/2;
     NSMutableArray *debuffList = [target debuffList];
     for (Debuff *debuff in debuffList) {
         if ([debuff nType] == WARRIOR && [debuff row] == 0) {
